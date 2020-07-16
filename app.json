@@ -6,34 +6,34 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "程序",
+    "navigationBarBackgroundColor": "#87CEEB",
+    "navigationBarTitleText": "8号青年校园",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#FE9132",
+    "backgroundColor": "#ffffff",
     "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "color": "#B6B6B6",
-    "selectedColor": "#FE9132",
+    "color": "#000000",
+    "selectedColor": "#1296db",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-h.png"
+        "iconPath": "icon/shouye_1.png",
+        "selectedIconPath": "icon/shouye.png"
       },
       {
         "pagePath": "pages/order/order",
         "text": "订单",
-        "iconPath": "images/list.png",
-        "selectedIconPath": "images/list-h.png"
+        "iconPath": "icon/wendang_1.png",
+        "selectedIconPath": "icon/wendang.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",
-        "iconPath": "images/user.png",
-        "selectedIconPath": "images/user-h.png"
+        "iconPath": "icon/wode_1.png",
+        "selectedIconPath": "icon/wode.png"
       }
     ]
   }
