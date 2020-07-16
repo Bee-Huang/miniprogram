@@ -9,7 +9,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "小程序",
+    "navigationBarTitleText": "程序",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FE9132",
     "enablePullDownRefresh": true
