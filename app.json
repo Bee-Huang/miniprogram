@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/discount/discount",
+    "pages/mine/mine",
+    "pages/user_data/user_data"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "我的小程序",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FE9132",
+    "enablePullDownRefresh": true
+  
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#B6B6B6",
+    "selectedColor": "#FE9132",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-h.png"
+
+      },
+      {
+        "pagePath": "pages/discount/discount",
+        "text": "订单",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list-h.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-h.png"
+
+      }
+    ]
+  }
+}
