@@ -24,7 +24,7 @@
         "selectedIconPath": "images/home-h.png"
       },
       {
-        "pagePath": "pages/discount/discount",
+        "pagePath": "pages/order/order",
         "text": "订单",
         "iconPath": "images/list.png",
         "selectedIconPath": "images/list-h.png"
