@@ -1,10 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/discount/discount",
     "pages/mine/mine",
-    "pages/user_data/user_data"
-    
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -13,7 +11,6 @@
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FE9132",
     "enablePullDownRefresh": true
-  
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
@@ -25,7 +22,6 @@
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-h.png"
-
       },
       {
         "pagePath": "pages/discount/discount",
@@ -38,7 +34,6 @@
         "text": "我的",
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user-h.png"
-
       }
     ]
   }

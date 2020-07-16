@@ -1,4 +1,4 @@
-// pages/discount/discount.js
+// pages/order/order.js
 Page({
 
   /**
