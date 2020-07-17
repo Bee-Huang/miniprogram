@@ -2,22 +2,11 @@
 <view>
     <swiper class="swiper" indicator-dots="ture" indicator-color="rgba(0,0,0,.3)" autoplay="ture" 
     interval="3000" circular="ture">
-<block wx:for="{{swiper_item}}" wx:key="id">
-    <swiper-item class="swiper_item" item-id="">
-        <image class="image" mode="widthFix" src="{{item.src}}"/>
-    </swiper-item>
-      
-</block>
-<!-- 
-        <swiper-item class="swiper-item1" item-id=""> 
-            <image class="image" mode="widthFix" src="../../images/image1.jpg" />
-        </swiper-item>
-        <swiper-item class="swiper-item1" item-id="">
-            <image class="image" mode="widthFix" src="../../images/image2.jpg" />
-        </swiper-item>
-        <swiper-item class="swiper-item3" item-id="">
-            <image class="image" mode="widthFix" src="../../images/image3.jpg" />
-        </swiper-item> -->
+        <block wx:for="{{swiper_item}}" wx:key="id">
+            <swiper-item class="swiper_item" item-id="">
+                <image class="image" mode="aspectFill" src="{{item.src}}" />
+            </swiper-item>
+        </block>
     </swiper>
 </view>
  <!-- 十个项目 -->

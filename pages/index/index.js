@@ -37,62 +37,62 @@ Page({
     object1:[
       {
       id:0,
-      src:"../../images/kecheng1.png",
-      text:"第一个",
+      src:"../../icon/jiaoyu.png",
+      text:"教育",
       // url1: '/pages/no1/no1'
     },
     {
       id:1,
-      src:"../../images/kecheng2.png",
-      text:"第二个",
+      src:"../../icon/fuzhuang.png",
+      text:"服装",
       // url1: '/pages/no1/no1'
     },
     {
       id:2,
-      src:"../../images/kecheng3.png",
-      text:"第三个",
+      src:"../../icon/tongxun.png",
+      text:"通讯",
       // url1: '/pages/no1/no1'
     },
     {
       id:3,
-      src:"../../images/kecheng4.png",
-      text:"第四个",
+      src:"../../icon/canyin.png",
+      text:"餐饮",
       // url1: '/pages/no1/no1'
     },
     {
       id:4,
-      src:"../../images/kecheng5.png",
-      text:"第五个",
+      src:"../../icon/jiaxiao.png",
+      text:"驾校",
       // url1: '/pages/no1/no1'
     },
     {
       id:5,
-      src:"../../images/kecheng1.png",
-      text:"第六个",
+      src:"../../icon/lvyouyule.png",
+      text:"娱乐",
       // url1: '/pages/no1/no1'
     },
     {
       id:6,
-      src:"../../images/kecheng2.png",
-      text:"第七个",
+      src:"../../icon/wenti.png",
+      text:"文体",
       // url1: '/pages/no1/no1'
     },
     {
       id:7,
-      src:"../../images/kecheng3.png",
-      text:"第八个",
+      src:"../../icon/keji.png",
+      text:"科技",
       // url1: '/pages/no1/no1'
     },
     {
       id:8,
-      src:"../../images/kecheng4.png",
-      text:"第九个",
+      src:"../../icon/renliziyuan.png",
+      text:"人力",
       // url1: '/pages/no1/no1'
     },
     {
       id:9,
-      src:"../../images/kecheng5.png",
-      text:"第十个",
+      src:"../../icon/shangwuhezuo.png",
+      text:"商务",
       // url1: '/pages/no1/no1'
     }
   ],
