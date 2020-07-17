@@ -1,1 +1,81 @@
 /* pages/login/login.wxss */
+.text_view{
+  margin-top: 20rpx;
+  margin-left: 10%;
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  flex-direction: column;
+}
+
+.text1{
+  font-size: 30rpx;
+  color: #000000;
+}
+
+.text2{
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  color: #999999;
+}
+
+
+.image_view{
+  margin-top: 100rpx;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.image_text{
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+
+.divLine{
+  margin-top: 20rpx;
+  background: #AAAAAA;
+  width: 80%;
+  height: 1rpx;
+  align-self: center;
+ }
+
+.image{
+  align-self: center;
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 50%;
+}
+
+.button_view{
+  margin-top: 100rpx;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.cancel{
+  width: 30%;
+  margin-left: 10%;
+  margin-right: 5%;
+  font-size: 25rpx;
+  padding: 10rpx;
+  border-radius: 30px;
+  background: #efefef;
+  color: #000000;
+}
+
+.login_to{
+  width: 30%;
+  font-size: 25rpx;
+  margin-right: 10%;
+  margin-left: 5%;
+  padding: 10rpx;
+  border-radius: 25px;
+  background: #87CEEB;
+  color: #ffffff;
+}

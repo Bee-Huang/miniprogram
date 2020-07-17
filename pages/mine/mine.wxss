@@ -1,0 +1,42 @@
+
+
+.topview{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  justify-content: left;
+  background-color: #87CEEB;
+}
+
+.portrait{
+  align-self: center;
+  margin: 50rpx;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 50%;
+}
+
+.portrait_text{
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 30rpx;
+  padding: 10rpx;
+  border-radius: 50rpx;
+  border:1px solid black;
+}
+
+.nickname_view{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.name{
+  font-size: 40rpx;
+  color: #000000;
+}
+
+.phone{
+  font-size: 30rpx;
+  color: #000000;
+}
