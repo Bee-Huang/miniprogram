@@ -1,3 +1,4 @@
+<!-- kdsf -->
 <view>
     <swiper class="swiper" indicator-dots="ture" indicator-color="rgba(0,0,0,.3)" autoplay="ture" 
     interval="3000" circular="ture">
