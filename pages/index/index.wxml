@@ -4,7 +4,7 @@
     interval="3000" circular="ture">
 <block wx:for="{{swiper_items}}" wx:key="id">
     <swiper-item class="swiper_item" item-id="">
-        <image class="image" mode="widthFix" src="{{item.src}}"/>
+        <image class="image" mode="widthFix" src="{{item.src}}" />
     </swiper-item>
       
 </block>
