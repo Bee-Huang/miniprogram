@@ -1,8 +1,15 @@
-<!-- kdsf -->
+<!-- 轮播图 -->
 <view>
     <swiper class="swiper" indicator-dots="ture" indicator-color="rgba(0,0,0,.3)" autoplay="ture" 
     interval="3000" circular="ture">
-        <swiper-item class="swiper-item1" item-id="">
+<block wx:for="{{swiper_item}}" wx:key="id">
+    <swiper-item class="swiper_item" item-id="">
+        <image class="image" mode="widthFix" src="{{item.src}}"/>
+    </swiper-item>
+      
+</block>
+<!-- 
+        <swiper-item class="swiper-item1" item-id=""> 
             <image class="image" mode="widthFix" src="../../images/image1.jpg" />
         </swiper-item>
         <swiper-item class="swiper-item1" item-id="">
@@ -10,22 +17,23 @@
         </swiper-item>
         <swiper-item class="swiper-item3" item-id="">
             <image class="image" mode="widthFix" src="../../images/image3.jpg" />
-        </swiper-item>
+        </swiper-item> -->
     </swiper>
 </view>
- 
+ <!-- 十个项目 -->
 <view class="business">
-    <block wx:for="{{object1}}">
-        <view>
-            <navigator class="navigator1" url="" hover-class="navigator-hover" open-type="navigate">
-            <image class="business-image" src="{{item.src}}">
-                
-            </image>
-            
-        </navigator>
+    <block wx:for="{{object1}}" wx:key="id">
+        <view class="navi-business-image">
+            <navigator class="navigator" url="{{item.url1}}" hover-class="navigator-hover" open-type="navigate">
+                <image class="business-image" src="{{item.src}}"/>
+            </navigator>
+            <text class="business-name">
+                {{item.text}}
+            </text>
         </view>
-          
-       
+    
     </block>
       
 </view>
+
+

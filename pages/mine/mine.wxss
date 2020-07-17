@@ -1,4 +1,61 @@
+page{
+  background-color: #efefef;
+}
 
+.order{
+  background-color: #ffffff;
+  margin: 5%;
+  height: 200rpx;
+  width: 90%;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: left;
+}
+
+.order_son{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+}
+
+.order_tip{
+  margin-left: 20rpx;
+  margin-top: 5%;
+  font-size: 25rpx;
+}
+
+.divLine{
+  margin-top: 10rpx;
+  background: #AAAAAA;
+  width: 95%;
+  height: 1rpx;
+  align-self: center;
+ }
+
+ .order_icon_view{
+  display: flex;
+  width: 120rpx;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  flex-direction:column;
+  justify-content: center;
+
+ }
+
+ .order_icon{
+    height: 40rpx;
+    width: 40rpx;
+    align-self: center;
+ }
+
+ .order_text{
+   margin-top: 10rpx;
+   font-size: 25rpx;
+   align-self: center;
+   color: #333333;
+ }
 
 .topview{
   height: 200rpx;
@@ -40,3 +97,4 @@
   font-size: 30rpx;
   color: #000000;
 }
+
