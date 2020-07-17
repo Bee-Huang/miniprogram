@@ -1,48 +1,21 @@
-page{
-    background-color:#efefef;
-  }
 .swiper{
     width: 100%;
     height: 400rpx;
-    /* border: red solid 2rpx; */
 }
 .image{
     width: 100%;
 }
 .business{
-    height: 170rpx;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* border: solid 5rpx; */
-    justify-content: center;
+}
+.navigator1{
 
 }
-.navi-business-image{
-    height: 170rpx;
-    margin-left: 10rpx;
-    margin-right: 10rpx;
-    margin-top: 20rpx;
-    /* border: solid 2rpx; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.navigator{
-    /* border: blue solid 2rpx; */
-    width: 120rpx;
-    height: 120rpx;
-    border-radius: 50%;
-    
-}
 .business-image{
-    width: 120rpx;
-    height: 120rpx;
-    /* border: red solid 2rpx; */
-}
-.business-name{
-    text-align: center;
-    line-height:20rpx;
-    font-size: 30rpx;
-    /* border: red solid 2rpx; */
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+   width: 120rpx;
+   height: 120rpx;
 }

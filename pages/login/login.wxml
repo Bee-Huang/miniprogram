@@ -1,2 +1,14 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class="image_view">
+  <image class="image" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/icon.jpg"/>
+  <text class="image_text">8号青年校园</text>
+  <view class="divLine"></view>
+</view>
+<view class="text_view">
+  <text class="text1">申请获取以下权限：</text>
+  <text class="text2">·获得你的公开信息（昵称、头像等）</text>
+</view>
+<view class="button_view">
+    <button class="cancel" bindtap="cancel">取消授权</button>
+    <button class="login_to" open-type="getUserInfo" 
+    bindgetuserinfo="login_to">确认授权</button>
+</view>
