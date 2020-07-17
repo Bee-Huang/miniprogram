@@ -1,15 +1,15 @@
 {
   "pages": [
-    "pages/mine/mine",
     "pages/index/index",
-    "pages/order/order",
-    "pages/login/login"
+    "pages/mine/mine",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#87CEEB",
     "navigationBarTitleText": "8号青年校园",
     "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff",
     "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json",
