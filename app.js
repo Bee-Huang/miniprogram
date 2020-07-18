@@ -1,5 +1,11 @@
 //app.js
 App({
+  GlobalData:{
+      openid:'',
+      nickname:'',
+      icon:''
+  },
+
   onLaunch(){
     console.log("onLaunch");
   },

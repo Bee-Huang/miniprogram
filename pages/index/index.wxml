@@ -13,7 +13,7 @@
 <view class="business">
     <block wx:for="{{object1}}" wx:key="id">
         <view class="navi-business-image">
-            <navigator class="navigator" url="{{item.url1}}" hover-class="navigator-hover" open-type="navigate" hover-stay-time	="100">
+            <navigator class="navigator" url="{{item.url1}}" hover-class="navigator-hover" open-type="navigate">
                 <image class="business-image" src="{{item.src}}"/>
             </navigator>
             <text class="business-name">
@@ -24,7 +24,5 @@
     </block>
       
 </view>
-<!-- 分割线 -->
-<view class="fengexian"></view>
 
 

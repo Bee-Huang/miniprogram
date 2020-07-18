@@ -1,11 +1,9 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/index/index",
     "pages/order/order",
-    "pages/mine/mine",
-    "pages/login/login",
-    "pages/clothes/clothes",
-    "pages/other/other" 
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "dark",

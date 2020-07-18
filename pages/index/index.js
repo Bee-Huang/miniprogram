@@ -39,61 +39,61 @@ Page({
       id:0,
       src:"../../icon/jiaoyu.png",
       text:"教育",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     },
     {
       id:1,
       src:"../../icon/fuzhuang.png",
       text:"服装",
-      url1: '/pages/clothes/clothes'
+      // url1: '/pages/no1/no1'
     },
     {
       id:2,
       src:"../../icon/tongxun.png",
       text:"通讯",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     },
     {
       id:3,
       src:"../../icon/canyin.png",
       text:"餐饮",
-      url1: '/pages/other/noother1'
+      // url1: '/pages/no1/no1'
     },
     {
       id:4,
       src:"../../icon/jiaxiao.png",
       text:"驾校",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     },
     {
       id:5,
       src:"../../icon/lvyouyule.png",
       text:"娱乐",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     },
     {
       id:6,
       src:"../../icon/wenti.png",
       text:"文体",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     },
     {
       id:7,
       src:"../../icon/keji.png",
       text:"科技",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     },
     {
       id:8,
       src:"../../icon/renliziyuan.png",
       text:"人力",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     },
     {
       id:9,
       src:"../../icon/shangwuhezuo.png",
       text:"商务",
-      url1: '/pages/other/other'
+      // url1: '/pages/no1/no1'
     }
   ],
     

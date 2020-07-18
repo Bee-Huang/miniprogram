@@ -11,9 +11,7 @@ page{
     height: 300rpx;
 }
 .business{
-    height: 280rpx;
-    background-color: #87CEFA;
-    /* color: #87CEEB; */
+    height: 170rpx;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -22,9 +20,10 @@ page{
 
 }
 .navi-business-image{
-    height: 120rpx;
+    height: 130rpx;
     margin-left: 35rpx;
     margin-right: 35rpx;
+    margin-top: 10rpx;
     /* border: solid 2rpx; */
     display: flex;
     flex-direction: column;
@@ -32,23 +31,19 @@ page{
 }
 .navigator{
     /* border: blue solid 2rpx; */
-    width: 70rpx;
-    height: 70rpx;
-
+    width: 60rpx;
+    height: 60rpx;
+    
+    
 }
 .business-image{
-    width: 70rpx;
-    height: 70rpx;
+    width: 60rpx;
+    height: 60rpx;
     /* border: red solid 2rpx; */
 }
 .business-name{
     text-align: center;
     line-height:20rpx;
-    font-size: 30rpx;
-    color:#333333;
+    font-size: 25rpx;
     /* border: red solid 2rpx; */
-}
-.fengexian{
-    border: #87CEEB solid 1rpx;
-    margin-top: 5rpx;
 }
