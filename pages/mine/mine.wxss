@@ -5,7 +5,8 @@ page{
 .order{
   background-color: #ffffff;
   margin: 5%;
-  height: 200rpx;
+  margin-top: 2%;
+  height: 180rpx;
   width: 90%;
   border-radius: 20rpx;
   display: flex;
@@ -21,13 +22,13 @@ page{
 
 .order_tip{
   margin-left: 20rpx;
-  margin-top: 5%;
+  margin-top: 3%;
   font-size: 25rpx;
 }
 
 .divLine{
   margin-top: 10rpx;
-  background: #AAAAAA;
+  background: #4f4f4f;
   width: 95%;
   height: 1rpx;
   align-self: center;
@@ -43,6 +44,7 @@ page{
   justify-content: center;
 
  }
+
 
  .order_icon{
     height: 40rpx;
@@ -90,11 +92,58 @@ page{
 
 .name{
   font-size: 40rpx;
-  color: #000000;
+  color: #4f4f4f;
 }
 
 .phone{
   font-size: 30rpx;
-  color: #000000;
+  color: #4f4f4f;
+}
+
+.box{
+  background-color: #efefef;
+  margin: 5%;
+  height: 490rpx;
+  width: 90%;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: left;
+  /* border: red solid 2rpx; */
+}
+
+.box1{
+  background-color: #ffffff;
+  width: 100%;
+  height: 80rpx;
+  margin-top: 2rpx;
+  display: flex;
+  border-radius: 20rpx;
+  
+}
+
+.navigator{
+  width: 100%;
+}
+
+.image1{
+  width: 30rpx;
+  height: 30rpx;
+  margin:3.8%;
+  margin-left:20rpx;
+}
+
+.text{
+  line-height:28rpx;
+  font-size: 35rpx;
+  color:#4f4f4f;
+  font-style: normal;
+}
+
+.image2{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 25rpx;
+  margin-left:400rpx;
 }
 

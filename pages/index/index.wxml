@@ -4,7 +4,7 @@
     interval="3000" circular="ture">
         <block wx:for="{{swiper_item}}" wx:key="id">
             <swiper-item class="swiper_item" item-id="">
-                <navigator class="navi-swiper" url="{{item.url}}" hover-class="navigator-hover" open-type="navigate">
+                <navigator class="navi-swiper" url="{{item.url}}" hover-class="" open-type="navigate">
                     <image class="image" mode="aspectFill" src="{{item.src}}" />
                 </navigator>
             </swiper-item>
@@ -12,7 +12,7 @@
     </swiper>
 </view>
  <!-- 十个项目 -->
-<view class="business" >
+<view class="business">
     <block wx:for="{{object1}}" wx:key="id">
         <view class="navi-business-image">
             <navigator class="navigator" url="{{item.url1}}" hover-class="navigator-hover" open-type="navigate" hover-stay-time	="100">

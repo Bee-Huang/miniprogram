@@ -15,28 +15,110 @@
     <view class="order_tip">我的订单</view>
     <view class="divLine"></view>
     <view class="order_son">
-      <view class="order_icon_view">
+
+      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
+        <view class="order_icon_view">
           <image class="order_icon" src="../../icon/dingdan.png"></image>
           <view class="order_text">全部订单</view>
-      </view>
-      <view class="order_icon_view">
+        </view>
+      </navigator>
+      
+      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
+        <view class="order_icon_view">
           <image class="order_icon" src="../../icon/daifukuan.png"></image>
           <view class="order_text">待付款</view>
-      </view>
-      <view class="order_icon_view">
+        </view>
+      </navigator>
+      
+      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
+        <view class="order_icon_view">
           <image class="order_icon" src="../../icon/daifahuo.png"></image>
           <view class="order_text">待发货</view>
-      </view>
-      <view class="order_icon_view">
+        </view>
+      </navigator>
+      
+      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
+        <view class="order_icon_view">
           <image class="order_icon" src="../../icon/yifahuo.png"></image>
           <view class="order_text">已发货</view>
-      </view>
-      <view class="order_icon_view">
+        </view>
+      </navigator>
+      
+      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
+        <view class="order_icon_view">
           <image class="order_icon" src="../../icon/shouhou.png"></image>
           <view class="order_text">退款</view>
-      </view>
+        </view>
+      </navigator>
+      
     </view>
 </view>
+<view class="box" >
+  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+    <view class="box1">
+      <image class="image1" src="../../images/mine-images/huodong.png" />
+      <text class="text" >
+        我的活动
+      </text>
+      <image class="image2" src="../../images/mine-images/fanhui.png" />
+    </view>
+  </navigator>
+  <view class="fengexian" />
 
+  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+    <view class="box1">
+      <image class="image1" src="../../images/mine-images/choujiang.png" />
+      <text class="text" >
+        我的抽奖
+      </text>
+      <image class="image2" src="../../images/mine-images/fanhui.png" />
+    </view>
+  </navigator>
+  <view class="fengexian" />
+
+  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+    <view class="box1">
+      <image class="image1" src="../../images/mine-images/shouhuodizhi.png" />
+      <text class="text" >
+        收货地址
+      </text>
+      <image class="image2" src="../../images/mine-images/fanhui.png" />
+    </view>
+  </navigator>
+  <view class="fengexian" />
+
+  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+    <view class="box1">
+      <image class="image1" src="../../images/mine-images/shangjia.png" />
+      <text class="text" >
+        商家入驻
+      </text>
+      <image class="image2" src="../../images/mine-images/fanhui.png" />
+    </view>
+  </navigator>
+  <view class="fengexian" />
+
+  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+    <view class="box1">
+      <image class="image1" src="../../images/mine-images/kefu.png" />
+      <text class="text" >
+        在线客服
+      </text>
+      <image class="image2" src="../../images/mine-images/fanhui.png" />
+    </view>
+  </navigator>
+  <view class="fengexian" />
+
+  <navigator class="navigator"  hover-stay-time="100" url="/pages/other/other" >
+    <view class="box1">
+      <image class="image1" src="../../images/mine-images/qinglihuancun.png" />
+      <text class="text" >
+        清除缓存
+      </text>
+      <image class="image2" src="../../images/mine-images/fanhui.png" />
+    </view>
+  </navigator>
+  <view class="fengexian" /> 
+</view>
 
 
