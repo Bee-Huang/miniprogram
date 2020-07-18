@@ -42,7 +42,7 @@ Page({
         },
         success(res){
             var app=getApp();
-            app.data.openid=res.result.userInfo.opendId;
+            app.globalData.openid=res.result.userInfo.opendId;
         }
       })
       wx.navigateBack({})
