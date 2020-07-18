@@ -1,0 +1,8 @@
+.dashazi{
+    width: 100%;
+}
+.Tips{
+    font-style: normal;
+    font-size: 50rpx;
+    color: #000;
+}

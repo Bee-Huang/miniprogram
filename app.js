@@ -1,6 +1,7 @@
 //app.js
 App({
-  GlobalData:{
+  
+  globalData:{
       openid:'',
       nickname:'',
       icon:''

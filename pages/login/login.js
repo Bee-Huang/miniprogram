@@ -12,7 +12,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      
+      //初始化云服务
+    wx.cloud.init({
+      env: 'wxpay-8jkfa'
+    })
   },
 
   login_to:function(e){
@@ -27,7 +30,20 @@ Page({
       let pages = getCurrentPages(); // 当前页的数据，
       let prevPage = pages[pages.length - 2]; // 上一页的数据
       prevPage.setData({
-        rawdata:e.detail.rawData
+        nick:e.detail.userInfo.nickName,
+        avatarUrl:e.detail.userInfo.avatarUrl,
+        islogin:false
+      })
+      //获取Openid  
+      wx.cloud.callFunction({
+        name: 'openid',
+        data: {
+          weRunData: wx.cloud.CloudID('wxpay-8jkfa')
+        },
+        success(res){
+            var app=getApp();
+            app.data.openid=res.result.userInfo.opendId;
+        }
       })
       wx.navigateBack({})
     }

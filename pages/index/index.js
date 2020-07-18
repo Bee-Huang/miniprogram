@@ -11,27 +11,32 @@ Page({
       {
         id:0,
         src:"../../images/image1.jpg",
-        name:"第一个"
+        name:"第一个",
+        url: '/pages/other/other'
       },
       {
         id:1,
         src:"../../images/image2.jpg",
-        name:"第二个"
+        name:"第二个",
+        url: '/pages/other/other'
       },
       {
         id:2,
         src:"../../images/image3.jpg",
-        name:"第三个"
+        name:"第三个",
+        url: '/pages/other/other'
       },
       {
         id:3,
         src:"../../images/image1.jpg",
-        name:"第四个"
+        name:"第四个",
+        url: '/pages/other/other'
       },
       {
         id:4,
         src:"../../images/image2.jpg",
-        name:"第五个"
+        name:"第五个",
+        url: '/pages/other/other'
       }
     ],  
     object1:[
@@ -39,61 +44,61 @@ Page({
       id:0,
       src:"../../icon/jiaoyu.png",
       text:"教育",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:1,
       src:"../../icon/fuzhuang.png",
       text:"服装",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/clothes/clothes'
     },
     {
       id:2,
       src:"../../icon/tongxun.png",
       text:"通讯",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:3,
       src:"../../icon/canyin.png",
       text:"餐饮",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:4,
       src:"../../icon/jiaxiao.png",
       text:"驾校",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:5,
       src:"../../icon/lvyouyule.png",
       text:"娱乐",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:6,
       src:"../../icon/wenti.png",
       text:"文体",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:7,
       src:"../../icon/keji.png",
       text:"科技",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:8,
       src:"../../icon/renliziyuan.png",
       text:"人力",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     },
     {
       id:9,
       src:"../../icon/shangwuhezuo.png",
       text:"商务",
-      // url1: '/pages/no1/no1'
+      url1: '/pages/other/other'
     }
   ],
     

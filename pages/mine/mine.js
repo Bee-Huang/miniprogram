@@ -5,8 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    islogin:false,
-    rawdata:{}
+    islogin:true,
+    nick:'',
+    avatarUrl:''
   },
 
   /**
@@ -14,16 +15,35 @@ Page({
    */
   onLoad: function (options) {
     var that=this
+    //初始化云服务
+    wx.cloud.init({
+      env: 'wxpay-8jkfa'
+    })
+    //
     wx.getSetting({
       success (res){
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
             success: function(res) {
+              console.log(res.userInfo.nickName)
               that.setData({
-                rawdata:res.userInfo
+                nick:res.userInfo.nickName,
+                avatarUrl:res.userInfo.avatarUrl,
+                islogin:false
               })
-              console.log(res.userInfo)
+              //获取Openid  
+              wx.cloud.callFunction({
+                name: 'openid',
+                data: {
+                  weRunData: wx.cloud.CloudID('wxpay-8jkfa')
+                },
+                success(res){
+                    var app=getApp();
+                    console.log(res.result.userInfo.openId)
+                    app.globalData.openid=res.result.userInfo.openId;
+                }
+              })
             }
           })
         }else{
@@ -38,7 +58,11 @@ Page({
    
   },
 
-
+  gotologin:function(){
+    wx.navigateTo({
+      url: '../login/login'
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

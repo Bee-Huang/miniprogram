@@ -1,14 +1,14 @@
 
 <view class="topview" wx:if="{{!islogin}}">
-  <image class="portrait" src="{{rawdata.avatarUrl}}"></image>
+  <image class="portrait" src="{{avatarUrl}}"></image>
   <view class="nickname_view">
-    <view class="name">{{rawdata.nickName}}</view>
+    <view class="name">{{nick}}</view>
     <view class="phone">未绑定手机</view>
   </view>
 </view>
 <view class="topview" wx:if="{{islogin}}">
   <image class="portrait" src="../../icon/user.png"></image>
-  <view class="portrait_text">立即登录</view>
+  <view class="portrait_text" bindtap="gotologin">立即登录</view>
 </view>
 
 <view class="order">
