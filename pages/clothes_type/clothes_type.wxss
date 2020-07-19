@@ -1,0 +1,44 @@
+page{
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+.container{
+  width: 100%; 
+  height: 100%;
+ 
+}
+
+.left{ 
+  /*设置行内块级元素（没使用定位）*/ 
+  flex-direction: column;
+  width: 25%; 
+  height: 100%;
+  background: #eeeeee; 
+  text-align: left;
+} 
+
+.nav_active{
+  height: 90rpx;
+  width: 100%;
+  background: #ffffff;
+  padding-left: 1%;
+  display: flex;
+  flex-direction: row;
+}
+
+.type_block{
+  width:10rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 80%;
+  background: #87CEEB;
+}
+
+.type_text{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10%;
+}
