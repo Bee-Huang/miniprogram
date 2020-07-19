@@ -42,14 +42,15 @@ page{
   margin-right: 10rpx;
   flex-direction:column;
   justify-content: center;
+  /* border: tomato solid; */
 
  }
-
 
  .order_icon{
     height: 40rpx;
     width: 40rpx;
     align-self: center;
+    /* border: blue solid; */
  }
 
  .order_text{

@@ -1,1 +1,89 @@
-/* pages/clothes/clothes.wxss */
+page{
+    background-color:#efefef;
+  }
+
+.swiper{
+    width: 100%;
+    height: 300rpx;
+    /* border: red solid 2rpx; */
+}
+
+.image{
+    width: 100%;
+    height: 300rpx;
+}
+
+.business{
+    height: 240rpx;
+    /* background-color:#ffffff; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border: solid 1rpx; */
+    justify-content: center;
+
+}
+
+.navi-business-image{
+    width: 180rpx;
+    height: 120rpx;
+    /* margin-left: 8rpx;
+    margin-right: 8rpx; */
+    /* border: solid 2rpx; */
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+}
+
+.navigator{
+    /* border: blue solid 2rpx; */
+    width: 180rpx;
+    height: 120rpx;
+}
+
+.business-image{
+    width: 180rpx;
+    height: 120rpx;
+    /* border: red solid 2rpx; */
+}
+
+/* .business-name{
+    text-align: center;
+    line-height:20rpx;
+    font-size: 30rpx;
+    color:#333333;
+    border: red solid 2rpx;
+} */
+
+.fengexian{
+    border: #87CEEB solid 1rpx;
+}
+
+.bigbox{
+    width: 100%;
+    height: 1100rpx;
+    margin-top: 20rpx;
+    /* border: red solid 1rpx; */
+}
+
+.box{
+    width: 100%;
+    height: 200rpx;
+    margin-bottom: 15rpx;
+    border-radius: 20rpx;
+    /* border: blue solid 1rpx; */
+    background-color: #ffffff;
+}
+
+.box1{
+    font-size: 35rpx;
+    font-weight: bold;
+    margin-left: 30rpx;
+   /* border: solid 1rpx; */
+}
+
+.box2{
+    width: 100%;
+    height: 100rpx;
+    border: yellow solid 1rpx;
+}

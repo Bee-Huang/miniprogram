@@ -10,31 +10,31 @@ Page({
     swiper_item:[
       {
         id:0,
-        src:"../../images/image1.jpg",
+        src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/index-images/image1.jpg",
         name:"第一个",
         url: '/pages/other/other'
       },
       {
         id:1,
-        src:"../../images/image2.jpg",
+        src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/index-images/image2.jpg",
         name:"第二个",
         url: '/pages/other/other'
       },
       {
         id:2,
-        src:"../../images/image3.jpg",
+        src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/index-images/image3.jpg",
         name:"第三个",
         url: '/pages/other/other'
       },
       {
         id:3,
-        src:"../../images/image1.jpg",
+        src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/index-images/image1.jpg",
         name:"第四个",
         url: '/pages/other/other'
       },
       {
         id:4,
-        src:"../../images/image2.jpg",
+        src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/index-images/image2.jpg",
         name:"第五个",
         url: '/pages/other/other'
       }

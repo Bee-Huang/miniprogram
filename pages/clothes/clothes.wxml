@@ -1,2 +1,46 @@
-<!--pages/clothes/clothes.wxml-->
-<text>pages/clothes/clothes.wxml</text>
+<!-- 服装轮播图 -->
+<view>
+    <swiper class="swiper" indicator-dots="ture" indicator-color="rgba(0,0,0,.3)" autoplay="ture" 
+    interval="3000" circular="ture">
+        <block wx:for="{{swiper_item}}" wx:key="id">
+            <swiper-item class="swiper_item" item-id="">
+                <navigator class="navi-swiper" url="{{item.url}}" >
+                    <image class="image" src="{{item.src}}" />
+                </navigator>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+ <!-- 八个服装 -->
+<view class="business">
+    <block wx:for="{{object1}}" wx:key="id">
+        <view class="navi-business-image">
+            <navigator class="navigator" url="{{item.url1}}" hover-class="navigator-hover" open-type="navigate" hover-stay-time	="100">
+                <image class="business-image" src="{{item.src}}"/>
+            </navigator>
+            <!-- <text class="business-name">
+                {{item.text}}
+            </text> -->
+        </view>
+    </block>  
+</view>
+<!-- 分割线 -->
+<view class="fengexian"></view>
+
+<view class="bigbox" >
+    <block wx:for="{{box}}" wx:key="id">
+    <view class="box">
+        <view class="box1">
+            {{item.text}}
+        </view>    
+        <view class="box2" >
+          <block wx:for="{{box2}}" wx:key="id">
+        <view class="box2">
+        {{item.clothes.text}}
+        </view>
+        </block>  
+        </view>
+        
+    </view>
+    </block>
+</view>
