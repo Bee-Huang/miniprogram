@@ -1,8 +1,39 @@
 <view class="left">
   <block wx:for="{{type}}" wx:key="id">
-      <view class="{{nav_id==item.id ? 'nav_active' : 'nav_unactive'}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">
-          <view wx:if="{{nav_id==item.id ? 'nav_active' : 'nav_unactive'}}" class="type_block"></view>
+      <view class="{{nav_id==item.id ? 'nav_active' : 'nav_unactive'}}"   catchtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}">
+          <view wx:if="{{nav_id==item.id}}" class="type_block"></view>
           <view class="type_text">{{item.text}}</view>
+      </view>
+  </block>
+</view>
+<view class="divie_line"></view>
+<view class="right">
+  
+  <block  wx:for="{{type_son}}" wx:key="type">
+      <view class="title_view">
+        <view class="title">{{item.type}}</view>
+        <view class="more_view">
+          <view class="more">更多</view>
+        </view>
+      </view>
+      <view class="diver"></view>
+      <!--前三个-->
+      <view class="top_three">
+        <block  wx:for="{{item.data1}}" wx:key="type">
+            <view class="img_view">
+              <image  class="img" src="{{item.src}}"></image>
+              <view class="img_text">{{item.text}}</view>
+            </view>
+        </block>
+      </view>
+      <!-- 后三个 -->
+      <view class="top_three">
+        <block  wx:for="{{item.data2}}" wx:key="type">
+            <view class="img_view">
+              <image  class="img" src="{{item.src}}"></image>
+              <view class="img_text">{{item.text}}</view>
+            </view>
+        </block>
       </view>
   </block>
 </view>

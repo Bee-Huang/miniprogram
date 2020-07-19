@@ -3,12 +3,19 @@ page{
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
+  color: #4f4f4f;
 }
 
 .container{
   width: 100%; 
   height: 100%;
- 
+  
+}
+
+.divie_line{
+  height: 100%;
+  width: 1rpx;
+  background: #999999;
 }
 
 .left{ 
@@ -16,14 +23,23 @@ page{
   flex-direction: column;
   width: 25%; 
   height: 100%;
-  background: #eeeeee; 
   text-align: left;
+  font-size: 30rpx;
 } 
 
 .nav_active{
   height: 90rpx;
   width: 100%;
   background: #ffffff;
+  padding-left: 1%;
+  display: flex;
+  flex-direction: row;
+  /* border:#4f4f4f solid 1px; */
+}
+
+.nav_unactive{
+  height: 90rpx;
+  width: 100%;
   padding-left: 1%;
   display: flex;
   flex-direction: row;
@@ -41,4 +57,73 @@ page{
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 10%;
+}
+
+.right{
+  width: 72%;
+  margin-left: 2%;
+  
+}
+
+
+.title_view{
+    display: flex;
+    flex-direction: row;
+    height: 90rpx;
+}
+
+.title{
+  font-weight:bold;
+  color: #000000;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10rpx;
+  font-size: 38rpx;
+  width: 50%;
+  /* border: #000000 solid 1rpx; */
+}
+
+.more_view{
+  display: flex;
+  font-size: 30rpx;
+  width: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: flex-end;
+  margin-right: 2%;
+  /* border: #000000 solid 1rpx; */
+}
+    
+.diver{
+  height: 1rpx;
+  width: 100%;
+  background: #cccccc;
+}
+
+.top_three{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+
+}
+
+.img_view{
+  height: 200rpx;
+  width: 30%;
+  margin-left: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* border: #000000 solid 1rpx;  */
+}
+
+.img_text{
+  font-size: 20rpx;
+  width:100%;
+  text-align: center;
+  
+}
+
+.img{
+  width: 100%;
 }
