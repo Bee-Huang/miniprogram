@@ -18,9 +18,6 @@
             <navigator class="navigator" url="{{item.url1}}" hover-class="navigator-hover" open-type="navigate" hover-stay-time	="100">
                 <image class="business-image" src="{{item.src}}"/>
             </navigator>
-            <!-- <text class="business-name">
-                {{item.text}}
-            </text> -->
         </view>
     </block>  
 </view>
@@ -28,19 +25,25 @@
 <view class="fengexian"></view>
 
 <view class="bigbox" >
-    <block wx:for="{{box}}" wx:key="id">
+    <block wx:for="{{box}}" wx:key="hand_text">
     <view class="box">
-        <view class="box1">
-            {{item.text}}
-        </view>    
-        <view class="box2" >
-          <block wx:for="{{box2}}" wx:key="id">
-        <view class="box2">
-        {{item.clothes.text}}
+        <view class="clothes_text">
+            {{item.hand_text}}
         </view>
-        </block>  
+
+        <view class="clothes_box">
+            <block wx:for="{{item.clothes}}" wx:key="hand_text">
+                <view class="img_box">
+                    <image class="img" src="{{item.src}}"/>
+                    <view class="img_text">
+                        {{item.text}}
+                    </view>
+                    <view class="money">
+                        {{item.money}}
+                    </view>
+                </view>
+            </block>
         </view>
-        
-    </view>
+    </view>  
     </block>
 </view>

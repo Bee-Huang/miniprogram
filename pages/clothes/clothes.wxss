@@ -5,7 +5,6 @@ page{
 .swiper{
     width: 100%;
     height: 300rpx;
-    /* border: red solid 2rpx; */
 }
 
 .image{
@@ -27,16 +26,10 @@ page{
 .navi-business-image{
     width: 180rpx;
     height: 120rpx;
-    /* margin-left: 8rpx;
-    margin-right: 8rpx; */
-    /* border: solid 2rpx; */
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
 }
 
 .navigator{
-    /* border: blue solid 2rpx; */
     width: 180rpx;
     height: 120rpx;
 }
@@ -44,16 +37,7 @@ page{
 .business-image{
     width: 180rpx;
     height: 120rpx;
-    /* border: red solid 2rpx; */
 }
-
-/* .business-name{
-    text-align: center;
-    line-height:20rpx;
-    font-size: 30rpx;
-    color:#333333;
-    border: red solid 2rpx;
-} */
 
 .fengexian{
     border: #87CEEB solid 1rpx;
@@ -61,29 +45,61 @@ page{
 
 .bigbox{
     width: 100%;
-    height: 1100rpx;
+    height: 5300rpx;
     margin-top: 20rpx;
-    /* border: red solid 1rpx; */
 }
 
 .box{
-    width: 100%;
-    height: 200rpx;
-    margin-bottom: 15rpx;
-    border-radius: 20rpx;
-    /* border: blue solid 1rpx; */
     background-color: #ffffff;
 }
 
-.box1{
-    font-size: 35rpx;
-    font-weight: bold;
-    margin-left: 30rpx;
-   /* border: solid 1rpx; */
+.text_box{
+    margin-top: 10rpx;
+    background-color: #ffffff;
 }
 
-.box2{
+.clothes_text{
+    margin-left: 40rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.clothes_box{
     width: 100%;
-    height: 100rpx;
-    border: yellow solid 1rpx;
+    height: 1000rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img_box{
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    margin-top: 10rpx;
+    width: 220rpx;
+    height: 300rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img{
+    width: 180rpx;
+    height: 180rpx;
+}
+
+.img_text{
+    font-size: 28rpx;
+    height: 80rpx;
+    color: #5B5B5B;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+
+.money{
+    color:red;
+    font-size: 30rpx;
 }

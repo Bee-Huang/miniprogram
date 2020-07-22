@@ -1,13 +1,14 @@
 {
   "could": true,
   "pages": [ 
-    "pages/clothes_type/clothes_type",
     "pages/index/index",
+    "pages/clothes/clothes",
+    "pages/clothes_type/clothes_type",
     "pages/mine/mine",
     "pages/order/order",
     "pages/login/login",
-    "pages/other/other",
-    "pages/clothes/clothes" 
+    "pages/other/other"
+    
     
   ],
   "window": {
