@@ -57,49 +57,49 @@ Page({
       id:0,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/Txu.jpg",
       text:"T恤",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=0'
     },
     {
       id:1,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/polo.png",
       text:"polo",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=1'
     },
     {
       id:2,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/weiyiweiku.png",
       text:"卫衣卫裤",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=2'
     },
     {
       id:3,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/fengyimajia.png",
       text:"风衣马甲",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=3'
     },
     {
       id:4,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/zhiyezhuang.png",
       text:"职业装",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=4'
     },
     {
       id:5,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/yundongfu.png",
       text:"运动服",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=5'
     },
     {
       id:6,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/laobaofu.png",
       text:"劳保服",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=6'
     },
     {
       id:7,
       src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/chongfengyitaozhaung.png",
       text:"冲锋衣套装",
-      url1: '/pages/other/other'
+      url1: '/pages/clothes_type/clothes_type?index=7'
     },
     ],
 

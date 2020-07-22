@@ -14,8 +14,9 @@ page{
 
 .divie_line{
   height: 100%;
-  width: 1rpx;
+  width: 3rpx;
   background: #999999;
+  margin-left:25%;
 }
 
 .left{ 
@@ -25,6 +26,8 @@ page{
   height: 100%;
   text-align: left;
   font-size: 30rpx;
+  position:fixed;
+  
 } 
 
 .nav_active{
@@ -62,7 +65,6 @@ page{
 .right{
   width: 72%;
   margin-left: 2%;
-  
 }
 
 

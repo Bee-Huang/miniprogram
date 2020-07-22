@@ -13,8 +13,16 @@ Page({
           {id:8,text:'其他',icon:''},{id:9,text:'裤子',icon:''},
           {id:10,text:'时装',icon:''}],
     type_son:[{type:'圆领短袖',
-    data1:[{text:'QX 190# 180G',src:'http://cdn.okktee.com/o_1ebfk97kbqfqvqu9121bdh15dqn.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY 5810# 200G',src:'http://cdn.okktee.com/o_1ec9lr9hg1fdg14i317i1fevi4t33.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HBT 806#',src:'http://cdn.okktee.com/o_1dd24vp641n261e271s6t11jh1f7ah.jpg?imageView2/2/w/320/h/320/q/90'}],
-    data2:[{text:'BMY YC190-C',src:'http://cdn.okktee.com/o_1e5rftpoq6i88111jtf1v9n12n01r.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY WC190-C',src:'http://cdn.okktee.com/o_1e5rgcbv714ab1hfb1ip1o8f17a2t.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HL 6880#',src:'http://img.qudache.cn//pictures/2018-09-07/5b91edc18af23.jpg!labrand'}]
+    data1:[{text:'QX 190',src:'http://cdn.okktee.com/o_1ebfk97kbqfqvqu9121bdh15dqn.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY 5810',src:'http://cdn.okktee.com/o_1ec9lr9hg1fdg14i317i1fevi4t33.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HBT 806',src:'http://cdn.okktee.com/o_1dd24vp641n261e271s6t11jh1f7ah.jpg?imageView2/2/w/320/h/320/q/90'}],
+    data2:[{text:'BMY YC190-C',src:'http://cdn.okktee.com/o_1e5rftpoq6i88111jtf1v9n12n01r.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY WC190-C',src:'http://cdn.okktee.com/o_1e5rgcbv714ab1hfb1ip1o8f17a2t.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HL 6880',src:'http://img.qudache.cn//pictures/2018-09-07/5b91edc18af23.jpg!labrand'}]
+    },
+    {type:'无领短袖',
+    data1:[{text:'QX 190',src:'http://cdn.okktee.com/o_1ebfk97kbqfqvqu9121bdh15dqn.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY 5810',src:'http://cdn.okktee.com/o_1ec9lr9hg1fdg14i317i1fevi4t33.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HBT 806',src:'http://cdn.okktee.com/o_1dd24vp641n261e271s6t11jh1f7ah.jpg?imageView2/2/w/320/h/320/q/90'}],
+    data2:[{text:'BMY YC190-C',src:'http://cdn.okktee.com/o_1e5rftpoq6i88111jtf1v9n12n01r.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY WC190-C',src:'http://cdn.okktee.com/o_1e5rgcbv714ab1hfb1ip1o8f17a2t.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HL 6880',src:'http://img.qudache.cn//pictures/2018-09-07/5b91edc18af23.jpg!labrand'}]
+    },
+    {type:'圆领长袖',
+    data1:[{text:'QX 190',src:'http://cdn.okktee.com/o_1ebfk97kbqfqvqu9121bdh15dqn.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY 5810',src:'http://cdn.okktee.com/o_1ec9lr9hg1fdg14i317i1fevi4t33.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HBT 806',src:'http://cdn.okktee.com/o_1dd24vp641n261e271s6t11jh1f7ah.jpg?imageView2/2/w/320/h/320/q/90'}],
+    data2:[{text:'BMY YC190-C',src:'http://cdn.okktee.com/o_1e5rftpoq6i88111jtf1v9n12n01r.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY WC190-C',src:'http://cdn.okktee.com/o_1e5rgcbv714ab1hfb1ip1o8f17a2t.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HL 6880',src:'http://img.qudache.cn//pictures/2018-09-07/5b91edc18af23.jpg!labrand'}]
     }]
 
    },
@@ -31,7 +39,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.setData({
+        nav_id:options.index
+      })
+      
+      
   },
 
   /**
