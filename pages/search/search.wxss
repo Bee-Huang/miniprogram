@@ -1,1 +1,71 @@
-/* pages/search/search.wxss */
+.sousuo_box{
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* border: steelblue solid 1rpx; */
+}
+
+.input_box{
+    width: 80%;
+    height: 50rpx;
+    border-radius: 10rpx;
+    background-color: #EFEFEF;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: springgreen solid 1rpx; */
+}
+
+.img{
+    width: 50rpx;
+    height: 50rpx;
+    margin-left: 20rpx;
+    /* border: solid 1rpx; */
+}
+
+.cancel{
+    margin-left: 10rpx;
+}
+
+.fengexian{
+    width: 100%;
+    height: 1rpx;
+    background-color: #CCCCCC;
+}
+
+.bigbox{
+    background-color:#EFEFEF;
+}
+
+.text{
+    font-size: 40rpx;
+    color: #676767;
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+    border: springgreen solid;
+}
+
+.history_search{
+    background-color: white;
+    margin-bottom: 10rpx;
+    display: flex;
+    flex-wrap: wrap;
+    border: springgreen solid;
+}
+
+.keyword_box{
+    width: 100%;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    border: violet solid;
+}
+
+.popular_search{
+    background-color: white;
+    display: flex;
+
+    flex-wrap: wrap;
+    border: steelblue solid;
+}

@@ -1,2 +1,42 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<!-- 搜索功能 -->
+<view class="sousuo_box">
+     <view class="input_box" >
+        <image class="img" src="../../icon/sousuo.png" />
+        <input class="input" auto-focus placeholder="请输入关键词搜索"/>
+        </view>
+    <view class="cancel">
+        <navigator class="cancel_navi" url="/pages/clothes/clothes" hover-stay-time="100" open-type="navigateBack" delta="1">
+            取消
+        </navigator> 
+    </view>
+</view>
+<!-- 分割线 -->
+<view class="fengexian" ></view>
+
+<view class="bigbox">
+    <!-- 历史搜索 -->
+    <view class="history_search" >
+        <view class="text">
+            <view class="" >
+                历史搜索
+            </view>
+        </view>
+        <view class="keyword_box">
+            sdfghsdg
+            ghdfgchfdfgh
+        </view>
+    </view>
+    <!-- 热门搜素 -->
+    <view class="popular_search">
+        <view class="text">
+            <view class="" >
+                热门搜索
+            </view>
+        </view>
+        <view class="keyword_box">
+            sdfghsdg
+            ctghdfgchfg
+        </view>
+    </view>
+    
+</view>
