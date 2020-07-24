@@ -11,24 +11,47 @@ Page({
           {id:4,text:'职业装',icon:''},{id:5,text:'运动系列',icon:''},
           {id:6,text:'劳保服',icon:''},{id:7,text:'冲锋衣套装',icon:''},
           {id:8,text:'其他',icon:''},{id:9,text:'裤子',icon:''},
-          {id:10,text:'时装',icon:''}],
-    type_small:[],
-    list_big:[],
+          {id:10,text:'时装'}],
+    type_small:[["圆领短袖","圆领长袖","V领","中袖","背心"],["翻领短袖","翻领长袖","立领短袖"],["圆领卫衣","带帽套头卫衣","带帽拉链卫衣","卫裤","立领卫衣","棒球服"],["风衣","马甲"],["短袖衬衫","西装外套","西裤","西裙","长袖衬衫","西装马甲","西装套装"],["篮球服","足球服","运动训练服","瑜伽健身服","乒羽服","休闲运动裤"],["劳保服"],["冲锋衣","冲锋裤"],["短裤","休闲运动裤"],["时装"],["帽子","围裙","围巾","袜子"]],
+    info:[]
+   },
 
 
-    type_son:[{type:'圆领短袖',
-    data1:[{text:'QX 190',src:'http://cdn.okktee.com/o_1ebfk97kbqfqvqu9121bdh15dqn.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY 5810',src:'http://cdn.okktee.com/o_1ec9lr9hg1fdg14i317i1fevi4t33.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HBT 806',src:'http://cdn.okktee.com/o_1dd24vp641n261e271s6t11jh1f7ah.jpg?imageView2/2/w/320/h/320/q/90'}],
-    data2:[{text:'BMY YC190-C',src:'http://cdn.okktee.com/o_1e5rftpoq6i88111jtf1v9n12n01r.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY WC190-C',src:'http://cdn.okktee.com/o_1e5rgcbv714ab1hfb1ip1o8f17a2t.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HL 6880',src:'http://img.qudache.cn//pictures/2018-09-07/5b91edc18af23.jpg!labrand'}]
-    },
-    {type:'无领短袖',
-    data1:[{text:'QX 190',src:'http://cdn.okktee.com/o_1ebfk97kbqfqvqu9121bdh15dqn.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY 5810',src:'http://cdn.okktee.com/o_1ec9lr9hg1fdg14i317i1fevi4t33.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HBT 806',src:'http://cdn.okktee.com/o_1dd24vp641n261e271s6t11jh1f7ah.jpg?imageView2/2/w/320/h/320/q/90'}],
-    data2:[{text:'BMY YC190-C',src:'http://cdn.okktee.com/o_1e5rftpoq6i88111jtf1v9n12n01r.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY WC190-C',src:'http://cdn.okktee.com/o_1e5rgcbv714ab1hfb1ip1o8f17a2t.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HL 6880',src:'http://img.qudache.cn//pictures/2018-09-07/5b91edc18af23.jpg!labrand'}]
-    },
-    {type:'圆领长袖',
-    data1:[{text:'QX 190',src:'http://cdn.okktee.com/o_1ebfk97kbqfqvqu9121bdh15dqn.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY 5810',src:'http://cdn.okktee.com/o_1ec9lr9hg1fdg14i317i1fevi4t33.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HBT 806',src:'http://cdn.okktee.com/o_1dd24vp641n261e271s6t11jh1f7ah.jpg?imageView2/2/w/320/h/320/q/90'}],
-    data2:[{text:'BMY YC190-C',src:'http://cdn.okktee.com/o_1e5rftpoq6i88111jtf1v9n12n01r.jpg?imageView2/2/w/320/h/320/q/90'},{text:'BMY WC190-C',src:'http://cdn.okktee.com/o_1e5rgcbv714ab1hfb1ip1o8f17a2t.jpg?imageView2/2/w/320/h/320/q/90'},{text:'HL 6880',src:'http://img.qudache.cn//pictures/2018-09-07/5b91edc18af23.jpg!labrand'}]
-    }]
-
+   getinfo:function(){
+      var infomation=[];
+      const small_type=this.data.type_small[this.data.nav_id];
+      var big_type=this.data.type[this.data.nav_id].text;
+      var i=0;
+      for(i=0;i<small_type.length;i++){
+        //console.log(this.data.type[this.data.nav_id].text+","+small_type[i]);
+        let small_infomation={type:i,data1:[],data2:[]}
+        const db = wx.cloud.database()
+        db.collection('list')
+        .where({
+          keyword:this.data.type[this.data.nav_id].text+","+small_type[i]
+        })
+        .limit(6)
+        .get({
+          success:function(res){ 
+            if(res.data.length>0){
+                var o=0;
+                for(o=0;o<res.data.length;o++){
+                  var tmp={text:res.data[i].code,src:res.data[i].img_src}
+                  if(o<3)
+                    small_infomation.data1.push(tmp)
+                  else
+                    small_infomation.data2.push(tmp)
+                }
+                console.log(small_infomation);
+                small_infomation.type=small_type[small_infomation.type]
+                infomation.push(small_infomation)
+            }    
+          }
+        })
+      }
+      this.setData({
+        info:infomation
+      })
    },
 
    switchRightTab:function(e){
@@ -37,6 +60,7 @@ Page({
      this.setData({
       nav_id:e.currentTarget.dataset.id
      })
+     this.getinfo();
    },
 
   /**
@@ -48,59 +72,7 @@ Page({
       this.setData({
         nav_id:options.index
       })
-      var type_now=this.data.type[options.index].text
-      const db = wx.cloud.database()
-      db.collection('type')
-      .where({
-        big: type_now
-      })
-      .get({
-        success:function(res) {
-          console.log(res.data[0].small);
-            if(res.data.length==1){
-                var tmp=res.data[0].small.split(",")
-                that.setData({
-                  type_small:tmp
-                })
-                console.log(res.data.length);
-                var i=0;
-                for(i=0;i<tmp.length;i++){
-                  console.log(tmp[i]);
-                  const db2 = wx.cloud.database()
-                  db2.collection('list')
-                  .where({
-                    keyword: type_now+","+tmp[i]
-                  })
-                  .limit(6)
-                  .get({
-                    success:function(res){
-                      console.log(res);
-                        if(res.length>0){
-                          var list_tmp={
-                            type:tmp[i],
-                            data1:[{text:'',src:''},{text:'',src:''},{text:'',src:''}],
-                            data2:[{text:'',src:''},{text:'',src:''},{text:'',src:''}]
-                          }
-                          var i=0;
-                          for(i=0;i<res.length;i++){
-                            if(i<3){
-                              //设置data1
-                              list_tmp.data1[i].text=res.data[i].code
-                              list_tmp.data1[i].src=res.data[i].img_src
-                            }else{
-                              //设置data2
-                              list_tmp.data2[i%3].text=res.data[i].code
-                              list_tmp.data2[i%3].src=res.data[i].img_src
-                            }
-                          }
-                          console.log(list_tmp);
-                        }
-                    }
-                  })
-                }
-            }
-        }
-      })
+      this.getinfo();
   },
 
   /**
