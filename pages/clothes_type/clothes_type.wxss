@@ -65,6 +65,7 @@ page{
 .right{
   width: 72%;
   margin-left: 2%;
+  border: #000000 solid 1rpx;
 }
 
 
@@ -72,6 +73,7 @@ page{
     display: flex;
     flex-direction: row;
     height: 90rpx;
+    border: #000000 solid 1rpx;
 }
 
 .title{
@@ -82,7 +84,7 @@ page{
   margin-left: 10rpx;
   font-size: 38rpx;
   width: 50%;
-  /* border: #000000 solid 1rpx; */
+  border: #000000 solid 1rpx;
 }
 
 .more_view{
@@ -116,7 +118,7 @@ page{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* border: #000000 solid 1rpx;  */
+  border: #000000 solid 1rpx; 
 }
 
 .img_text{

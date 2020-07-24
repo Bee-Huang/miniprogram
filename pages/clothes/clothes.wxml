@@ -1,17 +1,15 @@
 <!-- 搜索框 -->
 <view class="search_box">
+    <view class="img_box1">
+        <image class="sousuo_img" src="../../icon/sousuo.png" >      
+        </image>
+    </view>
     <view class="search_box1">
     <navigator class="search__navi"  url="/pages/search/search" hover-stay-time	="100">
         <text class="text">
             面料/款式/商品名称
         </text>         
     </navigator>
-    </view>
-    <view class="img_box1">
-        <image class="sousuo_img" src="../../icon/sousuo.png" >
-            
-        </image>
-        
     </view>
 </view>
 <!-- 服装轮播图 -->
@@ -37,16 +35,16 @@
         </view>
     </block>  
 </view>
-<!-- 分割线 -->
-<view class="fengexian"></view>
+
 
 <view class="bigbox" >
     <block wx:for="{{box}}" wx:key="hand_text">
     <view class="box">
-        <view class="clothes_text">
-            {{item.hand_text}}
+        <view class="clothes_text_box">
+            <view class="clothes_text">
+                {{item.hand_text}}
+            </view>
         </view>
-
         <view class="clothes_box">
             <block wx:for="{{item.clothes}}" wx:key="hand_text">
                 <view class="img_box">

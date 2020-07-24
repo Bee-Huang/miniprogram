@@ -8,8 +8,30 @@
 </view>
 <view class="divie_line"></view>
 <view class="right">
+
+  <view wx:for="{{info}}">
+    <view class="title_view">
+        <view class="title">{{item.type}}</view>
+        <view class="more_view">
+          <view class="more">更多</view>
+        </view>
+
+      <view class="top_three">
+        <block  wx:for="{{item.data1}}" >
+            <view class="img_view">
+              <image  class="img" src="{{item.src}}"></image>
+              <view class="img_text">{{item.text}}</view>
+            </view>
+        </block>
+      </view>
+
+
+    </view>
+
   
-  <block  wx:for="{{type_son}}" wx:key="type">
+  </view>
+  
+  <!-- <block  wx:for="{{info}}">
       <view class="title_view">
         <view class="title">{{item.type}}</view>
         <view class="more_view">
@@ -17,16 +39,18 @@
         </view>
       </view>
       <view class="diver"></view>
-      <!--前三个-->
+
+     
       <view class="top_three">
-        <block  wx:for="{{item.data1}}" wx:key="type">
+        <block  wx:for="{{item.data1}}">
             <view class="img_view">
               <image  class="img" src="{{item.src}}"></image>
               <view class="img_text">{{item.text}}</view>
             </view>
         </block>
       </view>
-      <!-- 后三个 -->
+
+     
       <view class="top_three">
         <block  wx:for="{{item.data2}}" wx:key="type">
             <view class="img_view">
@@ -35,7 +59,7 @@
             </view>
         </block>
       </view>
-  </block>
+  </block> -->
 </view>
 
 

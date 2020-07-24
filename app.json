@@ -1,10 +1,9 @@
 {
   "could": true,
-  "pages": [ "pages/search/search",
+  "pages": [
+    "pages/clothes/clothes",
+    "pages/search/search", 
     "pages/index/index",
-     "pages/clothes/clothes",
-   
-    
     "pages/clothes_type/clothes_type",
     "pages/mine/mine",
     "pages/order/order",
