@@ -1,15 +1,15 @@
 {
   "could": true,
-  "pages": [ 
+  "pages": [
+    "pages/clothes_type/clothes_type",
+    "pages/clothes_list/clothes_list",
     "pages/index/index",
     "pages/clothes/clothes",
     "pages/search/search",
-    
-     
-    "pages/clothes_type/clothes_type",
     "pages/mine/mine",
     "pages/order/order",
     "pages/other/other"
+    
   ],
   "window": {
     "backgroundTextStyle": "dark",

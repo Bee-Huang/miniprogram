@@ -17,44 +17,6 @@ Page({
     info2:[]
    },
 
-
-   getinfo:function(){
-      var infomation=[];
-      const small_type=this.data.type_small[this.data.nav_id];
-      var big_type=this.data.type[this.data.nav_id].text;
-      var i=0;
-      for(i=0;i<small_type.length;i++){
-        //console.log(this.data.type[this.data.nav_id].text+","+small_type[i]);
-        let small_infomation={type:i,data1:[],data2:[]}
-        const db = wx.cloud.database()
-        db.collection('list')
-        .where({
-          keyword:this.data.type[this.data.nav_id].text+","+small_type[i]
-        })
-        .limit(6)
-        .get({
-          success:function(res){ 
-            if(res.data.length>0){
-                var o=0;
-                for(o=0;o<res.data.length;o++){
-                  var tmp={text:res.data[i].code,src:res.data[i].img_src}
-                  if(o<3)
-                    small_infomation.data1.push(tmp)
-                  else
-                    small_infomation.data2.push(tmp)
-                }
-                console.log(small_infomation);
-                small_infomation.type=small_type[small_infomation.type]
-                infomation.push(small_infomation)
-            }    
-          }
-        })
-      }
-      this.setData({
-        info:infomation
-      })
-   },
-
    switchRightTab:function(e){
      console.log(e);
      console.log(e.currentTarget.dataset.id);
@@ -73,7 +35,27 @@ Page({
       this.setData({
         nav_id:options.index
       })
-      this.getinfo();
+      let small_type=this.data.type_small[0];
+      var i=0;
+      var array=[]
+      for(i=0;i<small_type.length;i++){
+        const db = wx.cloud.database()
+        db.collection('list')
+        .where({
+          keyword: 'T恤,'+small_type[i]
+        })
+        .limit(6)
+        .get({
+          success:function(res){
+            var type_tmp=res.data[0].keyword.split(',')[1];
+            var tmp={type:type_tmp,data:res.data}
+            array.push(tmp)
+            that.setData({
+              info2:array
+            })
+          }
+        })
+      }
   },
 
   /**

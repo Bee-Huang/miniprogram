@@ -18,7 +18,7 @@
     interval="3000" circular="ture">
         <block wx:for="{{swiper_item}}" wx:key="id">
             <swiper-item class="swiper_item" item-id="">
-                <navigator class="navi-swiper" url="{{item.url}}" hover-stay-time	="100">
+                <navigator class="navi-swiper" url="{{item.url}}" hover-stay-time="100">
                     <image class="image" src="{{item.src}}" />
                 </navigator>
             </swiper-item>

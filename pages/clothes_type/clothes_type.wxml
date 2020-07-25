@@ -9,57 +9,24 @@
 <view class="divie_line"></view>
 <view class="right">
 
-  <view wx:for="{{info}}">
+  <view class="list" wx:for="{{info2}}"  wx:for-item="info">
     <view class="title_view">
-        <view class="title">{{item.type}}</view>
+        <view class="title">{{info.type}}</view>
         <view class="more_view">
           <view class="more">更多</view>
         </view>
-
-      <view class="top_three">
-        <block  wx:for="{{item.data1}}" >
-            <view class="img_view">
-              <image  class="img" src="{{item.src}}"></image>
-              <view class="img_text">{{item.text}}</view>
-            </view>
-        </block>
-      </view>
-
-
     </view>
-
-  
+    <view class="diver"></view>
+    <view class="top_three">
+      <view wx:for="{{info.data}}" wx:for-item="inf">
+        <view class="img_view">
+          <image class="img" src="{{inf.img_src}}"></image>
+          <view class="img_text">{{inf.code}}</view>
+        </view>
+      </view>
+    </view>
   </view>
   
-  <!-- <block  wx:for="{{info}}">
-      <view class="title_view">
-        <view class="title">{{item.type}}</view>
-        <view class="more_view">
-          <view class="more">更多</view>
-        </view>
-      </view>
-      <view class="diver"></view>
-
-     
-      <view class="top_three">
-        <block  wx:for="{{item.data1}}">
-            <view class="img_view">
-              <image  class="img" src="{{item.src}}"></image>
-              <view class="img_text">{{item.text}}</view>
-            </view>
-        </block>
-      </view>
-
-     
-      <view class="top_three">
-        <block  wx:for="{{item.data2}}" wx:key="type">
-            <view class="img_view">
-              <image  class="img" src="{{item.src}}"></image>
-              <view class="img_text">{{item.text}}</view>
-            </view>
-        </block>
-      </view>
-  </block> -->
 </view>
 
 
