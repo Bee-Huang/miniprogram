@@ -1,7 +1,7 @@
 <!-- 搜索功能 -->
 <view class="sousuo_box">
     <view class="input_box" >
-        <input class="input" auto-focus placeholder="请输入关键词搜索" />
+        <input class="input" auto-focus placeholder="请输入关键词搜索" bindinput="inputkeyword" bindconfirm="search"/>
     </view>
     <view class="cancel">
         <navigator class="cancel_navi" url="/pages/clothes/clothes" hover-stay-time="100" open-type="navigateBack" delta="1">
@@ -14,15 +14,16 @@
 
 <view class="bigbox">
     <!-- 历史搜索 -->
-    <view class="history_search" >
+    <view class="history_search">
         <view class="text">
-            <view class="" >
                 历史搜索
-            </view>
+                <view class="clean-box" >
+                    <image class="clean" src="../../icon/qingchu.png" bindtap='clean'/>
+                </view> 
         </view>
         <view class="keyword_box">
-            <block wx:for="{{keywords}}" wx:key="id">
-                <view class="keyword">
+            <block wx:for="{{hot_keywords}}">
+                <view class="keyword" wx:if="{{item.id>0}}">
                     {{item.name}}
                 </view>
             </block>
@@ -38,7 +39,7 @@
         </view>
         <view class="keyword_box">
             <block wx:for="{{keywords}}" wx:key="id">
-                <view class="keyword">
+                <view data-id="{{index}}" class="keyword" bindtap="click_keyword">
                     {{item.name}}
                 </view>
             </block>

@@ -62,11 +62,27 @@
 }
 
 .text{
+    width: 100%;
     font-size: 35rpx;
     color: #676767;
     font-weight: bold;
     margin-top: 10rpx;
     margin-left: 30rpx;
+    margin-right: 30rpx;
+    display: flex;
+    /* border: cyan solid 1rpx; */
+}
+
+.clean-box{
+    margin-left: 516rpx;
+    /* border: springgreen solid 1rpx; */
+}
+
+.clean{
+
+    width: 35rpx;
+    height: 35rpx;
+
 }
 
 .history_search{

@@ -5,6 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    user_keywords:'',
+    hot_keywords:[
+      {
+       id:0,
+       name:''
+      }
+    ],
+
     keywords:[
       {
         id:0,
@@ -47,65 +55,45 @@ Page({
         name:'63000',
       },
       {
-        id:8,
+        id:9,
         name:'GTSH',
       },
     ]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  inputkeyword:function(e){
+    this.setData({
+      user_keywords:e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
+  search:function(){
+  
+    this.data.hot_keywords.push({
+     id:1,
+     name: this.data.user_keywords
+   })
+    this.setData({
+      hot_keywords:this.data.hot_keywords,
+  })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  clean:function(){
+    this.data.hot_keywords=[];
+    this.setData({
+      hot_keywords:this.data.hot_keywords,
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  click_keyword:function(e){
+    var index=e.currentTarget.dataset.id
+    this.data.user_keywords=this.data.keywords[index].name
+    console.log(this.data.user_keywords)
+    this.setData({
+      user_keywords:this.data.keywords[index].name
+    })
   }
+
+  
 })
