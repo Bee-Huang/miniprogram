@@ -5,7 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    keywords:[
+      {
+        id:0,
+        name:'GDS',
+      },
+      {
+        id:1,
+        name:'LKL',
+      },
+      {
+        id:2,
+        name:'POLO',
+      },
+      {
+        id:3,
+        name:'新款卫衣',
+      },
+      {
+        id:4,
+        name:'冲锋衣',
+      },
+      {
+        id:4,
+        name:'维方斯',
+      },
+      {
+        id:5,
+        name:'XBHD',
+      },
+      {
+        id:6,
+        name:'JD',
+      },
+      {
+        id:7,
+        name:'76000',
+      },
+      {
+        id:8,
+        name:'63000',
+      },
+      {
+        id:8,
+        name:'GTSH',
+      },
+    ]
   },
 
   /**

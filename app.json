@@ -1,9 +1,11 @@
 {
   "could": true,
-  "pages": [
-    "pages/clothes/clothes",
-    "pages/search/search", 
+  "pages": [ 
     "pages/index/index",
+    "pages/clothes/clothes",
+    "pages/search/search",
+    
+     
     "pages/clothes_type/clothes_type",
     "pages/mine/mine",
     "pages/order/order",

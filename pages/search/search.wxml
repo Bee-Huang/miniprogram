@@ -1,9 +1,8 @@
 <!-- 搜索功能 -->
 <view class="sousuo_box">
-     <view class="input_box" >
-        <image class="img" src="../../icon/sousuo.png" />
-        <input class="input" auto-focus placeholder="请输入关键词搜索"/>
-        </view>
+    <view class="input_box" >
+        <input class="input" auto-focus placeholder="请输入关键词搜索" />
+    </view>
     <view class="cancel">
         <navigator class="cancel_navi" url="/pages/clothes/clothes" hover-stay-time="100" open-type="navigateBack" delta="1">
             取消
@@ -22,10 +21,14 @@
             </view>
         </view>
         <view class="keyword_box">
-            sdfghsdg
-            ghdfgchfdfgh
+            <block wx:for="{{keywords}}" wx:key="id">
+                <view class="keyword">
+                    {{item.name}}
+                </view>
+            </block>
         </view>
     </view>
+
     <!-- 热门搜素 -->
     <view class="popular_search">
         <view class="text">
@@ -34,9 +37,11 @@
             </view>
         </view>
         <view class="keyword_box">
-            sdfghsdg
-            ctghdfgchfg
+            <block wx:for="{{keywords}}" wx:key="id">
+                <view class="keyword">
+                    {{item.name}}
+                </view>
+            </block>
         </view>
     </view>
-    
 </view>
