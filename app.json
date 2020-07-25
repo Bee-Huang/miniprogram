@@ -1,11 +1,18 @@
 {
   "could": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "pages": [
 =======
   "pages": [ 
     "pages/search/search",
     "pages/index/index",
+    "pages/clothes/clothes",
+>>>>>>> 小程序
+=======
+  "pages": [  "pages/index/index",
+    "pages/clothes_list/clothes_list", 
+    "pages/search/search",
     "pages/clothes/clothes",
 >>>>>>> 小程序
     "pages/clothes_type/clothes_type",

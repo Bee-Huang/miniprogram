@@ -1,2 +1,55 @@
-<!--pages/clothes_list/clothes_list.wxml-->
-<text>pages/clothes_list/clothes_list.wxml</text>
+<view class="box">
+    <view class="search-text-box">
+        polo
+    </view>
+</view>
+ <view class="box1">
+     <!-- comprehensive-screen:综合-筛选 -->
+     <view class="comprehensive-screen" >
+         综合
+     </view>
+     <!-- <view class="comprehensive-screen" >
+         筛选
+     </view> -->
+     <view class="">
+  <view class="animation-button" bindtap="translate">筛选</view>
+  <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+    <view class="animation-element" animation="{{animation}}">
+
+<view class="box2">
+    <view class="box2-1" wx:for="{{Fabric}}" wx:if="{{item.id===0}}">
+        {{item.text}}
+    </view>
+    <view class="all" bindtap="tryDriver" style="background:{{background}};">
+        全部
+    </view>
+    <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
+        {{item.text}}
+    </view>
+</view>
+
+<view class="box2">
+    <view class="box2-1" wx:for="{{color}}" wx:if="{{item.id===0}}">
+        {{item.text}}
+    </view>
+    <view class="all" bindtap="tryDriver" style="background:{{background}};">
+        全部
+    </view>
+    <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{color}}" wx:if="{{item.id>0}}">
+        {{item.text}}
+    </view>
+</view>
+
+      <view class='buttom'>
+      <view class="animation-reset" >重置</view>
+      <view class="animation-button" bindtap="success">完成</view>
+      </view>
+
+
+
+    </view>
+  </view>
+ 
+</view>
+
+ </view>

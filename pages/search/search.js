@@ -6,13 +6,7 @@ Page({
    */
   data: {
     user_keywords:'',
-    hot_keywords:[
-      {
-       id:0,
-       name:''
-      }
-    ],
-
+    hot_keywords:[],
     keywords:[
       {
         id:0,
@@ -61,6 +55,10 @@ Page({
     ]
   },
 
+  onload:function(option){
+    hot_keywords=[]
+  },
+
   inputkeyword:function(e){
     this.setData({
       user_keywords:e.detail.value
@@ -69,7 +67,6 @@ Page({
 
 
   search:function(){
-  
     this.data.hot_keywords.push({
      id:1,
      name: this.data.user_keywords
@@ -77,6 +74,14 @@ Page({
     this.setData({
       hot_keywords:this.data.hot_keywords,
   })
+  wx.navigateTo({
+    url: '/pages/clothes_list/clothes_list?word='+this.data.user_keywords,
+    success: (result)=>{
+      
+    },
+    fail: ()=>{},
+    complete: ()=>{}
+  });
   },
 
   clean:function(){

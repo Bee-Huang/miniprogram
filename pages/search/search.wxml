@@ -14,7 +14,7 @@
 
 <view class="bigbox">
     <!-- 历史搜索 -->
-    <view class="history_search">
+    <view wx:if="{{hot_keywords.length>0}}" class="history_search">
         <view class="text">
                 历史搜索
                 <view class="clean-box" >

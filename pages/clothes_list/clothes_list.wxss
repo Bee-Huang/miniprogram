@@ -1,1 +1,138 @@
-/* pages/clothes_list/clothes_list.wxss */
+.box{
+    display: flex;
+    justify-content: center;
+    /* border: springgreen solid; */
+}
+
+.search-text-box{
+    width: 90%;
+    font-size: 35rpx;
+    border-radius: 10rpx;
+    margin: 15rpx 15rpx;
+    text-align: center;
+    background-color: #F5F5F5;
+    color: #000;
+}
+
+.box1{
+    display: flex;
+    border: springgreen solid;
+}
+
+.comprehensive-screen{
+    font-size: 35rpx;
+    margin: 20rpx 140rpx 20rpx 140rpx;
+    border: steelblue solid;
+}
+
+.isRuleShow {
+    display: block;
+  }
+  
+  .isRuleHide {
+    display: none;
+  }
+  .float {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    /* margin-top:80rpx; */
+  }
+  
+  
+  
+  
+  
+  .iconuse {
+    margin-left: 11rpx;
+  }
+  
+  .iconprice {
+    margin-left: 11rpx;
+  }
+  
+  .animation-element {
+    width: 630rpx;
+    height: 1175rpx;
+     background-color: #ffffff; 
+    border: 1px solid #f3f0f0;
+    position: absolute;
+    right: -490rpx;
+  }
+  
+ .box2{
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .box2-1{
+    width: 100%;
+    font-weight: bold;
+    font-size: 35rpx;
+    margin: 10rpx 15rpx 10rpx;
+ }
+
+.all{
+    width: 180rpx;
+    height: 50rpx;
+    margin: 10rpx 15rpx 10rpx 15rpx;
+    background-color: #F3F3F3;
+    border-radius: 30rpx;
+    line-height: 50rpx;
+    display: flex;
+    justify-content: center;
+    /* border: steelblue solid; */
+}
+
+ .type{
+    width: 180rpx;
+    height: 50rpx;
+    margin: 10rpx 15rpx 10rpx 15rpx;
+    background-color: #F3F3F3;
+    border-radius: 30rpx;
+    line-height: 50rpx;
+    display: flex;
+    justify-content: center;
+    /* border: steelblue solid; */
+ }
+  
+  .useage {
+    height: 40rpx;
+  }
+  
+  .useage li {
+    width: 177rpx;
+    margin: 12rpx 7rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #f3f0f0;
+    border-radius: 15rpx;
+    font-size: 30rpx;
+  }
+  
+  .buttom{
+    position: fixed;
+    bottom: 0;
+  }
+  .animation-reset{
+  float: left;
+   line-height: 2;
+    width: 260rpx;
+    margin: 15rpx 12rpx;
+    border: 1px solid #f3f0f0;
+    text-align: center;
+  }
+  .animation-button{
+  float: left;
+   line-height: 2;
+    width: 260rpx;
+    margin: 15rpx 12rpx;
+    border: 1px solid #f3f0f0;
+    text-align: center;
+  }

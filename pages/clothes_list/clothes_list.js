@@ -1,28 +1,119 @@
-// pages/clothes_list/clothes_list.js
+// pages/clothes_detail/clothes_detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    now_type:{big:'T恤',small:'圆领短袖'},
-    module:{color_count:'10色',img:'www',title:'title',prices:"25.6"}
-    
+    // 面料
+    Fabric:[
+      {
+        id:0,
+        text:'选择面料'
+      },
+      {
+        id:1,
+        text:'莫代尔'
+      },
+      {
+        id:2,
+        text:'纯棉'
+      },
+      {
+        id:3,
+        text:'丝光棉'
+      },
+      {
+        id:4,
+        text:'莱卡棉'
+      },
+      {
+        id:5,
+        text:'牛奶丝'
+      },
+      {
+        id:6,
+        text:'速干'
+      }
+    ],
+    color:[
+      {
+        id:0,text:'选择颜色'
+      },
+      {
+        id:1,text:'橙色'
+      },
+      {
+        id:2,text:'黑色'
+      },
+      {
+        id:3,text:'灰色'
+      },
+      {
+        id:4,text:'黄色'
+      },
+      {
+        id:5,text:'绿色'
+      },
+      {
+        id:6,text:'紫色'
+      },
+      {
+        id:7,text:'棕色'
+      },
+      {
+        id:8,text:'白色'
+      },
+      {
+        id:9,text:'青色'
+      },
+      {
+        id:10,text:'蓝色'
+      },
+      {
+        id:11,text:'红色'
+      },
+      {
+        id:12,text:'粉色'
+      }
+    ]
+  },
+  onReady: function () {
+    this.animation = wx.createAnimation()
+  },
+  translate: function () {
+    this.setData({
+      isRuleTrue: true
+    })
+    this.animation.translate(-245, 0).step()
+    this.setData({ animation: this.animation.export() })
   },
 
+  success: function () {
+    this.setData({
+      isRuleTrue: false
+    })
+    this.animation.translate(0, 0).step()
+    this.setData({ animation: this.animation.export() })
+  },
+  tryDriver: function () {
+    this.setData({
+      background: "#89dcf8"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  // onReady: function () {
 
-  },
+  // },
 
   /**
    * 生命周期函数--监听页面显示
