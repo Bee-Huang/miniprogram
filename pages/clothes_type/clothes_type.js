@@ -26,6 +26,31 @@ Page({
      this.getinfo();
    },
 
+   getinfo:function(){
+     var that=this
+    let small_type=this.data.type_small[this.data.nav_id];
+    var i=0;
+    var array=[]
+    for(i=0;i<small_type.length;i++){
+      const db = wx.cloud.database()
+      db.collection('list')
+      .where({
+        keyword: this.data.type[this.data.nav_id].text+','+small_type[i]
+      })
+      .limit(6)
+      .get({
+        success:function(res){
+          var type_tmp=res.data[0].keyword.split(',')[1];
+          var tmp={type:type_tmp,data:res.data}
+          array.push(tmp)
+          that.setData({
+            info2:array
+          })
+        }
+      })
+    }
+   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -35,14 +60,19 @@ Page({
       this.setData({
         nav_id:options.index
       })
-      let small_type=this.data.type_small[0];
+      if(options.index==define){
+        this.setData({
+          nav_id:0
+        })
+      }
+      let small_type=this.data.type_small[this.data.nav_id];
       var i=0;
       var array=[]
       for(i=0;i<small_type.length;i++){
         const db = wx.cloud.database()
         db.collection('list')
         .where({
-          keyword: 'T恤,'+small_type[i]
+          keyword: this.data.type[this.data.nav_id].text+','+small_type[i]
         })
         .limit(6)
         .get({

@@ -38,22 +38,22 @@
 
 
 <view class="bigbox" >
-    <block wx:for="{{box}}" wx:key="hand_text">
+    <block wx:for="{{box1}}" wx:for-item="box">
     <view class="box">
         <view class="clothes_text_box">
             <view class="clothes_text">
-                {{item.hand_text}}
+                {{box.type}}
             </view>
         </view>
         <view class="clothes_box">
-            <block wx:for="{{item.clothes}}" wx:key="hand_text">
+            <block wx:for="{{box.data}}" wx:for-item="data">
                 <view class="img_box">
-                    <image class="img" src="{{item.src}}"/>
+                    <image class="img" src="{{data.img_src}}"/>
                     <view class="img_text">
-                        {{item.text}}
+                        {{data.title}}
                     </view>
                     <view class="money">
-                        {{item.money}}
+                        ￥{{data.prices}}
                     </view>
                 </view>
             </block>

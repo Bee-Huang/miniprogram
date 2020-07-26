@@ -1,4 +1,5 @@
 // pages/clothes/clothes.js
+
 Page({
 
   /**
@@ -51,7 +52,6 @@ Page({
         url: '/pages/other/other'
       },
     ], 
-
     object1:[
       {
       id:0,
@@ -102,59 +102,15 @@ Page({
       url1: '/pages/clothes_type/clothes_type?index=7'
     },
     ],
-
-    box:[
-      {hand_text:'班服系列',
-      clothes:[{text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'}]},
-      {hand_text:'工作服系列',
-      clothes:[{text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'}]},
-      {hand_text:'运动系列',
-      clothes:[{text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'}]},
-      {hand_text:'活动系列',
-      clothes:[{text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'}]},
-      {hand_text:'户外系列',
-      clothes:[{text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'},
-      {text:'ZHJM118881000G精品冲锋衣',src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/HL6880陶瓷桑蚕丝POLO.jpg',money:'19.9元'}]}
-    ],
+    type:['个性班服','活动文化衫','工作服','户外服装','运动服饰'],
+    type_id:[
+    ['511','1750','5042','272','3247','6401','3826','4982','5230'],
+    ['3153','451','4180','1142','6443','21','2620','2467','1419'],
+    ['5753','5754','3797','3798','4853','4718','4710','4702','4875'],
+    ['6501','6502','6504','3653','6505','3518','3524','2617','6517'],
+    ['2532','2856','2533','102','413','414','6538','6415','6637']],
+    box1:[],
+  
    
   },
 
@@ -162,28 +118,43 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+    wx.cloud.init()
+    wx.showLoading({
+      title: '加载中',
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
+    var that=this
+    var p=0
+    var array=[]
+    //初始化数组
+    for(p=0;p<this.data.type.length;p++)
+      array.push({type:this.data.type[p],data:[]});
+    this.setData({
+      box1:array
+    })
+    for(let i=0;i<this.data.type.length;i++){
+      let small_id=this.data.type_id[i];
+      console.log(small_id); 
+      let array_small=[]
+      for(let o=0;o<small_id.length;o++){
+        const db = wx.cloud.database()
+        db.collection('list')
+        .where({
+          id:small_id[o]
+        })
+        .get({
+          success:function(res){
+            array_small.push(res.data[0])
+            var data='box1['+i+'].data'   
+            that.setData({
+              [data]:array_small
+            })
+          }
+        })
+      }
+    }
   },
 
   /**
