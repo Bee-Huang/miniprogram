@@ -5,26 +5,43 @@
 }
 
 .search-text-box{
+    height: 70rpx;
     width: 90%;
-    font-size: 35rpx;
     border-radius: 10rpx;
     margin: 15rpx 15rpx;
-    text-align: center;
+    display: flex;
+    justify-content: center;
     background-color: #F5F5F5;
-    color: #000;
+}
+
+.search-text{
+  font-size: 35rpx;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .box1{
-    display: flex;
-    border: springgreen solid;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  /* border: springgreen solid; */
 }
 
-
+.animation-button{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 30rpx;
+  display: flex;
+  /* border: deeppink solid 1rpx; */
+}
 
 .isRuleShow {
     display: block;
-    justify-content: right;
 }
+
   
 .isRuleHide {
     display: none;
@@ -33,22 +50,58 @@
 .float {
     height: 100%;
     width: 100%;
-    position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     /* margin-top:80rpx; */
 }
-  
+ 
+.float1 {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 1;
+  top: 197rpx;
+  left: 0;
+  /* margin-top:80rpx; */
+}
+
 .animation-element {
     width: 85%;
     height: 100%;
-     background-color: #ffffff; 
-    position: fixed;
-    right: -65%;
-    
+    margin-left: 15%;
+    background-color: #ffffff; 
+    position: absolute;
+    z-index: 2;
+    right: -570rpx;
+    top: 0; 
   }
+
+  .animation-element1 {
+    width: 100%;
+    height: 30%;
+    background-color: #ffffff; 
+    position: absolute;
+    z-index: 2;
+    top: 30%; 
+  }
+
+.Comprehensive1{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  background-color: #fff;
+  border-bottom: #F3F3F3 solid 1rpx;
+}
+
+.Comprehensive2{
+  font-size: 35rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50rpx;
+}
 
 .screen-box{
   height: 100%;
@@ -56,7 +109,7 @@
 
 .scroll-view-screen-box{
     width: 100%;
-    height: 90%;
+    height: 90vh;
     /* border: brown solid 1rpx; */
 }
 
@@ -99,7 +152,7 @@
  }
 
  .button{
-   height: 10%;
+   height: 10vh;
    display: flex;
    margin-bottom: 0;
    justify-content: center;
@@ -138,3 +191,45 @@
    margin-top: auto;
    margin-bottom: auto;
  }
+
+ .box3{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ }
+
+ .clothe-box{
+    width: 49%;
+    /* border: salmon solid 1rpx; */
+ }
+
+.clothe-img-box{
+    width: 100%;
+    height: 350rpx;
+    /* border: violet solid 1rpx; */
+}
+
+.clothe-img{
+    width: 100%;
+    height: 350rpx;
+}
+
+.clothe-name{
+    height: 80rpx;
+    margin-top: 15rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    font-size: 25rpx;
+    line-height: 40rpx;
+    /* background-color: yellow; */
+}
+
+.clothe-money{
+    height: 60rpx;
+    margin-left: 30rpx;
+    line-height: 65rpx;
+    font-size: 30rpx;
+    color: red;
+    /* background-color: violet; */
+}

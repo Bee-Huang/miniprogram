@@ -1,1 +1,23 @@
-/* pages/clothes_detail/clothes_detail.wxss */
+.swiper{
+    width: 100%;
+    height: 700rpx;
+}
+
+.image{
+    width: 100%;
+    height: 700rpx;
+}
+
+.box2{
+    width: 100%;
+    margin-top: 20rpx;
+    display: flex;
+    /* background-color: tomato; */
+}
+
+.clothe-name{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 40rpx;
+    /* background-color: turquoise; */
+}

@@ -8,34 +8,34 @@ Page({
     
     // 面料
     Fabric:[
-      {
-        id:0,
-        text:'选择面料'
-      },
-      {
-        id:1,
-        text:'莫代尔'
-      },
-      {
-        id:2,
-        text:'纯棉'
-      },
-      {
-        id:3,
-        text:'丝光棉'
-      },
-      {
-        id:4,
-        text:'莱卡棉'
-      },
-      {
-        id:5,
-        text:'牛奶丝'
-      },
-      {
-        id:6,
-        text:'速干'
-      }
+        {
+          id:0,
+          text:'选择面料'
+        },
+        {
+          id:1,
+          text:'莫代尔'
+        },
+        {
+          id:2,
+          text:'纯棉'
+        },
+        {
+          id:3,
+          text:'丝光棉'
+        },
+        {
+          id:4,
+          text:'莱卡棉'
+        },
+        {
+          id:5,
+          text:'牛奶丝'
+        },
+        {
+          id:6,
+          text:'速干'
+        }
     ],
     color:[
       {
@@ -77,17 +77,81 @@ Page({
       {
         id:12,text:'粉色'
       }
+    ],
+    clothes:[
+      {
+        id:0,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/BMYMC-190C男款珂桠180克纯棉圆领（克重可能会因批次不同而有所差异）.jpg',
+        name:'BMYMC-190C男款珂桠180克纯棉圆领',
+        money:'19.9￥'
+      },
+      {
+        id:1,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/BMYMC-190C男款珂桠180克纯棉圆领（克重可能会因批次不同而有所差异）.jpg',
+        name:'BMYMC-190C男款珂桠180克纯棉圆领',
+        money:'19.9￥'
+      },
+      {
+        id:2,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/BMYMC-190C男款珂桠180克纯棉圆领（克重可能会因批次不同而有所差异）.jpg',
+        name:'BMYMC-190C男款珂桠180克纯棉圆领',
+        money:'19.9￥'
+      },
+      {
+        id:3,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/BMYMC-190C男款珂桠180克纯棉圆领（克重可能会因批次不同而有所差异）.jpg',
+        name:'BMYMC-190C男款珂桠180克纯棉圆领',
+        money:'19.9￥'
+      },
+      {
+        id:4,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/BMYMC-190C男款珂桠180克纯棉圆领（克重可能会因批次不同而有所差异）.jpg',
+        name:'BMYMC-190C男款珂桠180克纯棉圆领',
+        money:'19.9￥'
+      },
+      {
+        id:5,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/BMYMC-190C男款珂桠180克纯棉圆领（克重可能会因批次不同而有所差异）.jpg',
+        name:'BMYMC-190C男款珂桠180克纯棉圆领',
+        money:'19.9￥'
+      },
     ]
   },
   onReady: function () {
-    this.animation = wx.createAnimation()
+
+    this.animation1 = wx.createAnimation({
+      duration:400,
+      timingFunction:'ease-out'
+    })
+    this.animation = wx.createAnimation({
+      duration:400,
+      timingFunction:'ease-out'
+    })
   },
-  translate: function () {
+  
+  translate1: function(){
+    this.setData({
+      isRuleTrue1: true
+    })
+    this.setData({ animation1: this.animation1.export() })
+  },
+
+  translate2: function () {
     this.setData({
       isRuleTrue: true
     })
-    this.animation.translate(-245, 0).step()
+    // animation.translate()中的值的单位是px,导致动画在不同的机型出现不同的位置，所以需要将px转换为rpx：px = rpx / 750 * wx.getSystemInfoSync().windowWidth;
+    var systemInfo = wx.getSystemInfoSync();
+    this.animation.translate(-570 / 750 * systemInfo.windowWidth, 0).step()
     this.setData({ animation: this.animation.export() })
+  },
+
+  success1: function () {
+    this.setData({
+      isRuleTrue1: false
+    })
+    this.animation1.translate(0, 0).step()
+    this.setData({ animation1: this.animation1.export() })
   },
 
   success: function () {

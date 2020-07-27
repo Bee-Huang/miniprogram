@@ -1,2 +1,17 @@
-<!--pages/clothes_detail/clothes_detail.wxml-->
-<text>pages/clothes_detail/clothes_detail.wxml</text>
+<view class="box1">
+    <swiper class="swiper" indicator-dots="ture" indicator-color="rgba(0,0,0,.3)" autoplay="ture" 
+    interval="3000" circular="ture" >
+        <block wx:for="{{swiper_item}}" wx:key="id">
+            <swiper-item class="swiper_item" >
+                    <image class="image" src="{{item.src}}" />
+            </swiper-item>
+        
+        </block>
+    </swiper>  
+</view>
+
+<view class="box2">
+    <view class="clothe-name" >
+        JD76000男款24支180g纯棉圆领短袖T恤
+    </view>
+</view>

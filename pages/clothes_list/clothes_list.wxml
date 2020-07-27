@@ -1,13 +1,35 @@
 <view class="box">
     <view class="search-text-box">
-        polo
+        <view class="search-text">
+            polo
+        </view>
     </view>
 </view>
 
  <view class="box1">
-    <view class="animation-button" bindtap="translate">综合</view>
-    <view class="animation-button" bindtap="translate">筛选</view>
-    <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+    <view class="animation-button" bindtap="translate1">综合</view>
+    <view class="float1 {{isRuleTrue1?'isRuleShow':'isRuleHide'}}" bindtap="success1" >
+        <view class="animation-element1" animation="{{animation1}}">
+            <view class="Comprehensive1" >
+                <view class="Comprehensive2" >
+                    综合
+                </view>
+            </view>
+            <view class="Comprehensive1" >
+                <view class="Comprehensive2" >
+                    价格降序
+                </view>
+            </view>
+            <view class="Comprehensive1" >
+                <view class="Comprehensive2" >
+                    价格升序
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="animation-button" bindtap="translate2">筛选</view>
+    <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}}" bindtap="success">
         <view class="animation-element" animation="{{animation}}">
             <view class="screen-box">
                 <scroll-view class="scroll-view-screen-box" scroll-y="ture">
@@ -85,3 +107,16 @@
     </view>
 </view>
 
+<view class="box3">
+    <view class="clothe-box" wx:for="{{clothes}}" wx:key="id">
+        <view class="clothe-img-box" >
+            <image class="clothe-img" src="{{item.src}}" /> 
+        </view>
+        <view class="clothe-name" >
+            {{item.name}}
+        </view>
+        <view class="clothe-money" >
+            {{item.money}}
+        </view>
+    </view>
+</view>
