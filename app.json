@@ -10,6 +10,7 @@
     "pages/mine/mine",
     "pages/order/order",
     "pages/other/other"
+    
   ],
   "window": {
     "backgroundTextStyle": "dark",

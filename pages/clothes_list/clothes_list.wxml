@@ -3,53 +3,85 @@
         polo
     </view>
 </view>
+
  <view class="box1">
-     <!-- comprehensive-screen:综合-筛选 -->
-     <view class="comprehensive-screen" >
-         综合
-     </view>
-     <!-- <view class="comprehensive-screen" >
-         筛选
-     </view> -->
-     <view class="">
-  <view class="animation-button" bindtap="translate">筛选</view>
-  <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
-    <view class="animation-element" animation="{{animation}}">
-
-<view class="box2">
-    <view class="box2-1" wx:for="{{Fabric}}" wx:if="{{item.id===0}}">
-        {{item.text}}
-    </view>
-    <view class="all" bindtap="tryDriver" style="background:{{background}};">
-        全部
-    </view>
-    <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
-        {{item.text}}
+    <view class="animation-button" bindtap="translate">综合</view>
+    <view class="animation-button" bindtap="translate">筛选</view>
+    <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+        <view class="animation-element" animation="{{animation}}">
+            <view class="screen-box">
+                <scroll-view class="scroll-view-screen-box" scroll-y="ture">
+                    <view class="box2">
+                        <view class="box2-1" wx:for="{{Fabric}}" wx:if="{{item.id===0}}">
+                            {{item.text}}
+                        </view>
+                        <view class="all" bindtap="tryDriver" style="background:{{background}};">
+                            全部
+                        </view>
+                        <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
+                            {{item.text}}
+                        </view>
+                    </view>
+                    <view class="box2">
+                        <view class="box2-1" wx:for="{{Fabric}}" wx:if="{{item.id===0}}">
+                            {{item.text}}
+                        </view>
+                        <view class="all" bindtap="tryDriver" style="background:{{background}};">
+                            全部
+                        </view>
+                        <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
+                            {{item.text}}
+                        </view>
+                    </view>
+                    <view class="box2">
+                        <view class="box2-1" wx:for="{{Fabric}}" wx:if="{{item.id===0}}">
+                            {{item.text}}
+                        </view>
+                        <view class="all" bindtap="tryDriver" style="background:{{background}};">
+                            全部
+                        </view>
+                        <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
+                            {{item.text}}
+                        </view>
+                    </view>
+                    <view class="box2">
+                        <view class="box2-1" wx:for="{{Fabric}}" wx:if="{{item.id===0}}">
+                            {{item.text}}
+                        </view>
+                        <view class="all" bindtap="tryDriver" style="background:{{background}};">
+                            全部
+                        </view>
+                        <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
+                            {{item.text}}
+                        </view>
+                    </view>
+                    <view class="box2">
+                        <view class="box2-1" wx:for="{{Fabric}}" wx:if="{{item.id===0}}">
+                            {{item.text}}
+                        </view>
+                        <view class="all" bindtap="tryDriver" style="background:{{background}};">
+                            全部
+                        </view>
+                        <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
+                            {{item.text}}
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class="button">
+                    <view class="button1">
+                        <view class="Reset-finish-bpox">
+                            重置
+                        </view>
+                    </view>
+                    <view class="button2">
+                        <view class="Reset-finish-bpox">
+                            完成
+                        </view>
+                    </view>
+                </view>
+            </view>
+            
+        </view>
     </view>
 </view>
 
-<view class="box2">
-    <view class="box2-1" wx:for="{{color}}" wx:if="{{item.id===0}}">
-        {{item.text}}
-    </view>
-    <view class="all" bindtap="tryDriver" style="background:{{background}};">
-        全部
-    </view>
-    <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{color}}" wx:if="{{item.id>0}}">
-        {{item.text}}
-    </view>
-</view>
-
-      <view class='buttom'>
-      <view class="animation-reset" >重置</view>
-      <view class="animation-button" bindtap="success">完成</view>
-      </view>
-
-
-
-    </view>
-  </view>
- 
-</view>
-
- </view>
