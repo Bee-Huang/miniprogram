@@ -111,7 +111,13 @@ Page({
     ['2532','2856','2533','102','413','414','6538','6415','6637']],
     box1:[],
   
-   
+
+  },
+  gotodetail:function(e){
+    console.log();
+    wx.navigateTo({
+      url: '../clothes_detail/clothes_detail?id='+e.currentTarget.dataset.id
+    })
   },
 
   /**

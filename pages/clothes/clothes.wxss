@@ -141,14 +141,16 @@ page{
 
 .img_text{
     font-size: 28rpx;
-    height: 80rpx;
     color: #5B5B5B;
-    display: -webkit-box;
-    word-break: break-all;
+    display: flex;
+    height: 50rpx;
     text-overflow: ellipsis;
-}
+} 
 
 .money{
+    width: 100%;
+    margin-top: 25rpx;
+    background-color: #ffffff;
     color:red;
     font-size: 30rpx;
 }

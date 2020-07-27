@@ -47,7 +47,7 @@
         </view>
         <view class="clothes_box">
             <block wx:for="{{box.data}}" wx:for-item="data">
-                <view class="img_box">
+                <view class="img_box" data-id="{{data.id}}" bindtap="gotodetail">
                     <image class="img" src="{{data.img_src}}"/>
                     <view class="img_text">
                         {{data.title}}
