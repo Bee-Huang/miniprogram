@@ -102,13 +102,12 @@
                     </view>
                 </view>
             </view>
-            
         </view>
     </view>
 </view>
 
 <view class="box3">
-    <view class="clothe-box" wx:for="{{clothes}}" wx:key="id">
+    <view class="clothe-box" wx:for="{{clothes}}" wx:key="id" bindtap="click">
         <view class="clothe-img-box" >
             <image class="clothe-img" src="{{item.src}}" /> 
         </view>

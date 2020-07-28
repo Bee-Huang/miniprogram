@@ -7,11 +7,44 @@
             </swiper-item>
         
         </block>
-    </swiper>  
+    </swiper>
 </view>
 
 <view class="box2">
-    <view class="clothe-name" >
+    <view class="clothe-name" > 
         JD76000男款24支180g纯棉圆领短袖T恤
     </view>
+</view>
+
+<view class="bos" >
+    
+</view>
+
+<view class="bottom-box" >
+    <view class="index" >
+        <view class="img">
+            <image class="img1" src="../../icon/home.png"/>
+        </view> 
+    </view>
+    <view class="cart" >
+        <view class="img">
+            <image class="img1" src="../../icon/cart.png"/> 
+        </view>
+    </view>
+    <view class="service" >
+        <view class="img">
+            <image class="img1" src="../../icon/service.png"/>
+        </view>
+    </view>
+    <view class="add" >
+        <view class="text1" >
+            加入购物车
+        </view>
+    </view>
+    <view class="buy" >
+        <view class="text2" >
+            立即购买
+        </view>
+    </view>
+    
 </view>

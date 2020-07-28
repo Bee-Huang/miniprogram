@@ -118,7 +118,6 @@ Page({
     ]
   },
   onReady: function () {
-
     this.animation1 = wx.createAnimation({
       duration:400,
       timingFunction:'ease-out'
@@ -161,7 +160,12 @@ Page({
     this.animation.translate(0, 0).step()
     this.setData({ animation: this.animation.export() })
   },
-  tryDriver: function () {
+
+click: function(){
+  
+},
+
+tryDriver: function () {
     this.setData({
       background: "#89dcf8"
     })
