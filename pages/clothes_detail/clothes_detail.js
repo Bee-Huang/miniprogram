@@ -4,15 +4,37 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
+  //guoshangbaodashabi
+  data: { 
+    swiper_item:[
+      {
+        id:0,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
+      },
+      {
+        id:1,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
+      },
+      {
+        id:2,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
+      },
+      {
+        id:3,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
+      },
+      {
+        id:4,
+        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
+      },
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id);
-    
+
   },
 
   /**
