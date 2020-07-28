@@ -16,9 +16,78 @@
     </view>
 </view>
 
-<view class="bos" >
-    
+<view class="box3">
+    <view class="money-box" >
+        <view class="money" >
+            19.9￥
+        </view>
+    </view>
+    <view class="Collection-box">
+        <view class="Collection-img" >
+            <image class="img2" src="../../icon/shoucang.png"/>     
+        </view>
+        <view class="Collection-text" >
+            收藏
+        </view>
+        
+    </view>
 </view>
+
+<view class="box4" >
+    <view class="parameter">
+        <view class="boxx" >
+            <view class="parameter-text" >
+                商品参数
+            </view>
+        </view>
+        <view class="boxx" >
+            <view class="fabric" >
+                面料
+            </view>
+            <view class="text">
+                法国海军的经典风格和释放
+            </view>
+        </view>
+        <view class="boxx" >
+            <view class="component" >
+                成分
+            </view>
+            <view class="text">
+                法国海军的经典风格和释放
+            </view>
+        </view>
+        <view class="boxx" >
+            <view class="weight" >
+                克重
+            </view>
+            <view class="text">
+                法国海军的经典风格和释放
+            </view>
+        </view>
+        <view class="boxx" >
+            <view class="instructions" >
+                特殊说明
+            </view>
+            <view class="text">
+                法国海军的经典风格和释放hsfdgadsgafDFsfgh
+            </view>
+        </view> 
+    </view>
+
+    <view class="particulars">
+        <view class="boxxx" >
+            <view class="particulars-text" >
+                商品详情
+            </view>
+        </view>
+        
+        <view class="particulars-img" wx:for="{{4}}">
+            <image class="img3" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg"/>          
+        </view>
+    </view>
+</view>
+
+<view class="space"></view> 
 
 <view class="bottom-box" >
     <view class="index" >

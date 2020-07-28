@@ -23,9 +23,175 @@
     /* background-color: turquoise; */
 }
 
-.bos{
-    height: 1000rpx;
-    /* background-color: darkred; */
+.box3{
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+    margin-top: 20rpx;
+    border-bottom: #E9E9E9 solid 1rpx;
+}
+
+.money-box{
+    width: 80%;
+    display: flex;
+    border-right: #E9E9E9 solid 1rpx;
+
+    /* background-color: cyan; */
+}
+
+.money{
+    font-size: 35rpx;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 40rpx;
+    color: red;
+
+}
+
+.Collection-box{
+    width: 15%;
+    margin-right: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    /* background-color: darkgoldenrod; */
+}
+
+.Collection-img{
+    width: 50%;
+    height: 40%;
+    margin-top: 20rpx;
+    display: flex;
+    /* background-color:greenyellow; */
+
+}
+
+.img2{
+    width: 100%;
+    height: 100%;
+    /* background-color: grey; */
+}
+
+.Collection-text{
+    margin-bottom: 40rpx;
+}
+
+.box4{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #F9F9F9;
+}
+
+.parameter{
+    width: 100%;
+    margin-top: 20rpx;
+    background-color: #fff;
+}
+
+.boxx{
+    width: 90%;
+    display: flex;
+    margin-left: 40rpx;
+    border-bottom: #E9E9E9 dotted 1rpx;
+    color: #959595;
+}
+
+.parameter-text{
+    width: 100%;
+    font-size: 35rpx;
+    display: flex;
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+    color: #000;
+}
+
+.text{
+    width: 70%;
+    display: flex;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    color: #000;
+}
+
+.fabric{
+    width: 30%;
+    display: flex;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.component{
+    width: 30%;
+    display: flex;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.weight{
+    width: 30%;
+    display: flex;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.instructions{
+    width: 30%;
+    display: flex;
+    margin-top: 30rpx;
+    margin-bottom: 40rpx;
+}
+
+
+
+
+
+.particulars{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.boxxx{
+    width: 100%;
+    display: flex;
+}
+
+.particulars-text{
+    width: 100%;
+    font-size: 35rpx;
+    display: flex;
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+    margin-left: 40rpx;
+    color: #000;
+}
+
+.particulars-img{
+    width: 90%;
+    height: 600rpx;
+    margin-top: 20rpx;
+    /* border: firebrick solid 1rpx; */
+}
+
+.img3{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+.space{
+    width: 100%;
+    height: 100rpx;
+    background-color: #fff;
 }
 
 .bottom-box{

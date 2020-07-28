@@ -2,8 +2,8 @@
   "could": true,
 
   "pages": [
-    "pages/clothes/clothes",
     "pages/clothes_detail/clothes_detail", 
+    "pages/clothes/clothes",
     "pages/clothes_list/clothes_list",
     "pages/clothes_type/clothes_type",
     "pages/index/index",
