@@ -27,6 +27,33 @@ Page({
         id:4,
         src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
       },
+    ],
+    parameter:[
+      {
+        id:0,
+        text1:'面料',
+        text2:'黄胜锋大傻子'
+      },
+      {
+        id:1,
+        text1:'成分',
+        text2:'黄胜锋大傻子'
+      },
+      {
+        id:2,
+        text1:'克重',
+        text2:'黄胜锋大傻子'
+      },
+      {
+        id:3,
+        text1:'面料',
+        text2:'黄胜锋大傻子'
+      },
+      {
+        id:4,
+        text1:'成分',
+        text2:'黄胜锋大傻子黄胜锋大傻子黄胜锋大傻子黄胜锋大傻子'
+      },
     ]
   },
 
@@ -34,6 +61,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
 
   },
 

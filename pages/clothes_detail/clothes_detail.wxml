@@ -40,38 +40,14 @@
                 商品参数
             </view>
         </view>
-        <view class="boxx" >
-            <view class="fabric" >
-                面料
+        <view class="boxx" wx:for="{{parameter}}">
+            <view class="boxx1" >
+                {{item.text1}}
             </view>
             <view class="text">
-                法国海军的经典风格和释放
+                {{item.text2}}
             </view>
-        </view>
-        <view class="boxx" >
-            <view class="component" >
-                成分
-            </view>
-            <view class="text">
-                法国海军的经典风格和释放
-            </view>
-        </view>
-        <view class="boxx" >
-            <view class="weight" >
-                克重
-            </view>
-            <view class="text">
-                法国海军的经典风格和释放
-            </view>
-        </view>
-        <view class="boxx" >
-            <view class="instructions" >
-                特殊说明
-            </view>
-            <view class="text">
-                法国海军的经典风格和释放hsfdgadsgafDFsfgh
-            </view>
-        </view> 
+        </view>  
     </view>
 
     <view class="particulars">

@@ -28,13 +28,24 @@
   /* border: springgreen solid; */
 }
 
-.animation-button{
+.animation-button1{
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
   font-size: 30rpx;
   display: flex;
+  /* border: deeppink solid 1rpx; */
+}
+
+.animation-button2{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 30rpx;
+  display: flex;
+  color: red;
   /* border: deeppink solid 1rpx; */
 }
 
@@ -52,7 +63,6 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
     /* margin-top:80rpx; */
@@ -71,10 +81,9 @@
 .animation-element {
     width: 85%;
     height: 100%;
-    margin-left: 15%;
     background-color: #ffffff; 
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     right: -570rpx;
     top: 0; 
   }
@@ -216,7 +225,7 @@
 }
 
 .clothe-name{
-    height: 80rpx;
+
     margin-top: 15rpx;
     margin-left: 30rpx;
     margin-right: 30rpx;
@@ -229,7 +238,8 @@
     height: 60rpx;
     margin-left: 30rpx;
     line-height: 65rpx;
+    width: 100%;
     font-size: 30rpx;
     color: red;
-    /* background-color: violet; */
+    background-color: white;
 }

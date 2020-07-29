@@ -1,36 +1,37 @@
 <view class="box">
     <view class="search-text-box">
         <view class="search-text">
-            polo
+            {{word}}
         </view>
     </view>
 </view>
 
- <view class="box1">
-    <view class="animation-button" bindtap="translate1">综合</view>
+<view class="box1">
+    <view class="animation-button1" bindtap="translate1">综合</view>
     <view class="float1 {{isRuleTrue1?'isRuleShow':'isRuleHide'}}" bindtap="success1" >
         <view class="animation-element1" animation="{{animation1}}">
             <view class="Comprehensive1" >
-                <view class="Comprehensive2" >
+                <view class="Comprehensive2" bindtap='comprehensive'>
                     综合
                 </view>
             </view>
             <view class="Comprehensive1" >
-                <view class="Comprehensive2" >
+                <view class="Comprehensive2" bindtap='grade_down'>
                     价格降序
                 </view>
             </view>
             <view class="Comprehensive1" >
-                <view class="Comprehensive2" >
+                <view class="Comprehensive2" bindtap='grade_up'>
                     价格升序
                 </view>
             </view>
         </view>
     </view>
 
-    <view class="animation-button" bindtap="translate2">筛选</view>
-    <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}}" bindtap="success">
-        <view class="animation-element" animation="{{animation}}">
+    <view class="animation-button2" bindtap="translate2">筛选</view>
+    <view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}}"
+    bindtap="success">
+        <view class="animation-element" animation="{{animation}}" bindtap="success2">
             <view class="screen-box">
                 <scroll-view class="scroll-view-screen-box" scroll-y="ture">
                     <view class="box2">
@@ -40,7 +41,7 @@
                         <view class="all" bindtap="tryDriver" style="background:{{background}};">
                             全部
                         </view>
-                        <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}">
+                        <view class="type" bindtap="tryDriver" style="background:{{background}};" wx:for="{{Fabric}}" wx:if="{{item.id>0}}" data-text="{{item.text}}" data-id="{{item.id}}">
                             {{item.text}}
                         </view>
                     </view>
@@ -109,13 +110,13 @@
 <view class="box3">
     <view class="clothe-box" wx:for="{{clothes}}" wx:key="id" bindtap="click">
         <view class="clothe-img-box" >
-            <image class="clothe-img" src="{{item.src}}" /> 
+            <image class="clothe-img" src="{{item.img_src}}" /> 
         </view>
         <view class="clothe-name" >
-            {{item.name}}
+            {{item.title}}
         </view>
         <view class="clothe-money" >
-            {{item.money}}
+            ￥{{item.prices}}
         </view>
     </view>
 </view>

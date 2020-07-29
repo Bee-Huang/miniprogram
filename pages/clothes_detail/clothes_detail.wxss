@@ -115,37 +115,12 @@
     color: #000;
 }
 
-.fabric{
+.boxx1{
     width: 30%;
     display: flex;
     margin-top: 30rpx;
     margin-bottom: 30rpx;
 }
-
-.component{
-    width: 30%;
-    display: flex;
-    margin-top: 30rpx;
-    margin-bottom: 30rpx;
-}
-
-.weight{
-    width: 30%;
-    display: flex;
-    margin-top: 30rpx;
-    margin-bottom: 30rpx;
-}
-
-.instructions{
-    width: 30%;
-    display: flex;
-    margin-top: 30rpx;
-    margin-bottom: 40rpx;
-}
-
-
-
-
 
 .particulars{
     width: 100%;
