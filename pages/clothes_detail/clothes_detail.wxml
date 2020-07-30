@@ -33,7 +33,7 @@
     </view>
 </view>
 
-<view class="box4" >
+<view class="box4">
     <view class="parameter">
         <view class="boxx" >
             <view class="parameter-text" >
@@ -65,7 +65,7 @@
 
 <view class="space"></view> 
 
-<view class="bottom-box" >
+<view class="bottom-box">
     <view class="index" >
         <view class="img">
             <image class="img1" src="../../icon/home.png"/>
@@ -90,6 +90,5 @@
         <view class="text2" >
             立即购买
         </view>
-    </view>
-    
+    </view>  
 </view>

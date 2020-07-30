@@ -1,4 +1,4 @@
-<view class="box">
+<view class="box" >
     <view class="search-text-box">
         <view class="search-text">
             {{word}}
@@ -6,7 +6,7 @@
     </view>
 </view>
 
-<view class="box1">
+<view class="box1" >
     <view class="animation-button1" bindtap="translate1">综合</view>
     <view class="float1 {{isRuleTrue1?'isRuleShow':'isRuleHide'}}" bindtap="success1" >
         <view class="animation-element1" animation="{{animation1}}">

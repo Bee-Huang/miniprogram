@@ -239,7 +239,7 @@ tryDriver: function (e) {
     const db = wx.cloud.database()
     db.collection('list')
     .where({
-      keyword: 'T恤,圆领短袖'
+      keyword: options.word
     })
     .limit(20)
     .get({

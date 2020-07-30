@@ -79,11 +79,11 @@ Page({
   })
   wx.navigateTo({
     url: '/pages/clothes_list/clothes_list?word='+this.data.user_keywords,
-    success: (result)=>{
+    // success: (result)=>{
       
-    },
-    fail: ()=>{},
-    complete: ()=>{}
+    // },
+    // fail: ()=>{},
+    // complete: ()=>{}
   });
   },
 
@@ -97,16 +97,15 @@ Page({
   click_keyword:function(e){
     var index=e.currentTarget.dataset.id
     this.data.user_keywords=this.data.keywords[index].name
-    
     console.log(this.data.user_keywords)
      this.data.hot_keywords.push({
         id:1,
         name: this.data.user_keywords
       })
     this.setData({
+      hot_keywords:this.data.hot_keywords,
       user_keywords:this.data.keywords[index].name,
     })
-    console.log(this.data.hot_keywords.length);
     wx.navigateTo({
       url: '/pages/clothes_list/clothes_list?word='+this.data.user_keywords,
     });

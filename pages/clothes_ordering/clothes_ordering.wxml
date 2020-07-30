@@ -1,0 +1,55 @@
+<view class="box1">
+    <view class="clothe_img_box">
+        <image class="clothe_img" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" />
+    </view>
+    <view class="clothe_text_box">
+        <view class="clothe_text">
+            8号青年校园8号青年校园
+            8号青年校园8号青年校园
+        </view>
+        <view class="price">
+            ￥19.9
+        </view>
+    </view> 
+</view>
+
+<view class="box2">
+    <view class="color_box" wx:for="{{color}}">
+        <view class="color" style="background:{{item.color}};">            
+        </view>
+        <view class="text">
+            {{item.text}}
+        </view>  
+    </view>  
+</view>
+
+<view class="box3">
+    <view class="type">
+        <view class="size">
+            尺码
+        </view>
+        <view class="number">
+            购买数量
+        </view>     
+    </view>
+    <view class="data" wx:for="{{data}}">
+        <view class="size_data">
+            {{item.size_data}}
+        </view>
+        <view class="reduce">
+            <image class="reduce_img" src="../../icon/jian.png" />
+              
+        </view>
+        <view class="number_data_box">
+            <view class="number_data" >
+                {{item.number_data}}
+            </view>
+            
+        </view>
+        <view class="add">
+            <image class="add_img" src="../../icon/jia.png" />
+        </view>  
+    </view>
+</view>
+  
+  
