@@ -2,6 +2,7 @@
   "could": true,
 
   "pages": [
+    "pages/clothes_place-order/clothes_place-order",  
     "pages/clothes_ordering/clothes_ordering", 
     "pages/clothes_detail/clothes_detail", 
     "pages/clothes_list/clothes_list",

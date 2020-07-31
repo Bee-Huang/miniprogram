@@ -1,0 +1,23 @@
+<view class="box1" >
+    <view class="box1.1" >
+        <view class="img_box" >
+            <image class="" src="" />
+        </view>
+    </view>
+    <view class="box1.2" >
+        <view class="clothe_text" >
+            
+        </view>
+        <view class="color_size_number" >
+            
+        </view>
+    </view>
+    <view class="box1.3" >
+        <view class="number" >
+            
+        </view>
+        <view class="money" >
+            
+        </view>
+    </view>
+</view>

@@ -4,17 +4,17 @@
     </view>
     <view class="clothe_text_box">
         <view class="clothe_text">
-            8号青年校园8号青年校园
+            8号青年校园8号青年校园 
             8号青年校园8号青年校园
         </view>
         <view class="price">
-            ￥19.9
+            ￥{{price}}
         </view>
     </view> 
 </view>
 
 <view class="box2">
-    <view class="color_box" wx:for="{{color}}">
+    <view class="{{item.id==is_select_color?'color_box_press':'color_box'}}" wx:for="{{color}}" bindtap="color_click"  data-id="{{item.id}}">
         <view class="color" style="background:{{item.color}};">            
         </view>
         <view class="text">
@@ -36,20 +36,35 @@
         <view class="size_data">
             {{item.size_data}}
         </view>
-        <view class="reduce">
-            <image class="reduce_img" src="../../icon/jian.png" />
-              
+        <view class="reduce"  >
+            <image class="reduce_img" src="../../icon/jian.png" bindtap="reduce_click" data-id="{{item.id}}" data-size="{{item.size_data}}" data-number="{{item.number_data}}"/>
         </view>
         <view class="number_data_box">
             <view class="number_data" >
                 {{item.number_data}}
             </view>
-            
         </view>
-        <view class="add">
-            <image class="add_img" src="../../icon/jia.png" />
+        <view class="add" >
+            <image class="add_img" src="../../icon/jia.png" bindtap="add_click" data-id="{{item.id}}" data-size="{{item.size_data}}" data-number="{{item.number_data}}"/>
         </view>  
     </view>
 </view>
   
-  
+  <view class="box4" >
+      <view class="box4-1" >
+          <view class="number" >
+              {{all_number}}件：  
+          </view>
+          <view class="money">
+              ￥{{all_money}}
+          </view>
+      </view>
+      <view class="box4-2" >
+          <view class="buy" >
+              立即购买
+          </view>
+          
+      </view>
+
+      
+  </view>
