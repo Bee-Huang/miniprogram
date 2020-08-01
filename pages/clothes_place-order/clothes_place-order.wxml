@@ -1,23 +1,80 @@
 <view class="box1" >
-    <view class="box1.1" >
-        <view class="img_box" >
-            <image class="" src="" />
+    <view class="box1_1" >
+        <view class="box1_1_1" >
+            <view class="img_box" >
+                <image class="img" mode="widthFix" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" />
+            </view>
+        </view>
+        <view class="box1_1_2" >
+            <view class="clothe_text" >
+                JD76000男款24支180g纯棉圆领短袖T恤
+            </view>
+            <view class="color_size_number" >
+                <view class="color_box" >
+                    <view class="color" >
+                        {{color}}：
+                    </view>
+                </view>
+                <view class="size_number_box">
+                    <view class="size_number" wx:for="{{6}}">
+                        {{size}}-{{number}}
+                    </view>  
+                </view>
+            </view>
+        </view>
+        <view class="box1_1_3" >
+            <view class="number" >
+                x{{all_number}}件
+            </view>
+            <view class="money" >
+                ￥{{all_money}}
+            </view>
+        </view>
+    </view> 
+</view>
+
+<view class="box2">
+    <view class="box2_1">
+        <view class="box2_1_1" >
+            提货方式
+        </view>
+        <view class="box2_1_2" >
+            自提
         </view>
     </view>
-    <view class="box1.2" >
-        <view class="clothe_text" >
-            
+    <view class="box2_2" >
+        <view class="box2_2_1" >
+            商品合计
         </view>
-        <view class="color_size_number" >
-            
+        <view class="number1" >
+            x{{all_number}}件  合计：
+        </view>
+        <view class="money1" >
+            {{all_money}}
         </view>
     </view>
-    <view class="box1.3" >
-        <view class="number" >
-            
+    <view class="box2_3">
+        <view class="box2_3_1" >
+            备注信息
         </view>
-        <view class="money" >
-            
+        <view class="box2_3_2" >
+            <input type="text" placeholder="            请输入备注信息" maxlength="300" bindinput="input_text"/>
+        </view>
+    </view>
+</view>
+
+<view class="box3">
+    <view class="box3_1" >
+        <view class="box3_1_1" >
+            总计：
+        </view>
+        <view class="box3_1_2" >
+            ￥{{all_money}}
+        </view>
+    </view>
+    <view class="box3_2" >
+        <view class="box3_2_1" >
+            提交
         </view>
     </view>
 </view>

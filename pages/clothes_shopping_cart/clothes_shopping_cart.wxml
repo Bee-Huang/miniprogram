@@ -1,0 +1,42 @@
+<view class="box1" >
+    <view class="box1_1" >
+        <view class="select" >
+            
+        </view>
+    </view>
+    <view class="box1_2" >
+        <view class="box1_2_1" >
+            <view class="img_box" >
+                <image class="img" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" mode="widthFix"/>   
+            </view>
+            <view class="text_box" >
+                <view class="text" >
+                    JD76000男款24支180g纯棉圆领短袖T恤
+                </view>
+            </view>
+        </view>
+        <view class="fengexian" >
+            
+        </view>
+        <view class="box1_2_2" >
+            <view class="box1_2_2_1" >
+                <view class="color_text" >
+                    红色
+                </view>
+            </view>
+            <view class="box1_2_2_2" >
+                <view class="box1_2_2_2_2_1" wx:for="{{2}}">
+                    <view class="size" >
+                        S
+                    </view>
+                    <view class="input_box" >
+                        <input type="number"/>
+                    </view>
+                    <view class="money" >
+                        ￥19.9
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

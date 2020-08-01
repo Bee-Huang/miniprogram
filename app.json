@@ -2,11 +2,12 @@
   "could": true,
 
   "pages": [
+    "pages/clothes_shopping_cart/clothes_shopping_cart",  
     "pages/clothes_place-order/clothes_place-order",  
     "pages/clothes_ordering/clothes_ordering", 
     "pages/clothes_detail/clothes_detail", 
     "pages/clothes_list/clothes_list",
-    "pages/search/search",
+    "pages/search/search", 
  
   
     "pages/clothes/clothes",

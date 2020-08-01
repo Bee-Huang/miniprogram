@@ -1,0 +1,120 @@
+.box1{
+    width: 100%;
+    display: flex;
+    margin-top: 10rpx;
+}
+
+.box1_1{
+    width: 15%;
+    display: flex;
+    /* background-color: darkred; */
+}
+
+.select{
+    width: 40%;
+    height: 45rpx;
+    border-radius: 50%;
+    margin: auto auto auto auto;
+    border: #92CDFD solid 1rpx;
+    /* background-color: darksalmon; */
+}
+
+.box1_2{
+    width: 80%;
+    border: #DFDFDF solid 5rpx;
+    border-radius: 20rpx;
+    /* background-color: darkseagreen; */
+}
+
+.box1_2_1{
+    width: 100%;
+    display: flex;
+    margin-top: 30rpx;
+    /* background-color: darkslateblue; */
+}
+
+.img_box{
+    width: 30%;
+    display: flex;
+    /* background-color: darkslateblue; */
+}
+
+.img{
+    width: 80%;
+    margin: auto auto auto auto;
+}
+
+.text_box{
+    width: 70%;
+    display: flex;
+}
+
+.text{
+    margin: auto auto auto auto;
+}
+
+.fengexian{
+    width: 90%;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    margin-left: 30rpx;
+    border: #DFDFDF solid 1rpx;
+}
+
+.box1_2_2{
+    width: 100%;
+    display: flex;
+    margin-bottom: 50rpx;
+    /* background-color: darkturquoise; */
+}
+
+.box1_2_2_1{
+    width: 30%;
+    display: flex;
+    /* background-color: deeppink; */
+}
+
+.color_text{
+    margin: auto auto auto auto;
+    color: #959595;
+    /* background-color: dimgray; */
+}
+
+.box1_2_2_2{
+    width: 70%;
+    /* background-color: dodgerblue; */
+
+}
+
+.box1_2_2_2_2_1{
+    width: 100%;
+    display: flex;
+    margin-top: 5rpx;
+    margin-bottom: 5rpx;
+    /* background-color: firebrick; */
+}
+
+.size{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50rpx;
+    color: #6E6E6E;
+    /* background-color: forestgreen; */
+}
+
+.input_box{
+    width: 100rpx;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 140rpx;
+    color: #6E6E6E;
+    border: #DFDFDF solid 1rpx;
+    /* background-color: gold; */
+}
+
+.money{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #6E6E6E;
+    /* background-color: greenyellow; */
+}

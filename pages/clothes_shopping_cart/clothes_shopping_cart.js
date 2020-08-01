@@ -1,23 +1,11 @@
-// pages/clothes_place-order/clothes_place-order.js
+// pages/clothes_shopping_cart/clothes_shopping_cart.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    color:'红色',
-    size:'S',
-    number:10,
-    all_number:10,
-    all_money:19.90,
-    input_text:''
-  },
 
-  input_text:function(e){
-    this.setData({
-      input_terxt:e.detail.value
-    })
-  
   },
 
   /**

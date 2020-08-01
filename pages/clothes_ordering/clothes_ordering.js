@@ -113,10 +113,21 @@ Page({
     for(var i=0;i<=array.length;i++){
       if(i==id){
         if(array[i].number_data==0){
+          // wx.showModal({
+          //   title: '提示',
+          //   content: '这是一个模态弹窗',
+          //   success (res) {
+          //     if (res.confirm) {
+          //       console.log('用户点击确定')
+          //     } else if (res.cancel) {
+          //       console.log('用户点击取消')
+          //     }
+          //   }
+          // })
           wx.showToast({
             title: '一件都没有，减个屁啊',
             icon: 'none',
-            duration: 2000
+            duration: 1000
           })
         }
         else{
