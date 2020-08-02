@@ -2,23 +2,20 @@
   "could": true,
 
   "pages": [
+
+    "pages/order_details/order_details",  
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/search/search", 
     "pages/clothes_shopping_cart/clothes_shopping_cart",  
     "pages/clothes_place-order/clothes_place-order",  
     "pages/clothes_ordering/clothes_ordering", 
     "pages/clothes_detail/clothes_detail", 
     "pages/clothes_list/clothes_list",
-    "pages/search/search", 
- 
-  
     "pages/clothes/clothes",
-    
     "pages/clothes_type/clothes_type",
     "pages/index/index",
-    
-    "pages/mine/mine",
-    "pages/order/order",
     "pages/other/other"
-    
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -39,10 +36,10 @@
         "selectedIconPath": "icon/shouye.png"
       },
       {
-        "pagePath": "pages/order/order",
-        "text": "订单",
-        "iconPath": "icon/wendang_1.png",
-        "selectedIconPath": "icon/wendang.png"
+        "pagePath": "pages/clothes_shopping_cart/clothes_shopping_cart",
+        "text": "购物车",
+        "iconPath": "icon/cart_1.png",
+        "selectedIconPath": "icon/cart.png"
       },
       {
         "pagePath": "pages/mine/mine",

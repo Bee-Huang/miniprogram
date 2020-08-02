@@ -7,7 +7,6 @@
 .box1_1{
     width: 15%;
     display: flex;
-    /* background-color: darkred; */
 }
 
 .select{
@@ -15,28 +14,24 @@
     height: 45rpx;
     border-radius: 50%;
     margin: auto auto auto auto;
-    border: #92CDFD solid 1rpx;
-    /* background-color: darksalmon; */
+    border: #92CDFD solid 3.5rpx;
 }
 
 .box1_2{
     width: 80%;
     border: #DFDFDF solid 5rpx;
     border-radius: 20rpx;
-    /* background-color: darkseagreen; */
 }
 
 .box1_2_1{
     width: 100%;
     display: flex;
     margin-top: 30rpx;
-    /* background-color: darkslateblue; */
 }
 
 .img_box{
     width: 30%;
     display: flex;
-    /* background-color: darkslateblue; */
 }
 
 .img{
@@ -65,25 +60,20 @@
     width: 100%;
     display: flex;
     margin-bottom: 50rpx;
-    /* background-color: darkturquoise; */
 }
 
 .box1_2_2_1{
     width: 30%;
     display: flex;
-    /* background-color: deeppink; */
 }
 
 .color_text{
     margin: auto auto auto auto;
     color: #959595;
-    /* background-color: dimgray; */
 }
 
 .box1_2_2_2{
     width: 70%;
-    /* background-color: dodgerblue; */
-
 }
 
 .box1_2_2_2_2_1{
@@ -91,7 +81,6 @@
     display: flex;
     margin-top: 5rpx;
     margin-bottom: 5rpx;
-    /* background-color: firebrick; */
 }
 
 .size{
@@ -99,22 +88,71 @@
     margin-bottom: auto;
     margin-left: 50rpx;
     color: #6E6E6E;
-    /* background-color: forestgreen; */
 }
 
 .input_box{
     width: 100rpx;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 140rpx;
+    margin-left: 100rpx;
     color: #6E6E6E;
     border: #DFDFDF solid 1rpx;
-    /* background-color: gold; */
 }
 
 .money{
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 30rpx;
     color: #6E6E6E;
-    /* background-color: greenyellow; */
+}
+
+.none{
+    width: 100%;
+    height: 100rpx;
+    margin-top: 10rpx;
+}
+
+.box2{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    border-top: #DFDFDF solid 1rpx;
+}
+
+.box2_1{
+    width: 45rpx;
+    height: 45rpx;
+    border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 30rpx;
+    border: #92CDFD solid 1rpx;
+}
+
+.box2_2{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 121rpx;
+}
+.box2_3{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: red;
+}
+
+.box2_4{
+    width: 32%;
+    height: 100%;
+    display: flex;
+    margin-left: 103rpx;
+    background-color: #61B5FB;
+}
+
+.box2_4_1{
+    margin: auto auto auto auto;
+    color: #fff;
 }

@@ -1,56 +1,18 @@
-// pages/order/order.js
+// pages/order_details/order_details.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      openid:'',
-      is_select_color:-1,
-      order_text:[
-        {
-          id:0,
-          text:'全部'
-        },
-        {
-          id:1,
-          text:'已接单'
-        },
-        {
-          id:2,
-          text:'配货中'
-        },
-        {
-          id:3,
-          text:'待发货'
-        },
-        {
-          id:4,
-          text:'待收货'
-        },
-        {
-          id:5,
-          text:'已收货'
-        },
-        
-      ]
-  },
 
-  click:function(e){
-    console.log(e.currentTarget.dataset.id)
-    this.setData({
-      is_select_color:e.currentTarget.dataset.id
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var app=getApp();
-    this.setData({
-        openid:app.globalData.openid
-    })
+
   },
 
   /**

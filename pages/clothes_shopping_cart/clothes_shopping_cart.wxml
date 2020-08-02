@@ -1,4 +1,4 @@
-<view class="box1" >
+<view class="box1" wx:for="{{4}}">
     <view class="box1_1" >
         <view class="select" >
             
@@ -37,6 +37,27 @@
                     </view>
                 </view>
             </view>
+        </view>
+    </view>
+</view>
+
+<view class="none" >
+    
+</view>
+
+<view class="box2" >
+    <view class="box2_1" >
+        
+    </view>
+    <view class="box2_2" >
+        合计：
+    </view>
+    <view class="box2_3" >
+        ￥199.9
+    </view>
+    <view class="box2_4" >
+        <view class="box2_4_1">
+            下单(2件)
         </view>
     </view>
 </view>
