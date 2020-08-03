@@ -5,6 +5,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+    color:'红色',
+    size:'S',
+    number:10,
+    all_number:10,
+    all_money:19.90,
+    imgUrl:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/12.jpg'
+  },
+
+  click:function(){
+    wx.navigateTo({
+      url: '../clothes_ordering/clothes_ordering',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+
+  click1:function(e){
+    console.log(e)
+    var imgUrl = this.data.imgUrl;
+    wx.previewImage({
+      urls: [imgUrl], //需要预览的图片http链接列表，注意是数组
+      current: '', // 当前显示图片的http链接，默认是第一个
+    })
 
   },
 

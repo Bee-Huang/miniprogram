@@ -27,7 +27,7 @@
             <image class="img2" src="../../icon/shoucang.png"/>     
         </view>
         <view class="Collection-text" >
-            收藏
+           收藏
         </view>
         
     </view>

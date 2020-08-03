@@ -46,7 +46,7 @@
             <view class="box2_3_2" >
                 ￥19.9
             </view>
-            <view class="box2_3_3" >
+            <view class="box2_3_3" bindtap='click1'>
                 查看详情
             </view>
         </view>

@@ -52,7 +52,7 @@
   
   <view class="box4" >
       <view class="box4-1" >
-          <view class="number" >
+          <view class="number1" >
               {{all_number}}件：  
           </view>
           <view class="money">

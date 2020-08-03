@@ -1,1 +1,98 @@
+<view class="box1" >
+    <view class="box1_1" >
+        <image class="img1" src="../../images/12.jpg"  />
+    </view>
+    <view class="box1_2" >
+        黄胜锋
+    </view>
+    <view class="box1_3">
+        代理已接单
+    </view>
+</view>
 
+<view class="box2" bindtap='click'>
+    <view class="box2_1" >
+        设计流程
+    </view>
+    <view class="box2_2" >
+        <image class="img2" src="../../icon/fanhui_1.png" />  
+    </view>
+</view>
+
+<view class="_box1" >
+    <view class="_box1_1" >
+        <view class="_box1_1_1" >
+            <view class="_img_box" >
+                <image class="_img" mode="widthFix" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" />
+            </view>
+        </view>
+        <view class="_box1_1_2" >
+            <view class="_clothe_text" >
+                JD76000男款24支180g纯棉圆领短袖T恤
+            </view>
+            <view class="_color_size_number" >
+                <view class="_color_box" >
+                    <view class="_color" >
+                        {{color}}：
+                    </view>
+                </view>
+                <view class="_size_number_box">
+                    <view class="_size_number" wx:for="{{6}}">
+                        {{size}}-{{number}}
+                    </view>  
+                </view>
+            </view>
+        </view>
+        <view class="_box1_1_3" >
+            <view class="_number" >
+                x{{all_number}}件
+            </view>
+            <view class="_money" >
+                ￥{{all_money}}
+            </view>
+        </view>
+    </view> 
+    <view class="_box1_2" >
+        <view class="_box1_2_1" >
+            效果图
+        </view>
+        <view class="_box1_2_2" wx:for="{{4}}">
+            <image class="_img1" src="{{imgUrl}}" bindtap='click1'/>  
+        </view>
+    </view>
+</view>
+
+<view class="box3" >
+    <view class="box3_1" >
+        8号青年 12345678910
+    </view>
+    <view class="box3_2" >
+        广东省 茂名市 化州市 鉴江开发区 橘城北路68号眼之悦眼镜店
+    </view>
+</view>
+<view class="box4" >
+    <view class="box4_1" >
+        <view class="box4_1_1" >
+            订单号：
+        </view>
+        <view class="box4_1_2" >
+            13579246810
+        </view>
+    </view>
+    <view class="box4_1" >
+        <view class="box4_1_1" >
+            下单时间：
+        </view>
+        <view class="box4_1_2" >
+            2020-08-03
+        </view>
+    </view>
+    <view class="box4_1" >
+        <view class="box4_1_1" >
+            提货类型
+        </view>
+        <view class="box4_1_2" >
+            送货上门
+        </view>
+    </view>
+</view>

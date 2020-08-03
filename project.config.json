@@ -58,6 +58,13 @@
 			"list": []
 		},
 		"gamePlugin": {
+<<<<<<< HEAD
+=======
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+>>>>>>> 小程序2
 			"current": -1,
 			"list": []
 		},

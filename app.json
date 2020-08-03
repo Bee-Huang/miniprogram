@@ -1,27 +1,37 @@
 {
   "could": true,
 
+<<<<<<< HEAD
   "pages": [
     "pages/order/order",
     "pages/order_details/order_details",  
     "pages/mine/mine",
     "pages/search/search",
-    "pages/clothes_shopping_cart/clothes_shopping_cart",  
-    "pages/clothes_place-order/clothes_place-order",  
-    "pages/clothes_ordering/clothes_ordering", 
-    "pages/clothes_detail/clothes_detail", 
-    "pages/clothes_list/clothes_list",
-    "pages/clothes/clothes",
+=======
+  "pages": [  
+     "pages/clothes_ordering/clothes_ordering", 
+    "pages/order_details/order_details", 
+    "pages/other/other",
     "pages/clothes_type/clothes_type",
+    "pages/clothes/clothes",
+    "pages/clothes_list/clothes_list",
+    "pages/clothes_detail/clothes_detail", 
+
+    "pages/clothes_place-order/clothes_place-order", 
+>>>>>>> 小程序2
+    "pages/clothes_shopping_cart/clothes_shopping_cart",  
+    "pages/search/search", 
     "pages/index/index",
-    "pages/other/other"
+    "pages/order/order",
+    "pages/mine/mine"
+    
+   
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#87CEEB",
     "navigationBarTitleText": "8号青年校园",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

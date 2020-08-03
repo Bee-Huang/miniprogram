@@ -2,19 +2,22 @@
     width: 100%;
     height: 100rpx;
     display: flex;
+    justify-content: center;
 }
 
 .box1_1{
     height: 60rpx;
+    font-size: 30rpx;
     margin-top: 20rpx;
-    margin-left: 30rpx;
+    margin-left: 17.5rpx;
+    margin-right: 17.5rpx;
 }
 
 .box1_1_press{
     height: 60rpx;
     font-weight: bold;
     margin-top: 20rpx;
-    margin-left: 30rpx;
+    margin-left: 35rpx;
     color: #00BFFF;
     border-bottom: #00BFFF solid 5rpx;
 }
@@ -38,6 +41,7 @@
 }
 
 .box2_1_1{
+    font-size: 35rpx;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 30rpx;
@@ -45,9 +49,10 @@
 }
 
 .box2_1_2{
+    font-size: 35rpx;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 390rpx;
+    margin-left: 350rpx;
     color: red;
     /* background-color: darkmagenta; */
 }
@@ -110,17 +115,19 @@
     width: 16%;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 35rpx;
+    margin-left: 15rpx;
     /* background-color: forestgreen; */
 }
 
 .box2_2_3_1{
+    font-size: 32rpx;
     margin-top: auto;
     margin-left: 35rpx;
     /* background-color: fuchsia; */
 }
 
 .box2_2_3_2{
+    font-size: 32rpx;
     margin-top: 10rpx;
     margin-bottom: auto;
     margin-left: 5rpx;
@@ -131,6 +138,7 @@
 .box2_3{
     width: 100%;
     height: 100rpx;
+    font-size: 35rpx;
     display: flex;
     margin-top: 20rpx;
     border-top: #F1F0F0 solid 3rpx;
@@ -138,6 +146,7 @@
 }
 
 .box2_3_1{
+    
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 60rpx;
