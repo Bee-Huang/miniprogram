@@ -78,7 +78,7 @@ Page({
       hot_keywords:this.data.hot_keywords,
   })
   wx.navigateTo({
-    url: '/pages/clothes_list/clothes_list?word='+this.data.user_keywords,
+    url: '/pages/clothes_list/clothes_list?type=0&word='+this.data.user_keywords,
     // success: (result)=>{
       
     // },

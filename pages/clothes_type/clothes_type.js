@@ -17,6 +17,8 @@ Page({
     info2:[]
    },
 
+
+
    switchRightTab:function(e){
      console.log(e);
      console.log(e.currentTarget.dataset.id);
@@ -53,6 +55,15 @@ Page({
 
    },
 
+   
+
+   moreBindtap:function(e){
+      var str=e.currentTarget.dataset.type;
+      wx.navigateTo({
+        url: '../clothes_list/clothes_list?type=1&word='+str
+      })
+   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -62,11 +73,12 @@ Page({
       this.setData({
         nav_id:options.index
       })
-      if(options.index==define){
+      if(options.index==undefined){
         this.setData({
           nav_id:0
         })
       }
+      console.log(this.data.nav_id);
       let small_type=this.data.type_small[this.data.nav_id];
       var i=0;
       var array=[]

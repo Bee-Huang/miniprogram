@@ -12,7 +12,7 @@
   <view class="list" wx:for="{{info2}}"  wx:for-item="info">
     <view class="title_view">
         <view class="title">{{info.type}}</view>
-        <view class="more_view">
+        <view class="more_view" data-type="{{info.type}}" bindtap="moreBindtap">
           <view class="more">更多</view>
         </view>
     </view>

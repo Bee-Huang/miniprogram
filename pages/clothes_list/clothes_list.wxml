@@ -1,5 +1,6 @@
+<view class="content">
 <view class="box" >
-    <view class="search-text-box">
+    <view class="search-text-box" bindtap="backsearch">
         <view class="search-text">
             {{word}}
         </view>
@@ -107,16 +108,29 @@
     </view>
 </view>
 
-<view class="box3">
-    <view class="clothe-box" wx:for="{{clothes}}" wx:key="id" bindtap="click">
-        <view class="clothe-img-box" >
-            <image class="clothe-img" src="{{item.img_src}}" /> 
-        </view>
-        <view class="clothe-name" >
-            {{item.title}}
-        </view>
-        <view class="clothe-money" >
-            ￥{{item.prices}}
+<scroll-view class="box3" scroll-y="true">
+    <view class="box3">
+        <view class="clothe-box" wx:for="{{clothes}}" wx:key="id" bindtap="click">
+            <view class="clothe-img-box" >
+                <image class="clothe-img" src="{{item.img_src}}" /> 
+            </view>
+            <view class="clothe-name" >
+                {{item.title}}
+            </view>
+            <view class="clothe-money" >
+                ￥{{item.prices}}
+            </view>
         </view>
     </view>
+</scroll-view>
+
+<view class="pagecontorl">
+    <button wx:if="{{hasbefore}}" class="before" bindtap="before">
+       上一页
+    </button>
+    <button class="next" bindtap="nextpage">
+       下一页
+    </button>
+
+</view>
 </view>

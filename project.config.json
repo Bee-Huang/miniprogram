@@ -20,15 +20,15 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"compileHotReLoad": false,
-		"useIsolateContext": true
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.2",
@@ -49,13 +49,43 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"miniprogram": {
+		"gamePlugin": {
 			"current": -1,
 			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/clothes_type/clothes_type",
+					"pathName": "pages/clothes_type/clothes_type",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/clothes_list/clothes_list",
+					"pathName": "pages/clothes_list/clothes_list",
+					"query": "type=1&word=中袖",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }

@@ -1,13 +1,14 @@
-// pages/clothes_detail/clothes_detail.js
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     word:'',
+
+    type:-1,
     is_click:false,
-    // 面料
+    hasbefore:false,
+    upORdown:-1,
+    page:0,
     Fabric:[
         {
           id:0,
@@ -86,8 +87,324 @@ Page({
       }
     ],
     clothes:[]
+
   },
 
+  nextpage:function(){
+    var page_tmp=this.data.page+1
+    this.setData({
+      page:page_tmp,
+      hasbefore:true
+    })
+    //开始获取数据库
+    if(this.data.type==0){
+      if(this.data.upORdown==0){
+        this.database_down()
+      }else if(this.data.upORdown==1){
+        this.database_up()
+      }else{
+        this.database()
+      }
+    }else{
+      if(this.data.upORdown==0){
+        this.database_type_down()
+      }else if(this.data.upORdown==1){
+        this.database_type_up()
+      }else{
+        this.database_type()
+      }
+    }
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
+  },
+
+  before:function(){
+    if(this.data.page==0)return;
+    var page_tmp=this.data.page-1
+    this.setData({
+      page:page_tmp,
+    })
+    if(page_tmp==0){
+      this.setData({
+        hasbefore:false
+      })
+    }
+    //开始获取数据库
+    if(this.data.type==0){
+      if(this.data.upORdown==0){
+        this.database_down()
+      }else if(this.data.upORdown==1){
+        this.database_up()
+      }else{
+        this.database()
+      }
+    }else{
+      if(this.data.upORdown==0){
+        this.database_type_down()
+      }else if(this.data.upORdown==1){
+        this.database_type_up()
+      }else{
+        this.database_type()
+      }
+    }
+    wx.pageScrollTo({
+      scrollTop: 0
+    })
+  },
+
+  database_type:function(){
+    var that=this
+     const db = wx.cloud.database()
+      const _ = db.command
+      db.collection('list')
+      .where(_.or([{
+        keyword: db.RegExp({
+          regexp: '.*' + that.data.word,
+          options: 'i',
+        }),
+       }
+      ]))
+      .skip(that.data.page*20)
+      .limit(20)
+      .get({
+        success:function(res){
+          if(res.data.length==0){
+            wx.showModal({
+              title: '失败',
+              content: '无更多结果',
+              success(res) {
+                if(that.data.page==0){
+                  wx.navigateBack({
+                    delta: 0,
+                  })
+                }else{
+                  var a=that.data.page
+                  that.setData({
+                    page:a
+                  })
+                }
+              }
+             })
+          }
+          that.setData({
+            clothes:res.data
+          })
+        }
+      })
+  },
+
+  database_type_up:function(){
+    var that=this
+    const db = wx.cloud.database()
+    const _ = db.command
+    db.collection('list')
+    .where(_.or([{
+      keyword: db.RegExp({
+        regexp: '.*' + that.data.word,
+        options: 'i',
+      }),
+     }
+    ]))
+    .orderBy("prices","asc")
+    .skip(that.data.page*20)
+    .limit(20)
+    .get({
+      success:function(res){
+        if(res.data.length==0){
+          wx.showModal({
+            title: '失败',
+            content: '无更多结果',
+            success(res) {
+              if(that.data.page==0){
+                wx.navigateBack({
+                  delta: 0,
+                })
+              }else{
+                var a=that.data.page
+                that.setData({
+                  page:a
+                })
+              }
+            }
+           })
+        }
+        that.setData({
+          clothes:res.data
+        })
+      }
+    })
+  },
+
+  database_type_down:function(){
+    var that=this
+    const db = wx.cloud.database()
+    const _ = db.command
+    db.collection('list')
+    .where(_.or([{
+      keyword: db.RegExp({
+        regexp: '.*' + that.data.word,
+        options: 'i',
+      }),
+     }
+    ]))
+    
+    .orderBy("prices","desc")
+    .skip(that.data.page*20)
+    .limit(20)
+    .get({
+      success:function(res){
+        if(res.data.length==0){
+          wx.showModal({
+            title: '失败',
+            content: '无更多结果',
+            success(res) {
+              if(that.data.page==0){
+                wx.navigateBack({
+                  delta: 0,
+                })
+              }else{
+                var a=that.data.page
+                that.setData({
+                  page:a
+                })
+              }
+            }
+           })
+        }
+        that.setData({
+          clothes:res.data
+        })
+      }
+    })
+  },
+  
+
+  database:function(){
+      var that=this
+      const db = wx.cloud.database()
+      const _ = db.command
+      db.collection('list')
+      .where(_.or([{
+        title: db.RegExp({
+          regexp: '.*' + that.data.word,
+          options: 'i',
+        }),
+       }
+      ]))
+      .skip(that.data.page*20)
+      .limit(20)
+      .get({
+        success:function(res){
+          if(res.data.length==0){
+            wx.showModal({
+              title: '失败',
+              content: '无更多结果',
+              success(res) {
+                if(that.data.page==0){
+                  wx.navigateBack({
+                    delta: 0,
+                  })
+                }else{
+                  var a=that.data.page
+                  that.setData({
+                    page:a
+                  })
+                }
+              }
+             })
+          }
+          that.setData({
+            clothes:res.data
+          })
+        }
+      })
+  },
+
+  database_up:function(){
+    var that=this
+    const db = wx.cloud.database()
+    const _ = db.command
+    db.collection('list')
+    .where(_.or([{
+      title: db.RegExp({
+        regexp: '.*' + that.data.word,
+        options: 'i',
+      }),
+     }
+    ]))
+    .orderBy("prices","asc")
+    .skip(that.data.page*20)
+    .limit(20)
+    .get({
+      success:function(res){
+        if(res.data.length==0){
+          wx.showModal({
+            title: '失败',
+            content: '无更多结果',
+            success(res) {
+              if(that.data.page==0){
+                wx.navigateBack({
+                  delta: 0,
+                })
+              }else{
+                var a=that.data.page
+                that.setData({
+                  page:a
+                })
+              }
+            }
+           })
+        }
+        that.setData({
+          clothes:res.data
+        })
+      }
+    })
+  },
+
+  database_down:function(){
+    var that=this
+    const db = wx.cloud.database()
+    const _ = db.command
+    db.collection('list')
+    .where(_.or([{
+      title: db.RegExp({
+        regexp: '.*' + that.data.word,
+        options: 'i',
+      }),
+     }
+    ]))
+    .orderBy("prices","desc")
+    .skip(that.data.page*20)
+    .limit(20)
+    .get({
+      success:function(res){
+        if(res.data.length==0){
+          wx.showModal({
+            title: '失败',
+            content: '无更多结果',
+            success(res) {
+              if(that.data.page==0){
+                wx.navigateBack({
+                  delta: 0,
+                })
+              }else{
+                var a=that.data.page
+                that.setData({
+                  page:a
+                })
+              }
+            }
+           })
+        }
+        that.setData({
+          clothes:res.data
+        })
+      }
+    })
+  },
+  
   onReady: function () {
     this.animation1 = wx.createAnimation({
       duration:400,
@@ -98,6 +415,13 @@ Page({
       timingFunction:'ease-out'
     })
   },
+
+  backsearch:function(){
+    wx.navigateBack({
+      delta: 0
+    })
+  },
+
 //综合点击
   translate1: function(){
     if(this.data.isRuleTrue1==false){
@@ -111,6 +435,7 @@ Page({
       })
     this.setData({ animation1: this.animation1.export() })
   },
+
 //筛选点击
   translate2: function () {
     this.setData({
@@ -129,61 +454,46 @@ Page({
     this.animation1.translate(0, 0).step()
     this.setData({ animation1: this.animation1.export() })
   },
+
 // 综合
   comprehensive:function (){
-    var that=this
-    const db = wx.cloud.database()
-    db.collection('list')
-    .where({
-      keyword: 'T恤,圆领短袖'
+    //页数归零
+    this.setData({
+      page:0,
+      hasbefore:false,
+      upORdown:-1
     })
-    .limit(20)
-    .get({
-      success:function(res){
-        that.setData({
-          clothes:res.data
-        })
-      }
-    })
+    if(this.data.type==0)
+      this.database();
+    else
+      this.database_type();
   },
 // 价格降序
   grade_down:function (){
-    var that=this
-    const db = wx.cloud.database()
-    db.collection('list')
-    .where({
-      keyword: 'T恤,圆领短袖'
+    //页数归零
+    this.setData({
+      page:0,
+      hasbefore:false,
+      upORdown:0
     })
-    .orderBy('prices', 'asc')
-    .limit(20)
-    .get({
-      success:function(res){
-        console.log(res.data);
-       that.setData({
-         clothes:res.data
-       })
-      }
-    })
-
+    if(this.data.type==0)
+      this.database_down();
+    else
+      this.database_type_down();
   },
+  
 //价格升序
   grade_up:function (){
-    var that=this
-    const db = wx.cloud.database()
-    db.collection('list')
-    .where({
-      keyword: 'T恤,圆领短袖'
+    //页数归零
+    this.setData({
+      page:0,
+      hasbefore:false,
+      upORdown:0
     })
-    .orderBy('prices', 'desc')
-    .limit(20)
-    .get({
-      success:function(res){
-        console.log(res.data);
-       that.setData({
-         clothes:res.data
-       })
-      }
-    })
+    if(this.data.type==0)
+      this.database_up();
+    else
+      this.database_type_up();
   },
 
   success: function () {
@@ -197,7 +507,7 @@ Page({
       isRuleTrue: false
     })
     this.animation.translate(0, 0).step()
-    this.setData({ animation: this.animation.export() })
+    this.setData({ animation: this.animation.export()})
   },
 
   success2:function(){
@@ -209,7 +519,7 @@ Page({
 tryDriver: function (e) {
   console.log(e);
   let text=e.currentTarget.dataset.text
-  var that=this
+  var that=this 
     const db = wx.cloud.database()
     db.collection('list')
     .where({
@@ -230,27 +540,19 @@ tryDriver: function (e) {
    */
   onLoad: function (options) {
     console.log(options.word);
+    var typee=options.type;
     this.setData({
-      word:options.word
+      word:options.word,
+      type:options.typee
     })
-    
     wx.cloud.init()
-    var that=this
-    const db = wx.cloud.database()
-    db.collection('list')
-    .where({
-      keyword: options.word
-    })
-    .limit(20)
-    .get({
-      success:function(res){
-        that.setData({
-          clothes:res.data
-        })
-      }
-    })
-    
+    if(typee==1){
+      this.database_type();
+    }else{
+      this.database();
+    }
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成
