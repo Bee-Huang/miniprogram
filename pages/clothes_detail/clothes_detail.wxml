@@ -1,25 +1,24 @@
 <view class="box1">
     <swiper class="swiper" indicator-dots="ture" indicator-color="rgba(0,0,0,.3)" autoplay="ture" 
     interval="3000" circular="ture" >
-        <block wx:for="{{swiper_item}}" wx:key="id">
+        <block wx:for="{{data.swiper}}" wx:key="color">
             <swiper-item class="swiper_item" >
-                    <image class="image" src="{{item.src}}" />
+                    <image class="image" src="{{item.src}}" data-src="{{item.src}}" bindtap="swiper_click"/>
             </swiper-item>
-        
         </block>
     </swiper>
 </view>
 
 <view class="box2">
     <view class="clothe-name" > 
-        JD76000男款24支180g纯棉圆领短袖T恤
+        {{data.title}}
     </view>
 </view>
 
 <view class="box3">
     <view class="money-box" >
         <view class="money" >
-            19.9￥
+            ￥{{prices}}
         </view>
     </view>
     <view class="Collection-box">
@@ -40,12 +39,12 @@
                 商品参数
             </view>
         </view>
-        <view class="boxx" wx:for="{{parameter}}">
+        <view class="boxx" wx:for="{{data.fabric}}">
             <view class="boxx1" >
-                {{item.text1}}
+                {{item.type}}
             </view>
             <view class="text">
-                {{item.text2}}
+                {{item.info}}
             </view>
         </view>  
     </view>
@@ -57,8 +56,8 @@
             </view>
         </view>
         
-        <view class="particulars-img" wx:for="{{4}}">
-            <image class="img3" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg"/>          
+        <view class="particulars-img" wx:for="{{data.detail}}">
+            <image class="img3" src="{{item}}" data-src="{{item}}" bindtap="img_big" />          
         </view>
     </view>
 </view>

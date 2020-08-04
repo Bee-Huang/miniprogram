@@ -6,6 +6,8 @@ Page({
    */
   //guoshangbaodashabi
   data: { 
+    id:'',
+    prices:0.00,
     swiper_item:[
       {
         id:0,
@@ -54,14 +56,76 @@ Page({
         text1:'成分',
         text2:'黄胜锋大傻子黄胜锋大傻子黄胜锋大傻子黄胜锋大傻子'
       },
-    ]
+    ],
+    data:{}
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+      wx.cloud.init()
+      wx.showLoading({
+        title: '获取数据中',
+      })
+      console.log(options);
+      this.setData({
+        id:options.id,
+        prices:options.prices
+      })
+      this.getdata();
+  },
 
+  getdata:function(){
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('detail')
+    .where({
+      id:that.data.id
+    })
+    .get({
+      success:function(res){
+        if(res.data.length>0){
+          console.log(res.data);
+          that.setData({
+            data:res.data[0]
+          })
+          wx.hideLoading({})
+        }else{
+          //没有数据
+          wx.showToast({
+            title: '衣服信息不存在',
+            icon: 'none',
+            duration: 2000,
+            success: function () {
+              setInterval(function () {
+                wx.navigateBack({
+                  delta: 1,
+                })
+              }, 2000);
+            }
+          })
+        }
+      }
+    })
+  },
+
+  swiper_click:function(e){
+    //制作数组
+    var array=[]
+    for(let i=0;i<this.data.data.swiper.length;i++)
+      array.push(this.data.data.swiper[i].src)
+    wx.previewImage({
+      current: e.currentTarget.dataset.src,
+      urls: array
+    })
+  },
+
+  img_big:function(e){
+    console.log(e);
+    wx.previewImage({
+      current: e.currentTarget.dataset.src,
+      urls: this.data.data.detail
+    })
   },
 
   /**

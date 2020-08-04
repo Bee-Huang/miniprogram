@@ -79,11 +79,6 @@ Page({
   })
   wx.navigateTo({
     url: '/pages/clothes_list/clothes_list?type=0&word='+this.data.user_keywords,
-    // success: (result)=>{
-      
-    // },
-    // fail: ()=>{},
-    // complete: ()=>{}
   });
   },
 

@@ -110,7 +110,8 @@
 
 <scroll-view class="box3" scroll-y="true">
     <view class="box3">
-        <view class="clothe-box" wx:for="{{clothes}}" wx:key="id" bindtap="click">
+        <view class="clothe-box" wx:for="{{clothes}}" wx:key="id" bindtap="click"
+        data-prices="{{item.prices}}" data-id="{{item.id}}">
             <view class="clothe-img-box" >
                 <image class="clothe-img" src="{{item.img_src}}" /> 
             </view>

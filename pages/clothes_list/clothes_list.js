@@ -510,6 +510,13 @@ Page({
     this.setData({ animation: this.animation.export()})
   },
 
+  click:function(e){
+    console.log(e.currentTarget.dataset.id);
+    wx.navigateTo({
+      url: '../clothes_detail/clothes_detail?id='+e.currentTarget.dataset.id+"&prices="+e.currentTarget.dataset.prices
+    })
+  },
+
   success2:function(){
     this.setData({
       is_click:true
