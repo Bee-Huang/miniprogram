@@ -1,0 +1,53 @@
+<view class="box1">
+    <view class="box1_1">
+        姓名：
+    </view>
+    <view class="box1_2">
+        <input type="text" placeholder="请输入姓名" bindinput="input_name"/>
+    </view> 
+</view>
+
+<view class="box2">
+    <view class="box2_1">
+        手机：
+    </view>
+    <view class="box2_2">
+        <input type="number" placeholder="请输入手机号码" bindinput="input_number" />
+    </view> 
+</view>
+
+<view class="box3">
+    <view class="box3_1" >
+        选择地址
+    </view>
+    <view class="section" >
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            {{region[0]}}>{{region[1]}}>{{region[2]}}
+        </picker>
+    </view>
+</view>
+
+<view class="box4" >
+    <textarea class="textarea" placeholder="请填写您的详细地址" maxlength="-1" bindinput="input_address" bindconfirm=""  />
+</view>
+
+<view class="box5">
+    <view class="box5_1">
+        设为默认地址
+    </view>
+      <switch class="switch1" checked="{{is_checked}}" type="switch" bindchange="switch" />    
+</view>
+
+<view class="box6" >
+    <view class="box6_1" bindtap='click1'>
+        <view class="box6_1_1" >
+            取消
+        </view>
+    </view>
+    <view class="box6_2" bindtap='click2'>
+        <view class="box6_2_1" >
+            保存
+        </view>
+    </view>
+</view>
+  

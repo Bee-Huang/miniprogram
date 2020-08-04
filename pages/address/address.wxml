@@ -1,0 +1,24 @@
+<view class="box1" wx:for="{{name_number_address}}" wx:if="{{item.name}}!=''">
+    <view class="box1_1">
+            <view class="box1_1_1">
+                {{item.name}}
+            </view>
+            <view class="box1_1_2">
+                默认
+            </view>
+    </view>
+    <view class="box1_2">
+        <view class="box1_2_1">
+            {{item.number}}
+        </view>
+        <view class="box1_2_2">
+            {{item.address}}
+        </view>
+    </view>
+</view>
+<view class="butom" bindtap="click">
+    <view class="add">
+        新增收货地址
+    </view>
+</view>
+    
