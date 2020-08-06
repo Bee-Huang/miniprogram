@@ -102,6 +102,12 @@ Page({
       }
   },
 
+  gotodetails:function(e){
+    wx.navigateTo({
+      url: '../clothes_detail/clothes_detail?id='+e.currentTarget.dataset.id+"&prices="+e.currentTarget.dataset.prices
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

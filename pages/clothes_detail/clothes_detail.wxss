@@ -229,10 +229,17 @@
 }
 
 .buy{
-    width: 32%;
+    width: 480rpx;
     display: flex;
     background-color: #14A1FD;
 }
+
+.buy2{
+    width: 480rpx;
+    display: flex;
+    background-color: #999999;
+}
+
 
 .text2{
     margin: auto auto auto auto;

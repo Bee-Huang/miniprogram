@@ -1,6 +1,53 @@
-/* page{
+page{
     background-color:#efefef;
-  } */
+  }
+
+  .address{
+     margin-top: 20rpx;
+     margin-bottom: 20rpx;
+     height: 150rpx;
+     display: flex;
+     background-color: white;
+  }
+
+  .address_tip{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50rpx;
+    font-size: 35rpx;
+  }
+
+  .address_text{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50rpx;
+  }
+
+  .name{
+    font-size: 35rpx;
+    color: black;
+  }
+
+  .phone{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10rpx;
+    font-size: 30rpx;
+    color: #686565;
+  }
+
+  .np{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .img_addres{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 30rpx;
+    width: 80rpx;
+    height: 80rpx;
+  }
 
 .box1{
   width: 100%;

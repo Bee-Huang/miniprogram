@@ -5,12 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    address_status:false,
     color:'红色',
     size:'S',
     number:10,
     all_number:10,
     all_money:19.90,
-    input_text:''
+    input_text:'',
+    name:'黄胜锋',
+    phone:'13727734567',
+    address:'广东省茂名市化州市化州第二中学'
   },
 
   input_text:function(e){

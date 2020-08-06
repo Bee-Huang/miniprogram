@@ -1,3 +1,4 @@
+
 // pages/clothes_detail/clothes_detail.js
 Page({
 
@@ -8,6 +9,7 @@ Page({
   data: { 
     id:'',
     prices:0.00,
+    isorder:false,
     swiper_item:[
       {
         id:0,
@@ -73,6 +75,27 @@ Page({
         prices:options.prices
       })
       this.getdata();
+      this.gettemp();
+  },
+
+  gettemp:function(){
+    var that=this
+    wx.getStorage({
+      key: 'order',
+      success (res) {
+        console.log(res.data)
+        var array=res.data
+        if(array.length>0){
+          for(let i=0;i<array.length;i++){
+            if(array[i]==that.data.id){
+              that.setData({
+                isorder:true
+              })
+            }
+          }
+        }
+      }
+    })
   },
 
   getdata:function(){
@@ -85,7 +108,6 @@ Page({
     .get({
       success:function(res){
         if(res.data.length>0){
-          console.log(res.data);
           that.setData({
             data:res.data[0]
           })
@@ -105,6 +127,40 @@ Page({
             }
           })
         }
+      }
+    })
+  },
+
+  addto:function(){
+    wx.showLoading({
+      title: '添加中',
+    })
+    let order=[]
+    var that=this
+    wx.getStorage({
+      key: 'order',
+      success: function(res) {
+        order=res.data
+        console.log(res);
+      },
+      complete:function(res){
+        order.push(that.data.id)
+        wx.setStorage({
+          key:"order",
+          data:order,
+          success:function(res){
+            console.log(res.data);
+            wx.hideLoading()
+            wx.showToast({
+              title: '添加成功',
+              icon: 'success',
+              duration: 2000
+            })
+            that.setData({
+              isorder:true
+            })
+          },
+        })
       }
     })
   },

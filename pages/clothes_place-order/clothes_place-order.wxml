@@ -1,3 +1,15 @@
+<view class="address" bindtap="gotoaddress">
+    <image class="img_addres" src="../../images/mine-images/shouhuodizhi.png"></image>
+    <view wx:if="{{!address_status}}" class="address_tip">请选择联系/收货地址</view>
+    <view wx:if="{{address_status}}" class="address_text">
+        <view class="np">
+        <view class="name">{{name}}</view><view class="phone">{{phone}}</view>
+        </view>
+        <view class="address_details">{{address}}</view>
+    </view>
+</view>
+
+
 <view class="box1" >
     <view class="box1_1" >
         <view class="box1_1_1" >
@@ -58,7 +70,7 @@
             备注信息
         </view>
         <view class="box2_3_2" >
-            <input type="text" placeholder="            请输入备注信息" maxlength="300" bindinput="input_text"/>
+            <input type="text" placeholder="请输入备注信息" maxlength="300" bindinput="input_text"/>
         </view>
     </view>
 </view>

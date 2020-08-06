@@ -1,24 +1,31 @@
-<view class="box1" wx:for="{{4}}">
-    <view class="box1_1" >
-        <view class="select" >
-            
+<view class="box1" wx:for="{{details}}" data-id="{{index}}" bindlongtap="longtap">
+    <view class="box1_1" data-id="{{index}}"
+        bindtap="select_tap">
+        <view class="{{!item.isselect?'select':'is_select'}}" >
         </view>
     </view>
-    <view class="box1_2" >
+    <view class="box1_2" data-id="{{index}}"  bindtap="gotodetails"  >
         <view class="box1_2_1" >
             <view class="img_box" >
-                <image class="img" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" mode="widthFix"/>   
+                <image class="img" src="{{item.img_src}}" mode="widthFix"/>   
             </view>
             <view class="text_box" >
                 <view class="text" >
-                    JD76000男款24支180g纯棉圆领短袖T恤
+                    {{item.title}}
                 </view>
             </view>
         </view>
-        <view class="fengexian" >
-            
+        <view class="fengexian">
         </view>
         <view class="box1_2_2" >
+            <view class="color_text" >
+                {{item.color_count}}
+            </view>
+            <view class="money" >
+                ￥{{item.prices}}
+            </view>
+        </view>
+        <!-- <view class="box1_2_2" >
             <view class="box1_2_2_1" >
                 <view class="color_text" >
                     红色
@@ -37,7 +44,7 @@
                     </view>
                 </view>
             </view>
-        </view>
+        </view> -->
     </view>
 </view>
 
@@ -46,18 +53,19 @@
 </view>
 
 <view class="box2" >
-    <view class="box2_1" >
-        
+    <view class="box2_1" bindtap="all_select">
+        <view class="{{!isallselect?'select':'is_select'}}" >
+    </view>
     </view>
     <view class="box2_2" >
         合计：
     </view>
     <view class="box2_3" >
-        ￥199.9
+        {{selectcount}}件
     </view>
     <view class="box2_4" >
         <view class="box2_4_1">
-            下单(2件)
+             下单
         </view>
     </view>
 </view>

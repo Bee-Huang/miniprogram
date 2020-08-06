@@ -116,7 +116,7 @@ Page({
   gotodetail:function(e){
     console.log();
     wx.navigateTo({
-      url: '../clothes_detail/clothes_detail?id='+e.currentTarget.dataset.id
+      url: '../clothes_detail/clothes_detail?id='+e.currentTarget.dataset.id+"&prices="+e.currentTarget.dataset.prices
     })
   },
 

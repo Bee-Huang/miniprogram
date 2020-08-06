@@ -80,14 +80,14 @@
             <image class="img1" src="../../icon/service.png"/>
         </view>
     </view>
-    <view class="add" >
+    <!-- <view class="add" >
         <view class="text1" >
             加入购物车
         </view>
-    </view>
-    <view class="buy" >
-        <view class="text2" >
-            立即购买
+    </view> -->
+    <view class="{{!isorder?'buy':'buy2'}}" bindtap="{{!isorder?'addto':''}}">
+        <view class="text2">
+            {{isorder?"已加入清单":"加入清单"}}
         </view>
     </view>  
 </view>

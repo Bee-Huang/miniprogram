@@ -19,7 +19,7 @@
     <view class="diver"></view>
     <view class="top_three">
       <view wx:for="{{info.data}}" wx:for-item="inf">
-        <view class="img_view">
+        <view class="img_view" data-id="{{inf.id}}" data-prices="{{inf.prices}}" bindtap="gotodetails">
           <image class="img" src="{{inf.img_src}}"></image>
           <view class="img_text">{{inf.code}}</view>
         </view>

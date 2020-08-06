@@ -10,10 +10,19 @@
 }
 
 .select{
-    width: 40%;
-    height: 45rpx;
+    width: 30rpx;
+    height: 30rpx;
     border-radius: 50%;
     margin: auto auto auto auto;
+    border: #92CDFD solid 3.5rpx;
+}
+
+.is_select{
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    margin: auto auto auto auto;
+    background-color:#92CDFD;
     border: #92CDFD solid 3.5rpx;
 }
 
@@ -26,7 +35,8 @@
 .box1_2_1{
     width: 100%;
     display: flex;
-    margin-top: 30rpx;
+    margin-top: 20rpx;
+    margin-bottom: 10rpx;
 }
 
 .img_box{
@@ -57,9 +67,10 @@
 }
 
 .box1_2_2{
-    width: 100%;
     display: flex;
-    margin-bottom: 50rpx;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20rpx;
 }
 
 .box1_2_2_1{
@@ -68,8 +79,12 @@
 }
 
 .color_text{
-    margin: auto auto auto auto;
-    color: #959595;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #FFD700;
+    border-radius: 25rpx;
+    padding: 10rpx;
+    border: #FFD700 solid 1rpx;
 }
 
 .box1_2_2_2{
@@ -102,8 +117,8 @@
 .money{
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 30rpx;
-    color: #6E6E6E;
+    margin-left: 200rpx;
+    color: red;
 }
 
 .none{
@@ -124,19 +139,18 @@
 }
 
 .box2_1{
-    width: 45rpx;
-    height: 45rpx;
-    border-radius: 50%;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 30rpx;
-    border: #92CDFD solid 1rpx;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .box2_2{
+    font-size: 35rpx;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 121rpx;
+    margin-left: 100rpx;
 }
 .box2_3{
     margin-top: auto;
@@ -145,10 +159,10 @@
 }
 
 .box2_4{
-    width: 32%;
+    width: 30%;
     height: 100%;
     display: flex;
-    margin-left: 103rpx;
+    margin-left: 110rpx;
     background-color: #61B5FB;
 }
 
