@@ -100,6 +100,11 @@ Page({
             icon: 'success',
             duration: 1500
           })
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../order_details/order_details?type=2'
+            });
+          }, 1500)
         },
         fail:function(res){
           console.log(res);

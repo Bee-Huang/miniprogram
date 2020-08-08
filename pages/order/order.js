@@ -1,3 +1,4 @@
+
 // pages/order/order.js
 Page({
 
@@ -18,83 +19,18 @@ Page({
         },
         {
           id:2,
-          text:'配货中'
+          text:'设计中'
         },
         {
           id:3,
-          text:'待发货'
-        },
-        {
-          id:4,
           text:'待收货'
         },
         {
-          id:5,
-          text:'已收货'
-        }, 
+          id:4,
+          text:'已完成'
+        } 
       ],
-      order_details:[
-        {
-          id:1,
-          order_number:'12345678910',
-          is_close:'已关闭',
-          src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg",
-          clothe_text:'JD76000男款24支180g纯棉圆领短袖T恤',
-          clothe_color:'红色',
-          clothe_size_number:[
-            {
-              size:'S',
-              number:10
-            },
-            {
-              size:'M',
-              number:0
-            },
-            {
-              size:'L',
-              number:10
-            },
-            {
-              size:'XL',
-              number:0
-            },
-            {
-              size:'XXL',
-              number:0
-            } 
-          ]
-        },
-        {
-          id:2,
-          order_number:'13579246810',
-          is_close:'已关闭',
-          src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg",
-          clothe_text:'JD76000男款24支180g纯棉圆领短袖T恤',
-          clothe_color:'黄色',
-          clothe_size_number:[
-            {
-              size:'S',
-              number:10
-            },
-            {
-              size:'M',
-              number:0
-            },
-            {
-              size:'L',
-              number:10
-            },
-            {
-              size:'XL',
-              number:10
-            },
-            {
-              size:'XXL',
-              number:10
-            } 
-          ],
-        }
-      ]
+      order_details:[]
   },
 
   click:function(e){
@@ -102,13 +38,14 @@ Page({
     this.setData({
       id:e.currentTarget.dataset.id
     })
+    this.getindexdata(e.currentTarget.dataset.id)
   },
 
-  click1:function(){
+  click1:function(e){
+    console.log(e.currentTarget.dataset.uid);
     wx.navigateTo({
-      url: '../order_details/order_details',
+      url: '../order_details/order_details?type=0&uid='+e.currentTarget.dataset.uid,
       success: (result)=>{
-        
       },
       fail: ()=>{},
       complete: ()=>{}
@@ -119,14 +56,68 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options.id)
-    var app=getApp();
     this.setData({
-        openid:app.globalData.openid,
         id:options.id
     })
-  
+    wx.cloud.init()
+    this.getopenid();
+  },
 
+  getindexdata(index){
+    var statuss=['订单已提交','代理已接单','设计流程进行中','等待发货','订单完成']
+    if(index==0){
+      this.getdata();
+    }else{
+      var that=this
+      const db = wx.cloud.database()
+      db.collection('order')
+      .where({
+        _openid:this.data.openid,
+        status:statuss[index]
+     })
+     .get({ 
+       success:function(res){
+        console.log(res);
+        that.setData({
+          order_details:res.data
+        })
+       }
+      })
+    }
+  },
+
+  getdata(){
+    //获取全部数据
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('order')
+    .where({
+      _openid:this.data.openid
+   })
+   .get({ 
+     success:function(res){
+      console.log(res);
+      that.setData({
+        order_details:res.data
+      })
+     }
+    })
+  },
+
+  getopenid(){
+    var that=this
+    wx.cloud.callFunction({
+      name: 'openid',
+      data: {
+        weRunData: wx.cloud.CloudID('wxpay-8jkfa')
+      },
+      success(res){
+        that.setData({
+          openid:res.result.userInfo.openId
+        })
+        that.getindexdata(that.data.id);
+      }
+    })
   },
 
   /**

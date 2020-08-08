@@ -1,12 +1,12 @@
 <view class="box1" >
-    <view class="box1_1" >
-        <image class="img1" src="../../images/12.jpg"  />
+    <view class="pro_view">
+        <view class="for" wx:for="{{5}}">
+            <view class="{{now_progress==index?'rounded':'round'}}"/>
+            <view wx:if="{{index<4}}" class="line"/>
+        </view>
     </view>
-    <view class="box1_2" >
-        黄胜锋
-    </view>
-    <view class="box1_3">
-        代理已接单
+    <view class="progress">
+       {{order_details.status}}
     </view>
 </view>
 
@@ -19,7 +19,7 @@
     </view>
 </view>
 
-<view class="_box1" >
+<view class="_box1" wx:if="">
     <view class="_box1_1" >
         <view class="_box1_1_1" >
             <view class="_img_box" >

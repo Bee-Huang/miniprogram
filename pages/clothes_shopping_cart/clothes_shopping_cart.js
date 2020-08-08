@@ -170,10 +170,16 @@ Page({
       key: 'order',
       success (res) {
         that.setData({
-          order_array:res.data
+          order_array:res.data,
+          selectcount:0,
+          isallselect:false
         })
         that.getdetails();
       }
+    })
+    that.setData({
+      selectcount:0,
+      isallselect:false
     })
   },
 

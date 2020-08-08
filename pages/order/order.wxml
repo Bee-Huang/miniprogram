@@ -5,40 +5,25 @@
         </view>
     </view>
 </view>
+
 <view class="box" >
         <view class="box2" wx:for="{{order_details}}" wx:if="{{id==0}}" >
         <view class="box2_1" >
             <view class="box2_1_1" >
-                {{item.order_number}}
+                {{item.uid}}
             </view>
             <view class="box2_1_2" >
-                {{item.is_close}}
+                {{item.status}}
             </view>
         </view>
         <view class="box2_2" >
             <view class="box2_2_1" >
-                <image class="img" src="{{item.src}}" mode="widthFix" />   
+                <image class="img" src="{{item.sample_list[0].img_src}}" mode="widthFix" />   
             </view>
 
             <view class="box2_2_2" >
                 <view class="box2_2_2_1" >
-                    {{item.clothe_text}}
-                </view>
-                <view class="box2_2_2_2" >
-                    <view class="box2_2_2_2_1" >
-                            {{item.clothe_color}}： 
-                    </view>
-                    <view class="box2_2_2_2_2" >
-                        <view class="box2_2_2_2_2_1" wx:for="{{item.clothe_size_number}}" wx:if="{{item.number>0}}">
-                            {{item.size}}-{{item.number}}
-                        </view> 
-                    </view>
-                </view>
-            </view>
-
-            <view class="box2_2_3" >
-                <view class="box2_2_3_1" wx:for="{{order_details.clothe_size_number}}">
-                    x10件
+                    {{item.sample_list[0].title}}等
                 </view>
             </view>
         </view>
@@ -46,56 +31,11 @@
             <view class="box2_3_1" >
                 共10件商品 合计：
             </view>
-            <view class="box2_3_3" bindtap='click1'>
+            <view class="box2_3_3" bindtap='click1' data-uid="{{item.uid}}">
                 查看详情
             </view>
         </view>
-    </view>  
-    <view class="box2" wx:for="{{order_details}}" wx:if="{{item.id==id}}" >
-        <view class="box2_1" >
-            <view class="box2_1_1" >
-                {{item.order_number}}
-            </view>
-            <view class="box2_1_2" >
-                {{item.is_close}}
-            </view>
-        </view>
-        <view class="box2_2" >
-            <view class="box2_2_1" >
-                <image class="img" src="{{item.src}}" mode="widthFix" />   
-            </view>
-
-            <view class="box2_2_2" >
-                <view class="box2_2_2_1" >
-                    {{item.clothe_text}}
-                </view>
-                <view class="box2_2_2_2" >
-                    <view class="box2_2_2_2_1" >
-                            {{item.clothe_color}}： 
-                    </view>
-                    <view class="box2_2_2_2_2" >
-                        <view class="box2_2_2_2_2_1" wx:for="{{item.clothe_size_number}}" wx:if="{{item.number>0}}">
-                            {{item.size}}-{{item.number}}
-                        </view> 
-                    </view>
-                </view>
-            </view>
-
-            <view class="box2_2_3" >
-                <view class="box2_2_3_1" >
-                    x10件
-                </view>
-            </view>
-        </view>
-        <view class="box2_3" >
-            <view class="box2_3_1" >
-                共10件商品 合计：
-            </view>
-            <view class="box2_3_3" bindtap='click1'>
-                查看详情
-            </view>
-        </view>
-    </view>  
+    </view>   
 </view>
 
 <view class="box3">

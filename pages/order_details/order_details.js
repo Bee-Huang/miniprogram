@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    now_progress:0,
+    uid:'',//这里是订单号
     back_type:1,
+    order_details:{},
+    confirm_count:false,
+
     color:'红色',
     size:'S',
     number:10,
@@ -32,7 +37,6 @@ Page({
       urls: [imgUrl], //需要预览的图片http链接列表，注意是数组
       current: '', // 当前显示图片的http链接，默认是第一个
     })
-
   },
 
   /**
@@ -40,10 +44,54 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    wx.cloud.init()
     //这里传进type，判断type为0就返回前两个页面，type为2就返回前一个页面
     this.setData({
-      back_type:option.type
+      back_type:options.type,
+      uid:options.uid
     })
+    wx.showLoading({
+      title: '获取订单数据中……',
+    })
+    this.getorderdata();
+  },
+
+  getorderdata(){
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('order')
+    .where({
+      uid:this.data.uid
+   })
+   .get({ 
+     success:function(res){
+      console.log(res);
+      if(res.data.length>0){
+        that.setData({
+          order_details:res.data[0]
+        })
+        wx.hideLoading({
+          success: (res) => {},
+        })
+      }
+     }
+    })
+  },
+
+  checkcount(){
+    var type=['订单已提交','代理已接单','设计进行中','厂家生产发货中','已完成']
+    for(let i=0;i<type.length;i++){
+      if(this.data.order_details.status==type[i]){
+        this.setData({
+          now_progress:i
+        })
+      }
+    }
+     
+
+    if(this.data.order_details.confirm_size!=undefined){
+      
+    }
   },
 
   /**

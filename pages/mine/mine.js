@@ -16,17 +16,17 @@ Page({
       },
       {
         id:1,
-        text:'已接单',
+        text:'全部',
         src:"../../icon/dingdan.png"
       },
       {
         id:2,
-        text:'配货中',
+        text:'已接单',
         src:"../../icon/daifukuan.png"
       },
       {
         id:3,
-        text:'待发货',
+        text:'设计中',
         src:"../../icon/daifahuo.png"
       },
       {
@@ -36,7 +36,7 @@ Page({
       },
       {
         id:5,
-        text:'已收货',
+        text:'已完成',
         src:"../../icon/shouhou.png"
       }
     ]
@@ -50,6 +50,9 @@ Page({
     //初始化云服务
     wx.cloud.init({
       env: 'wxpay-8jkfa'
+    })
+    wx.showLoading({
+      title: '登录中…',
     })
     //
     wx.getSetting({
@@ -74,12 +77,21 @@ Page({
                     var app=getApp();
                     console.log(res.result.userInfo.openId)
                     app.globalData.openid=res.result.userInfo.openId;
+                    that.setData({
+                      openid:res.result.userInfo.openId
+                    })
+                    wx.hideLoading({
+                      success: (res) => {},
+                    })
                 }
               })
             }
           })
         }else{
           //没有授权
+          wx.hideLoading({
+            success: (res) => {},
+          })
           wx.navigateTo({
             url: '../login/login'
           })
@@ -95,9 +107,9 @@ Page({
   },
 
   click:function(e){
-    // console.log(e.currentTarget.dataset.id)
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../order/order?id='+e.currentTarget.dataset.id,
+      url: '../order/order?id='+(e.currentTarget.dataset.id-1)+'&openid='+this.data.openid,
     });
   },
 
