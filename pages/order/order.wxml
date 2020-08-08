@@ -1,41 +1,44 @@
 <view class="box1" >
-    <view class="{{item.id==is_select_color?'box1_1_press':'box1_1'}}" wx:for="{{order_text}}" bindtap="click"  data-id="{{item.id}}">
-        {{item.text}}
+    <view class="box1_" wx:for="{{order_text}}" >
+        <view class="{{item.id==id?'box1_1_press':'box1_1'}}"  bindtap="click"  data-id="{{item.id}}">
+            {{item.text}}
+        </view>
     </view>
 </view>
 <view class="box" >
-    <view class="box2" wx:for="{{4}}">
+        <view class="box2" wx:for="{{order_details}}" wx:if="{{id==0}}" >
         <view class="box2_1" >
             <view class="box2_1_1" >
-                12345678910
+                {{item.order_number}}
             </view>
             <view class="box2_1_2" >
-                已关闭
+                {{item.is_close}}
             </view>
         </view>
         <view class="box2_2" >
             <view class="box2_2_1" >
-                <image class="img" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" mode="widthFix" />   
+                <image class="img" src="{{item.src}}" mode="widthFix" />   
             </view>
+
             <view class="box2_2_2" >
                 <view class="box2_2_2_1" >
-                    JD76000男款24支180g纯棉圆领短袖T恤
+                    {{item.clothe_text}}
                 </view>
                 <view class="box2_2_2_2" >
                     <view class="box2_2_2_2_1" >
-                        红色：
+                            {{item.clothe_color}}： 
                     </view>
                     <view class="box2_2_2_2_2" >
-                        S-10
+                        <view class="box2_2_2_2_2_1" wx:for="{{item.clothe_size_number}}" wx:if="{{item.number>0}}">
+                            {{item.size}}-{{item.number}}
+                        </view> 
                     </view>
                 </view>
             </view>
+
             <view class="box2_2_3" >
-                <view class="box2_2_3_1" >
+                <view class="box2_2_3_1" wx:for="{{order_details.clothe_size_number}}">
                     x10件
-                </view>
-                <view class="box2_2_3_2" >
-                    ￥19.90
                 </view>
             </view>
         </view>
@@ -43,25 +46,66 @@
             <view class="box2_3_1" >
                 共10件商品 合计：
             </view>
-            <view class="box2_3_2" >
-                ￥19.9
+            <view class="box2_3_3" bindtap='click1'>
+                查看详情
+            </view>
+        </view>
+    </view>  
+    <view class="box2" wx:for="{{order_details}}" wx:if="{{item.id==id}}" >
+        <view class="box2_1" >
+            <view class="box2_1_1" >
+                {{item.order_number}}
+            </view>
+            <view class="box2_1_2" >
+                {{item.is_close}}
+            </view>
+        </view>
+        <view class="box2_2" >
+            <view class="box2_2_1" >
+                <image class="img" src="{{item.src}}" mode="widthFix" />   
+            </view>
+
+            <view class="box2_2_2" >
+                <view class="box2_2_2_1" >
+                    {{item.clothe_text}}
+                </view>
+                <view class="box2_2_2_2" >
+                    <view class="box2_2_2_2_1" >
+                            {{item.clothe_color}}： 
+                    </view>
+                    <view class="box2_2_2_2_2" >
+                        <view class="box2_2_2_2_2_1" wx:for="{{item.clothe_size_number}}" wx:if="{{item.number>0}}">
+                            {{item.size}}-{{item.number}}
+                        </view> 
+                    </view>
+                </view>
+            </view>
+
+            <view class="box2_2_3" >
+                <view class="box2_2_3_1" >
+                    x10件
+                </view>
+            </view>
+        </view>
+        <view class="box2_3" >
+            <view class="box2_3_1" >
+                共10件商品 合计：
             </view>
             <view class="box2_3_3" bindtap='click1'>
                 查看详情
             </view>
         </view>
-    </view>
-    <view class="box3">
-        <view class="xian">
-            
-        </view>
-        <view class="none">
-            暂无更多数据
-        </view>
-        <view class="xian">
-            
-        </view>  
-    </view>
+    </view>  
 </view>
 
-  
+<view class="box3">
+    <view class="xian">
+        
+    </view>
+    <view class="none">
+        暂无更多数据
+    </view>
+    <view class="xian">
+        
+    </view>  
+</view>

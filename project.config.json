@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -87,9 +87,8 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/address/address",
-					"pathName": "pages/address/address",
-					"query": "type=1&word=中袖",
+					"name": "pages/other/other",
+					"pathName": "pages/other/other",
 					"scene": null
 				}
 			]

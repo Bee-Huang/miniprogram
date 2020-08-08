@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    back_type:1,
     color:'红色',
     size:'S',
     number:10,
@@ -14,14 +15,17 @@ Page({
   },
 
   click:function(){
-    wx.navigateTo({
-      url: '../clothes_ordering/clothes_ordering',
-      success: (result)=>{
+    wx.navigateBack({
+      delta: 2,
+    })
+    // wx.navigateTo({
+    //   url: '../clothes_ordering/clothes_ordering',
+    //   success: (result)=>{
         
-      },
-      fail: ()=>{},
-      complete: ()=>{}
-    });
+    //   },
+    //   fail: ()=>{},
+    //   complete: ()=>{}
+    // });
   },
 
   click1:function(e){
@@ -38,7 +42,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    //这里传进type，判断type为0就返回前两个页面，type为2就返回前一个页面
+    this.setData({
+      back_type:option.type
+    })
   },
 
   /**
@@ -66,7 +74,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    wx.navigateBack({
+      delta: this.data.back_type,
+    })
   },
 
   /**

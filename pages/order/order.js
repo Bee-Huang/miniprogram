@@ -6,7 +6,7 @@ Page({
    */
   data: {
       openid:'',
-      is_select_color:-1,
+      id:0,
       order_text:[
         {
           id:0,
@@ -31,15 +31,76 @@ Page({
         {
           id:5,
           text:'已收货'
+        }, 
+      ],
+      order_details:[
+        {
+          id:1,
+          order_number:'12345678910',
+          is_close:'已关闭',
+          src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg",
+          clothe_text:'JD76000男款24支180g纯棉圆领短袖T恤',
+          clothe_color:'红色',
+          clothe_size_number:[
+            {
+              size:'S',
+              number:10
+            },
+            {
+              size:'M',
+              number:0
+            },
+            {
+              size:'L',
+              number:10
+            },
+            {
+              size:'XL',
+              number:0
+            },
+            {
+              size:'XXL',
+              number:0
+            } 
+          ]
         },
-        
+        {
+          id:2,
+          order_number:'13579246810',
+          is_close:'已关闭',
+          src:"cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg",
+          clothe_text:'JD76000男款24支180g纯棉圆领短袖T恤',
+          clothe_color:'黄色',
+          clothe_size_number:[
+            {
+              size:'S',
+              number:10
+            },
+            {
+              size:'M',
+              number:0
+            },
+            {
+              size:'L',
+              number:10
+            },
+            {
+              size:'XL',
+              number:10
+            },
+            {
+              size:'XXL',
+              number:10
+            } 
+          ],
+        }
       ]
   },
 
   click:function(e){
     console.log(e.currentTarget.dataset.id)
     this.setData({
-      is_select_color:e.currentTarget.dataset.id
+      id:e.currentTarget.dataset.id
     })
   },
 
@@ -58,10 +119,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log(options.id)
     var app=getApp();
     this.setData({
-        openid:app.globalData.openid
+        openid:app.globalData.openid,
+        id:options.id
     })
+  
+
   },
 
   /**

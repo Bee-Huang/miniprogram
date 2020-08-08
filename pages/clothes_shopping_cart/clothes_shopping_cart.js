@@ -73,7 +73,9 @@ Page({
         [s]:boo
       })
     }
-    var len=this.data.details.length
+    var len=0
+    if(boo)
+     len=this.data.details.length;
     this.setData({
       isallselect:boo,
       selectcount:len
@@ -124,6 +126,31 @@ Page({
         }
       }
     })
+  },
+
+  gotoorder:function(){
+    if(this.data.selectcount==0){
+      wx.showToast({
+        title: '至少选择一个',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+        var array=[]
+        for(let i=0;i<this.data.details.length;i++)
+          if(this.data.details[i].isselect)
+            array.push(this.data.details[i])
+        wx.setStorage({
+          key:"order_tmp",
+          data:array,
+          success:function(res){
+              wx.navigateTo({
+                url: '../clothes_place-order/clothes_place-order'
+              })
+          }
+        })
+    }
+    
   },
 
   /**

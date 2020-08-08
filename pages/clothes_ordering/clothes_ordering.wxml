@@ -14,6 +14,15 @@
 </view>
 
 <view class="box2">
+
+
+    <view class="{{item.id==is_select_color?'color_box_press':'color_box'}}" wx:for="{{color}}" bindtap="color_click"  data-id="{{item.id}}">
+        <view class="color" style="background:{{item.color}};">            
+        </view>
+        <view class="text">
+            {{item.text}}
+        </view>  
+    </view>  
     <view class="{{item.id==is_select_color?'color_box_press':'color_box'}}" wx:for="{{color}}" bindtap="color_click"  data-id="{{item.id}}">
         <view class="color" style="background:{{item.color}};">            
         </view>

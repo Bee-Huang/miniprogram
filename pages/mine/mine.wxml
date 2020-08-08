@@ -12,44 +12,31 @@
 </view>
 
 <view class="order">
-    <view class="order_tip">我的订单</view>
+    <view class="order_tip" bindtap="click" data-id="0">{{order_text[0].text}}</view>
     <view class="divLine"></view>
     <view class="order_son">
 
-      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
-        <view class="order_icon_view">
-          <image class="order_icon" src="../../icon/dingdan.png"></image>
-          <view class="order_text">全部订单</view>
+        <view class="order_icon_view" wx:for="{{order_text}}" bindtap="click" data-id="{{item.id}}" wx:if="{{item.id>0}}">
+          <image class="order_icon" src="{{item.src}}" />
+          <view class="order_text">{{item.text}}</view>
         </view>
-      </navigator>
       
-      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
-        <view class="order_icon_view">
+        <!-- <view class="order_icon_view" bindtap="click1" >
           <image class="order_icon" src="../../icon/daifukuan.png"></image>
-          <view class="order_text">待付款</view>
+          <view class="order_text">配货中</view>
         </view>
-      </navigator>
-      
-      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
-        <view class="order_icon_view">
+        <view class="order_icon_view" bindtap="click2" >
           <image class="order_icon" src="../../icon/daifahuo.png"></image>
           <view class="order_text">待发货</view>
         </view>
-      </navigator>
-      
-      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
-        <view class="order_icon_view">
+        <view class="order_icon_view" bindtap="click3" >
           <image class="order_icon" src="../../icon/yifahuo.png"></image>
-          <view class="order_text">已发货</view>
+          <view class="order_text">待收货</view>
         </view>
-      </navigator>
-      
-      <navigator class="navigator1" hover-stay-time="100" url="/pages/other/other" >
         <view class="order_icon_view">
           <image class="order_icon" src="../../icon/shouhou.png"></image>
-          <view class="order_text">退款</view>
-        </view>
-      </navigator>
+          <view class="order_text">已收货</view>
+        </view> -->
       
     </view>
 </view>
@@ -76,7 +63,7 @@
   </navigator>
   <view class="fengexian" />
 
-  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+  <navigator class="navigator" hover-stay-time="100" url="/pages/address/address" >
     <view class="box1">
       <image class="image1" src="../../images/mine-images/shouhuodizhi.png" />
       <text class="text" >

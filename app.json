@@ -1,21 +1,22 @@
 {
   "could": true,
 
-  "pages": [  
-    "pages/clothes_place-order/clothes_place-order", 
+  "pages": [
+    "pages/index/index",
+    "pages/order_details/order_details", 
+    "pages/clothes_shopping_cart/clothes_shopping_cart",    
     "pages/clothes_ordering/clothes_ordering", 
-    "pages/clothes_shopping_cart/clothes_shopping_cart",  
     "pages/order/order",
+    "pages/clothes_place-order/clothes_place-order", 
     "pages/clothes/clothes",
     "pages/address/address",  
     "pages/add_address/add_address", 
-    "pages/order_details/order_details", 
     "pages/other/other",
     "pages/clothes_type/clothes_type",
     "pages/clothes_list/clothes_list",
     "pages/clothes_detail/clothes_detail", 
     "pages/search/search", 
-    "pages/index/index",
+    
     "pages/mine/mine"
 
   ],

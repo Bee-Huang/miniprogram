@@ -25,26 +25,7 @@
                 ￥{{item.prices}}
             </view>
         </view>
-        <!-- <view class="box1_2_2" >
-            <view class="box1_2_2_1" >
-                <view class="color_text" >
-                    红色
-                </view>
-            </view>
-            <view class="box1_2_2_2" >
-                <view class="box1_2_2_2_2_1" wx:for="{{2}}">
-                    <view class="size" >
-                        S
-                    </view>
-                    <view class="input_box" >
-                        <input type="number"/>
-                    </view>
-                    <view class="money" >
-                        ￥19.9
-                    </view>
-                </view>
-            </view>
-        </view> -->
+        
     </view>
 </view>
 
@@ -63,7 +44,7 @@
     <view class="box2_3" >
         {{selectcount}}件
     </view>
-    <view class="box2_4" >
+    <view class="box2_4" bindtap="gotoorder" >
         <view class="box2_4_1">
              下单
         </view>

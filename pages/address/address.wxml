@@ -1,4 +1,4 @@
-<view class="box1" wx:for="{{name_number_address}}" wx:if="{{item.name}}!=''">
+<view class="box1" wx:for="{{addressList}}" wx:if="{{item.name}}!=''" data-index="{{index}}" bindtap="returnto">
     <view class="box1_1">
             <view class="box1_1_1">
                 {{item.name}}
@@ -13,6 +13,12 @@
         </view>
         <view class="box1_2_2">
             {{item.address}}
+        </view>
+    </view>
+    <view class="box1_3" >
+        <view class="box1_3_1" bindtap="clearCache" data-id="{{index}}" wx:key="index" >
+            <image class="img" src="../../icon/qingchu.png" />
+              
         </view>
     </view>
 </view>

@@ -7,7 +7,39 @@ Page({
   data: {
     islogin:true,
     nick:'',
-    avatarUrl:''
+    avatarUrl:'',
+    order_text:[
+
+      {
+        id:0,
+        text:'我的订单'
+      },
+      {
+        id:1,
+        text:'已接单',
+        src:"../../icon/dingdan.png"
+      },
+      {
+        id:2,
+        text:'配货中',
+        src:"../../icon/daifukuan.png"
+      },
+      {
+        id:3,
+        text:'待发货',
+        src:"../../icon/daifahuo.png"
+      },
+      {
+        id:4,
+        text:'待收货',
+        src:"../../icon/yifahuo.png"
+      },
+      {
+        id:5,
+        text:'已收货',
+        src:"../../icon/shouhou.png"
+      }
+    ]
   },
 
   /**
@@ -54,14 +86,19 @@ Page({
         }
       }
     })
-
-   
   },
 
   gotologin:function(){
     wx.navigateTo({
       url: '../login/login'
     })
+  },
+
+  click:function(e){
+    // console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../order/order?id='+e.currentTarget.dataset.id,
+    });
   },
 
   /**

@@ -159,6 +159,7 @@ page{
 .box2_1_1{
   margin-top: auto;
   margin-bottom: auto;
+  width: 100%;
   color: #686565;
   /* background-color: deeppink; */
 }
@@ -166,7 +167,8 @@ page{
 .box2_1_2{
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 500rpx;
+  width: 100%;
+  text-align: right;
 }
 
 .box2_2{
@@ -180,12 +182,15 @@ page{
   margin-top: auto;
   margin-bottom: auto;
   color: #686565;
+  width: 100%;
+
 }
 
 .number1{
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 310rpx;
+  width: 100%;
+  text-align: right;
 }
 
 .money1{
@@ -214,8 +219,12 @@ page{
 .box2_3_2{
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 160rpx;
+  width: 100%;
   /* background-color: darkmagenta; */
+}
+
+.inputbox{
+  text-align: right;
 }
 
 .box3{
@@ -223,22 +232,28 @@ page{
   height: 100rpx;
   font-size: 35rpx;
   display: flex;
-  position: absolute;
+  position:fixed;
   bottom: 0;
   left: 0;
   border-top:#F3F3F3 solid 1rpx;
+  background-color: white;
   /* background-color: darkorange; */
 
+}
+
+.shabi{
+  height: 100rpx;
 }
 
 .box3_1{
   width: 70%;
   height: 100%;
   display: flex;
+  
 }
 
 .box3_1_1{
-  width: 100rpx;
+  width: 150rpx;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 100rpx;
@@ -264,4 +279,46 @@ page{
   margin: auto auto auto auto;
   color: #fff;
   /* background-color: darkred; */
+}
+
+.list1{
+  background-color: #ffffff;
+}
+
+
+
+.tiptext{
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  padding: 10rpx;
+}
+
+.list-box{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon{
+  height: 150rpx;
+  width: 200rpx;
+}
+
+.textview{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.prices_view{
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.prices{
+  margin-top: 10rpx;
+  text-align: right;
+  font-size: 35rpx;
+  color: red;
+  margin-right: 20rpx;
 }
