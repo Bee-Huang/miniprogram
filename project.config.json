@@ -66,22 +66,8 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/clothes_type/clothes_type",
-					"pathName": "pages/clothes_type/clothes_type",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "pages/clothes_list/clothes_list",
-					"pathName": "pages/clothes_list/clothes_list",
-					"query": "type=1&word=中袖",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/search/search",
-					"pathName": "pages/search/search",
+					"name": "pages/clothes_place-order/clothes_place-order",
+					"pathName": "pages/clothes_place-order/clothes_place-order",
 					"query": "",
 					"scene": null
 				},

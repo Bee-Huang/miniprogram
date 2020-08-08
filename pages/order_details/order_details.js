@@ -15,17 +15,14 @@ Page({
   },
 
   click:function(){
-    wx.navigateBack({
-      delta: 2,
-    })
-    // wx.navigateTo({
-    //   url: '../clothes_ordering/clothes_ordering',
-    //   success: (result)=>{
+    wx.navigateTo({
+      url: '../clothes_ordering/clothes_ordering',
+      success: (result)=>{
         
-    //   },
-    //   fail: ()=>{},
-    //   complete: ()=>{}
-    // });
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   },
 
   click1:function(e){
@@ -75,7 +72,7 @@ Page({
    */
   onUnload: function () {
     wx.navigateBack({
-      delta: this.data.back_type,
+      delta: this.data.back_type
     })
   },
 

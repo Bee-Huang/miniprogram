@@ -1,35 +1,64 @@
-<view class="box1">
-    <view class="clothe_img_box">
-        <image class="clothe_img" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" />
-    </view>
-    <view class="clothe_text_box">
-        <view class="clothe_text">
-            8号青年校园8号青年校园 
-            8号青年校园8号青年校园
-        </view>
-        <view class="price">
-            ￥{{price}}
-        </view>
-    </view> 
-</view>
-
 <view class="box2">
+    <view class="box2_1_0" >
+            <view class="box2_1_0_0" >
+                布料/颜色
+            </view>
+    </view>
+<!-- 布料 -->
+    <view class="box2_1">
+        <swiper class="swiper" indicator-dots="true" bindanimationfinish="cloth_click">
+            <swiper-item class="swiper-item" item-id="" wx:for="{{cloth}}" 
+                data-id="{{item.id}}">
+                <view class="box2_1_1" >
+                    <view class="box2_1_1_1">
+                        <image class="img" src="{{item.src}}" />
+                    </view>
+                    <view class="box2_1_1_2">
+                        <view class="box2_1_1_2_1" >
+                            {{item.text}}
+                        </view>
+                        <view class="box2_1_1_2_2" >
+                            ￥{{item.money}}
+                        </view>
+                    </view>
+                    <view class="box2_1_1_3" >
+                        <view class="{{item.id==choose_id?'box2_1_1_3_1_press':'box2_1_1_3_1'}}"  bindtap='choose_click' >
+                            
+                        </view>
+                    </view>
 
-
-    <view class="{{item.id==is_select_color?'color_box_press':'color_box'}}" wx:for="{{color}}" bindtap="color_click"  data-id="{{item.id}}">
-        <view class="color" style="background:{{item.color}};">            
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+<!-- 颜色 -->
+    <view class="box2_2">
+            <view class="{{item.id==is_select_color?'color_box_press':'color_box'}}" wx:for="{{color}}" bindtap="color_click"  data-id="{{item.id}}">
+                <view class="color" style="background:{{item.color}};">          
+                </view>
+                <view class="text">
+                    {{item.text}}
+                </view>  
+            </view> 
         </view>
-        <view class="text">
-            {{item.text}}
-        </view>  
-    </view>  
-    <view class="{{item.id==is_select_color?'color_box_press':'color_box'}}" wx:for="{{color}}" bindtap="color_click"  data-id="{{item.id}}">
-        <view class="color" style="background:{{item.color}};">            
-        </view>
-        <view class="text">
-            {{item.text}}
-        </view>  
-    </view>  
+    
+    <view class="box2_1_0_" bindtap='sure_click' >
+            <view class="box2_1_0_1" >
+                确定
+            </view>
+    </view>
+</view>
+<view class="_box1_2" wx:if="{{appear}}" >
+    <view class="_box1_2_1" >
+        预定图案
+    </view>S
+    <view class="_box1_2_2" >
+            <view class="_box1_2_2_1" wx:for="{{4}}" bindtap='choose_img'>
+                <view class="_box1_2_2_1_1" >
+                    +
+                </view>
+            </view>
+    </view>
 </view>
 
 <view class="box3">
@@ -58,22 +87,5 @@
         </view>  
     </view>
 </view>
-  
-  <view class="box4" >
-      <view class="box4-1" >
-          <view class="number1" >
-              {{all_number}}件：  
-          </view>
-          <view class="money">
-              ￥{{all_money}}
-          </view>
-      </view>
-      <view class="box4-2" >
-          <view class="buy" >
-              立即购买
-          </view>
-          
-      </view>
 
-      
-  </view>
+<view class="none" ></view>
