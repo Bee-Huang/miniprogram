@@ -52,6 +52,17 @@ Page({
     });
   },
 
+  click1:function(){
+    wx.navigateTo({
+      url: '../order_details/order_details',
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -118,6 +129,8 @@ Page({
         that.getindexdata(that.data.id);
       }
     })
+  
+
   },
 
   /**

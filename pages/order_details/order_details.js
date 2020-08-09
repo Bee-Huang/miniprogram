@@ -10,7 +10,8 @@ Page({
     back_type:1,
     order_details:{},
     confirm_count:false,
-
+    design_count:false,
+    
     color:'红色',
     size:'S',
     number:10,
@@ -20,13 +21,12 @@ Page({
   },
 
   click:function(){
+    wx.setStorage({
+      key:"design_tmp",
+      data:this.data.order_details.sample_list
+    })
     wx.navigateTo({
-      url: '../clothes_ordering/clothes_ordering',
-      success: (result)=>{
-        
-      },
-      fail: ()=>{},
-      complete: ()=>{}
+      url: '../clothes_ordering/clothes_ordering?uid='+this.data.uid
     });
   },
 
@@ -87,8 +87,6 @@ Page({
         })
       }
     }
-     
-
     if(this.data.order_details.confirm_size!=undefined){
       
     }

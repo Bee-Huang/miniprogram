@@ -19,7 +19,7 @@
     </view>
 </view>
 
-<view class="_box1" wx:if="">
+<view class="_box1" wx:if="{{confirm_count}}">
     <view class="_box1_1" >
         <view class="_box1_1_1" >
             <view class="_img_box" >
@@ -52,7 +52,7 @@
             </view>
         </view>
     </view> 
-    <view class="_box1_2" >
+    <view class="_box1_2" wx:if="design_count">
         <view class="_box1_2_1" >
             效果图
         </view>
@@ -64,19 +64,19 @@
 
 <view class="box3" >
     <view class="box3_1" >
-        8号青年 12345678910
+        {{order_details.contactinfo.name}} {{order_details.contactinfo.phone}}
     </view>
     <view class="box3_2" >
-        广东省 茂名市 化州市 鉴江开发区 橘城北路68号眼之悦眼镜店
+       {{order_details.contactinfo.address}}
     </view>
 </view>
 <view class="box4" >
     <view class="box4_1" >
-        <view class="box4_1_1" >
+        <view class="box4_1_1" bindlongtap="copy_uid">
             订单号：
         </view>
         <view class="box4_1_2" >
-            13579246810
+            {{order_details.uid}}
         </view>
     </view>
     <view class="box4_1" >
@@ -84,12 +84,12 @@
             下单时间：
         </view>
         <view class="box4_1_2" >
-            2020-08-03
+            {{order_details.time}}
         </view>
     </view>
     <view class="box4_1" >
         <view class="box4_1_1" >
-            提货类型
+            提货类型：
         </view>
         <view class="box4_1_2" >
             送货上门

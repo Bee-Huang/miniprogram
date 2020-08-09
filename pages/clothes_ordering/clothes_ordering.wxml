@@ -1,67 +1,103 @@
+<view class="pro_box" >
+    <view class="pro_view">
+        <view class="for" wx:for="{{4}}">
+            <view class="{{now_progress==index?'rounded':'round'}}"/>
+            <view wx:if="{{index<3}}" class="line"/>
+        </view>
+    </view>
+    <view class="progress">
+        选择衣服材料/颜色
+    </view>
+</view>
+
 <view class="box2">
     <view class="box2_1_0" >
             <view class="box2_1_0_0" >
-                布料/颜色
+            选择布料/颜色
+                <!-- 布料/颜色 -->
+            </view>
+            <view class="right_text" bindtap='sure_click'>
+                确定
             </view>
     </view>
+
 <!-- 布料 -->
     <view class="box2_1">
         <swiper class="swiper" indicator-dots="true" bindanimationfinish="cloth_click">
-            <swiper-item class="swiper-item" item-id="" wx:for="{{cloth}}" 
-                data-id="{{item.id}}">
+            <swiper-item class="swiper-item" item-id="" wx:for="{{clothes}}" data-id="{{item.id}}" wx:for-item="detail">
                 <view class="box2_1_1" >
                     <view class="box2_1_1_1">
-                        <image class="img" src="{{item.src}}" />
+                        <image class="img" src="{{detail.swiper[is_select_color].src}}" data-src="{{detail.swiper[is_select_color].src}}"
+                        bindtap="bigimg"/>
                     </view>
                     <view class="box2_1_1_2">
                         <view class="box2_1_1_2_1" >
-                            {{item.text}}
+                            {{detail.title}}
                         </view>
                         <view class="box2_1_1_2_2" >
-                            ￥{{item.money}}
+                            ￥{{detail.prices}}
                         </view>
                     </view>
-                    <view class="box2_1_1_3" >
-                        <view class="{{item.id==choose_id?'box2_1_1_3_1_press':'box2_1_1_3_1'}}"  bindtap='choose_click' >
-                            
-                        </view>
-                    </view>
-
                 </view>
             </swiper-item>
         </swiper>
     </view>
 <!-- 颜色 -->
     <view class="box2_2">
-            <view class="{{item.id==is_select_color?'color_box_press':'color_box'}}" wx:for="{{color}}" bindtap="color_click"  data-id="{{item.id}}">
-                <view class="color" style="background:{{item.color}};">          
+            <view class="{{index==is_select_color?'color_box_press':'color_box'}}" wx:for="{{clothes[id].color}}" bindtap="color_click"  data-id="{{index}}">
+                <view class="color" style="background:{{item.hex}};">          
                 </view>
                 <view class="text">
-                    {{item.text}}
+                    {{item.name}}
                 </view>  
             </view> 
         </view>
     
-    <view class="box2_1_0_" bindtap='sure_click' >
-            <view class="box2_1_0_1" >
-                确定
-            </view>
-    </view>
-</view>
-<view class="_box1_2" wx:if="{{appear}}" >
-    <view class="_box1_2_1" >
-        预定图案
-    </view>S
-    <view class="_box1_2_2" >
-            <view class="_box1_2_2_1" wx:for="{{4}}" bindtap='choose_img'>
-                <view class="_box1_2_2_1_1" >
-                    +
+        <!-- <view class="box2_1_0_" bindtap='sure_click' >
+                <view class="box2_1_0_1" >
+                    确定
                 </view>
+        </view> -->
+    </view>
+<!-- 图库图案 -->
+<view class="_box1_2" wx:if="{{appear=='false'}}" >
+    <view class="_box1_2_1">
+        图库
+    </view>
+    <scroll-view class="_box1_2_1_1" scroll-y="true" >
+        <view class="_box1_2_1_1_1" >
+            <view class="{{item.id==pattern_id?'_box1_2_1_1_1_1_press':'_box1_2_1_1_1_1'}}" 
+            wx:for="{{pattern}}" 
+            bindtouchstart='Start' 
+            bindtouchend='End'
+            bindtap='choose_img_click' bindlongtap='check_img_click' 
+            data-id="{{item.id}}">
+                <image class="img" src="{{item.src}}"  />  
             </view>
+        </view>
+    </scroll-view>
+    <view class="_box1_2_1_2">
+        <textarea class="_box1_2_1_2_1" placeholder='备注信息' ></textarea>
     </view>
 </view>
 
-<view class="box3">
+<!-- 自定义图案 -->
+<view class="_box1_2" wx:if="{{appear=='true'}}">
+    <view class="_box1_2_1">
+        自定义
+    </view>
+    <view class="__box1_2_1_1" >
+        <view class="__box1_2_1_1_1" wx:for="{{picture}}">
+            <image class="img1" src="{{item}}" />
+              
+        </view>
+    </view>
+    <view class="_box1_2_1_2">
+        <textarea class="_box1_2_1_2_1" placeholder='备注信息' ></textarea>
+    </view>
+</view>
+
+<view class="box3" wx:if="{{false}}">
     <view class="type">
         <view class="size">
             尺码
@@ -88,4 +124,4 @@
     </view>
 </view>
 
-<view class="none" ></view>
+

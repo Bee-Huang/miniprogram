@@ -176,6 +176,8 @@ Page({
     })
   },
 
+ 
+
   img_big:function(e){
     console.log(e);
     wx.previewImage({

@@ -84,6 +84,13 @@
 					"pathName": "pages/order_details/order_details",
 					"query": "type=0",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clothes_ordering/clothes_ordering",
+					"pathName": "pages/clothes_ordering/clothes_ordering",
+					"query": "uid=2020080717005586e5df",
+					"scene": null
 				}
 			]
 		}
