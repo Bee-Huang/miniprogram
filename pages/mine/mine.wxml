@@ -41,22 +41,22 @@
     </view>
 </view>
 <view class="box" >
-  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+  <navigator class="navigator" hover-stay-time="100" url="/pages/agent_register/agent_register">
     <view class="box1">
       <image class="image1" src="../../images/mine-images/huodong.png" />
       <text class="text" >
-        我的活动
+        代理注册
       </text>
       <image class="image2" src="../../images/mine-images/fanhui.png" />
     </view>
   </navigator>
   <view class="fengexian" />
 
-  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
+  <navigator class="navigator" hover-stay-time="100" url="/pages/designer_register/designer_register" >
     <view class="box1">
       <image class="image1" src="../../images/mine-images/choujiang.png" />
       <text class="text" >
-        我的抽奖
+        设计注册
       </text>
       <image class="image2" src="../../images/mine-images/fanhui.png" />
     </view>

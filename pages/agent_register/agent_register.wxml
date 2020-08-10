@@ -1,0 +1,69 @@
+<form action="" catchsubmit="formSubmit" catchreset="formReset">
+    <view class="box1" >
+    <view class="box1_1" >
+        <view class="box1_1_1" >
+            姓名:
+        </view>
+        <view class="box1_1_2" >
+            <input type="text" bindinput="input_name" placeholder="请输入姓名"/>
+        </view>
+    </view>
+    <view class="sex" >
+        <label class="radio" >
+        <radio value="r1" bindtap="radioChange" checked="{{radio_value=='r1'?true:false}}" data-value="r1"/>男
+        </label>
+        <label class="radio" >
+        <radio value="r2" bindtap="radioChange" checked="{{radio_value=='r2'?true:false}}"  data-value="r2"/>女
+        </label>
+    </view>
+
+    <view class="box1_1" >
+        <view class="box1_1_1" >
+            联系手机:
+        </view>
+        <view class="box1_1_2" >
+            <input type="number" bindinput="input_phone_number" placeholder="请输入手机号码"/>
+        </view>
+    </view>
+    <view class="box1_1" >
+        <view class="box1_1_1" >
+            学校、班级:
+        </view>
+        <view class="box1_1_2" >
+            <input type="text" bindinput="input_class" placeholder="（xxx中学xxx级xxx班）"/>
+        </view>
+    </view>
+    <view class="box1_1" >
+        <view class="box1_1_1" >
+            内宿（宿舍号）:
+        </view>
+        <view class="box1_1_2" >
+            <input type="text" bindinput="input_dorm" placeholder="内宿生必填"/>
+        </view>
+    </view>
+    <view class="box1_1" >
+        <view class="box1_1_1" >
+            介绍人:
+        </view>
+        <view class="box1_1_2" >
+            <input type="text" bindinput="input_introducer" placeholder="可不填"/>
+        </view>
+    </view>
+    <view class="QRcode">
+        <view class="box1_1_1" >
+            个人微信二维码:
+        </view>
+        <view class="QRcode_img" bindtap='add_QRcode' >
+            <view class="add_QRcode" wx:if="{{QRcode_appear==false}}">
+                +
+            </view>
+            <image class="img" src="{{QRcode_src}}" wx:if="{{QRcode_appear==true}}" />
+              
+        </view>
+    </view>
+</view>
+    <view class="box2" >
+        <button style="margin: 30rpx 30rpx 0 30rpx" type="primary" formType="submit">注册</button>
+        <button style="margin: 30rpx 30rpx 0 30rpx" formType="reset">重置</button>
+    </view>
+</form>

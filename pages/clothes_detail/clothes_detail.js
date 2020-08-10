@@ -10,6 +10,7 @@ Page({
     id:'',
     prices:0.00,
     isorder:false,
+    QRcode_appear:false,
     swiper_item:[
       {
         id:0,
@@ -176,13 +177,30 @@ Page({
     })
   },
 
- 
-
   img_big:function(e){
     console.log(e);
     wx.previewImage({
       current: e.currentTarget.dataset.src,
       urls: this.data.data.detail
+    })
+  },
+
+  index_click:function(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
+
+  cart_click:function(){
+    wx.switchTab({
+      url: '/pages/clothes_shopping_cart/clothes_shopping_cart'
+    })
+  },
+
+  service_click:function(){
+    wx.previewImage({
+      current: 'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/12.jpg', 
+      urls: ['cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/12.jpg'] 
     })
   },
 

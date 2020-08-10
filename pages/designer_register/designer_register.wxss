@@ -1,0 +1,85 @@
+page{
+    background-color:#efefef;
+  }
+
+.box1{
+    margin-top: 5rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-color: #fff;
+}
+
+.box1_1{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    /* margin-bottom: 10rpx; */
+    border-bottom: #EFEFEF solid 5rpx;
+}
+
+.box1_1_1{
+    font-size: 36rpx;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15rpx;
+    /* background-color: darkmagenta; */
+}
+
+.box1_1_2{
+    /* text-align: right; */
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 60rpx;
+    /* background-color: darkmagenta; */
+}
+
+.sex{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    border-bottom: #EFEFEF solid 5rpx;
+    /* background-color: darkmagenta; */
+}
+
+.radio{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15rpx;
+}
+
+.QRcode{
+    width: 100%;
+    display: flex;
+}
+
+.QRcode_img{
+    width: 150rpx;
+    height: 150rpx;
+    display: flex;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    margin-left: 180rpx;
+    border: #EFEFEF solid 5rpx;
+    /* background-color: darkmagenta; */
+}
+
+.add_QRcode{
+    font-size: 80rpx;
+    margin: auto auto auto auto;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
