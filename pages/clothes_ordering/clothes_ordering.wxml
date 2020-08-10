@@ -6,11 +6,11 @@
         </view>
     </view>
     <view class="progress">
-        选择衣服材料/颜色
+        {{progress[now_progress]}}
     </view>
 </view>
 
-<view class="box2">
+<view class="box2" wx:if="{{now_progress==0}}">
     <view class="box2_1_0" >
             <view class="box2_1_0_0" >
             选择布料/颜色
@@ -20,8 +20,7 @@
                 确定
             </view>
     </view>
-
-<!-- 布料 -->
+    <!-- 布料 -->
     <view class="box2_1">
         <swiper class="swiper" indicator-dots="true" bindanimationfinish="cloth_click">
             <swiper-item class="swiper-item" item-id="" wx:for="{{clothes}}" data-id="{{item.id}}" wx:for-item="detail">
@@ -42,9 +41,9 @@
             </swiper-item>
         </swiper>
     </view>
-<!-- 颜色 -->
+    <!-- 颜色 -->
     <view class="box2_2">
-            <view class="{{index==is_select_color?'color_box_press':'color_box'}}" wx:for="{{clothes[id].color}}" bindtap="color_click"  data-id="{{index}}">
+        <view class="{{index==is_select_color?'color_box_press':'color_box'}}" wx:for="{{clothes[id].color}}" bindtap="color_click"  data-id="{{index}}">
                 <view class="color" style="background:{{item.hex}};">          
                 </view>
                 <view class="text">
@@ -52,19 +51,32 @@
                 </view>  
             </view> 
         </view>
-    
-        <!-- <view class="box2_1_0_" bindtap='sure_click' >
-                <view class="box2_1_0_1" >
-                    确定
-                </view>
-        </view> -->
+</view>
+
+<view class="select_show" wx:if="{{now_progress>0}}">
+    <view class="select_show_text1">
+        已选布料/颜色
     </view>
+    <view class="select_show_info">
+        <image class="select_show_img" src="{{order.confirm_type.img_src}}"></image>
+        <view class="select_show_son">
+            <view class="select_show_text">{{order.confirm_type.title}}</view>
+            <view class="select_show_color">
+                已选：{{order.confirm_type.color}}
+            </view>
+        </view>
+    </view>
+</view>
+
 <!-- 图库图案 -->
-<view class="_box1_2" wx:if="{{appear=='false'}}" >
+<view class="_box1_2" wx:if="{{now_progress==1}}" >
     <view class="_box1_2_1">
         图库
     </view>
-    <scroll-view class="_box1_2_1_1" scroll-y="true" >
+    <view class="_box1_2_1_100">
+        <image class="_box1_2_1_img" src="../../icon/fanhui_1.png"></image>
+    </view>
+    <!-- <scroll-view class="_box1_2_1_1" scroll-y="true" >
         <view class="_box1_2_1_1_1" >
             <view class="{{item.id==pattern_id?'_box1_2_1_1_1_1_press':'_box1_2_1_1_1_1'}}" 
             wx:for="{{pattern}}" 
@@ -78,24 +90,57 @@
     </scroll-view>
     <view class="_box1_2_1_2">
         <textarea class="_box1_2_1_2_1" placeholder='备注信息' ></textarea>
-    </view>
+    </view> -->
 </view>
 
 <!-- 自定义图案 -->
-<view class="_box1_2" wx:if="{{appear=='true'}}">
-    <view class="_box1_2_1">
-        自定义
-    </view>
-    <view class="__box1_2_1_1" >
-        <view class="__box1_2_1_1_1" wx:for="{{picture}}">
-            <image class="img1" src="{{item}}" />
-              
+<view class="_box1_5" wx:if="{{now_progress==1}}">
+    <view class="_box1_5_top">
+        <view class="__box1_2_1">
+            提交图案
+        </view> 
+        <view class="chooess_ok">
+              <view class="chooess_ok_text" bindtap="wirteimg">
+                    确定
+              </view>
         </view>
     </view>
+
+    <view class="forview">
+        <view class="chooess" wx:for="{{4}}" bindtap="chooess">
+            <view class="chooess_tip"  wx:if="{{picture[index]==undefine}}">
+            +
+            </view>
+            <image class="chooess_img" src="{{picture[index]}}" wx:if="{{picture[index]!=undefine}}">
+            </image>
+        </view>
+    </view>
+
     <view class="_box1_2_1_2">
-        <textarea class="_box1_2_1_2_1" placeholder='备注信息' ></textarea>
+        <textarea class="_box1_2_1_2_1" bindinput="reamark" placeholder='备注信息' ></textarea>
     </view>
 </view>
+
+<view class="img_show" wx:if="{{now_progress==2}}">
+    <view class="img_show_text_top">
+        <view class="img_show_text">已提交的图案</view>
+    </view>
+    <view class="img_show_view">
+        <view wx:for="{{order.userpic.item}}">
+            <image class="img_show_img" src="{{item}}"></image>
+        </view>
+    </view>
+    <view class="img_show_remark">
+        {{order.userpic.remarks}}
+    </view>
+</view>
+
+
+<view class="designing" wx:if="{{now_progress==2}}">
+    <view class="designing_text">设计师正在快马加鞭设计中……</view>
+    <view class="underline">急不可耐？这里添加设计师微信询问进度</view>
+</view>
+
 
 <view class="box3" wx:if="{{false}}">
     <view class="type">

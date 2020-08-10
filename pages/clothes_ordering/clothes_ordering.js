@@ -5,16 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
+    uid:'',
     now_progress:0,
+    progress:['选择衣服材料/颜色','选择/提交图案要求给设计师'
+              ,'设计师设计中','选择尺码和数量'],
     clothes:[],
     id:0,
     choose_id:-1,
-    price: 20,
+    order:{},
     all_number: 0,
     all_money: 0, 
     is_select_color:0,
     appear:false,
     color:[],
+    picture:[],
+    remark:'',
     cloth_color:{
       id:0,
       text:'',
@@ -453,28 +458,141 @@ Page({
     this.setData({
       is_select_color:e.currentTarget.dataset.id
     })
-    // console.log(this.data.cloth[this.data.id].color[e.currentTarget.dataset.id].color)
-    // var color=this.data.cloth[this.data.id].color[e.currentTarget.dataset.id].color
-    // if(this.data.cloth_color.text==''){
-    //   wx.showToast({
-    //     title: '请先选择布料',
-    //     icon: 'none',
-    //     duration: 3000
-    //   })
-    // }
-    // else
-    // this.data.cloth_color.color=color
-    
-    // this.setData({
-    //   cloth_color:this.data.cloth_color,
-    //   is_select_color:e.currentTarget.dataset.id
-    // })
-    // console.log(this.data.cloth_color)
   },
+
+  writedatabase_pro1:function(e){
+    console.log(e);
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('order')
+    .where({
+      uid: this.data.uid
+    })
+    .update({
+      data: {
+        confirm_type:{
+          id:e.type,
+          color:e.color,
+          title:e.title,
+          img_src:e.img_src
+        }
+      },
+      success:function(res){
+        if(res.errMsg=="collection.update:ok"){
+           var order_tmp=that.data.order
+            order_tmp.confirm_type=e
+            that.setData({
+              now_progress:1,
+              order:order_tmp
+            })
+        }
+      }
+    })
+  },
+
+  wirteimg:function(){
+    wx.showLoading({
+      title: '上传中…',
+    })
+    var that=this
+    var array=[]
+    for(let i=0;i<this.data.picture.length;i++){
+      let pic=this.data.picture[i]
+       let tmp1=pic.split(".")
+       let suffix=tmp1[tmp1.length-1]
+       wx.cloud.uploadFile({
+        cloudPath: 'design/'+this.data.uid+i+"."+suffix,
+        filePath: this.data.picture[i],
+        success: res => {
+          array.push(res.fileID)
+          console.log(array);
+          that.updateimg(array)
+        }
+      })
+    }
+    
+  },
+
+  updateimg:function(array){
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('order')
+    .where({
+      uid: this.data.uid
+    })
+    .update({
+      data: {
+        userpic:{
+          item:array,
+          remarks:this.data.remark
+        }
+      },
+      success:function(res){
+        if(res.errMsg=="collection.update:ok"){
+           var order_tmp=that.data.order
+            order_tmp.userpic={item:array,remarks:that.data.remark}
+            that.setData({
+              order:order_tmp
+            })
+            if(order_tmp.userpic.item.length==that.data.picture.length){
+              wx.hideLoading({
+                success: (res) => {},
+              })
+              wx.showToast({
+                title: '上传成功…',
+                icon:'success',
+                duration:1500
+              })
+              setTimeout(function () {
+                  that.setData({
+                    now_progress:2
+                  })
+              }, 1500)
+            }
+        }
+      }
+    })
+  },
+
+  reamark:function(e){
+    this.setData({
+      remark:e.detail.value
+    })
+  },
+
+  chooess:function(){
+    var that=this
+    wx.chooseImage({
+      count: 4,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success (res) {
+          // tempFilePath可以作为img标签的src属性显示图片
+          var tempFilePaths = res.tempFilePaths
+          that.setData({
+            picture:tempFilePaths,
+          })
+          console.log(that.data.picture)
+          
+      }
+    })
+  },
+
 
   sure_click:function(){
     var that=this
-    
+    wx.showModal({
+      title: '确认选择',
+      content: '选择的布料是：'+this.data.clothes[this.data.id].title+"   颜色是："+this.data.clothes[this.data.id].color[this.data.is_select_color].name,
+      success (res) {
+        if (res.confirm) {
+            var obj={type:that.data.clothes[that.data.id].id,color:that.data.clothes[that.data.id].color[that.data.is_select_color].name,title:that.data.clothes[that.data.id].title,img_src:that.data.clothes[that.data.id].swiper[that.data.is_select_color].src}
+            that.writedatabase_pro1(obj);
+        } else if (res.cancel) {
+            console.log('用户点击取消')
+        }
+      }
+    })
     // console.log(this.data.cloth_color)
     // if(this.data.cloth_color.text==''&&this.data.cloth_color.color==''){
     //   wx.showToast({
@@ -620,6 +738,40 @@ Page({
     })
   },
 
+  check_progress:function(){
+    if(this.data.order.confirm_type!=undefined){
+      this.setData({
+        now_progress:1
+      })
+      //继续检查是否已经选择照片
+      if(this.data.order.userpic!=undefined){
+        this.setData({
+          now_progress:2
+        })
+      }
+    }
+  },
+
+  getorder_details:function(){
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('order')
+    .where({
+      uid:this.data.uid
+   })
+   .get({ 
+     success:function(res){
+       console.log(res);
+       if(res.data.length>0){
+          that.setData({
+            order:res.data[0]
+          })
+          that.check_progress();
+       }
+     }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -635,9 +787,11 @@ Page({
       }
     })
     this.setData({
-      color:this.data.cloth[this.data.id].color
+      uid:options.uid
     })
+    this.getorder_details();
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
