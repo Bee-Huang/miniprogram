@@ -345,7 +345,11 @@ page{
 }
 
 .box3{
-    width: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20rpx;
+    margin-bottom: 40rpx;
     font-size: 35rpx;
     display: flex;
     flex-wrap: wrap;
@@ -376,7 +380,6 @@ page{
     height: 80rpx;
     display: flex;
     border-bottom: #EFEFEF solid 1rpx;
-
 }
 
 .size_data{
@@ -624,7 +627,15 @@ page{
       font-size: 30rpx;
       margin-left: 20rpx;
       margin-top: 10rpx;
-      margin-bottom: 10rpx;
+      margin-bottom: 20rpx;
+  }
+
+  .box3_text{
+      display: flex;
+      margin-top: 20rpx;
+      margin-bottom: 30rpx;
+      font-size: 35rpx;
+
   }
 
   .designing{
@@ -655,4 +666,71 @@ page{
     margin-bottom: 20rpx;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .desinged{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .desinged_son{
+      display: flex;
+      flex-direction: column;
+      margin-top: 20rpx;
+      margin-left: auto;
+      margin-right: auto;
+      height: 300rpx;
+      width: 95%;
+      border-radius: 20rpx;
+      background: #fff;
+  }
+
+  .desinged_text{
+      font-size: 35rpx;
+      margin-top: 20rpx;
+      margin-bottom: 10rpx;
+      margin-left: 20rpx;
+  }
+
+  .desinged_picview{
+      display: flex;
+      flex-direction: row;
+      width: 95%;
+      margin-top: 10rpx;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .desinged_img{
+      height: 200rpx;
+      width: 200rpx;
+      margin-left: 15rpx;
+      margin-bottom: 15rpx;
+  }
+
+  .total{
+      display: flex;
+      margin-top: 20rpx;
+      margin-bottom: 20rpx;
+      margin-right: 30rpx;
+      margin-left: auto;
+  }
+
+  .submit{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding:20rpx;
+    display: flex;
+    text-align: center;
+    background: #1296db;
+    border-radius: 30rpx;
+    margin-bottom: 30rpx;
+    font-size: 30rpx;
+  }
+
+  .submit_text{
+    margin-right: auto;
+    margin-left: auto;
+    color: #fff;
   }

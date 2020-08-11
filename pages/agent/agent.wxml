@@ -1,0 +1,51 @@
+<view class="box1" >
+    <view class="box1_" wx:for="{{order_text}}" >
+        <view class="{{item.id==id?'box1_1_press':'box1_1'}}"  bindtap="click"  data-id="{{item.id}}">
+            {{item.text}}
+        </view>
+    </view>
+</view>
+
+<view class="box" >
+        <view class="box2" wx:for="{{order_details}}" wx:if="{{id==0}}" >
+        <view class="box2_1" >
+            <view class="box2_1_1" >
+                {{item.uid}}
+            </view>
+            <view class="box2_1_2" >
+                接单
+            </view>
+        </view>
+        <view class="box2_2" >
+            <view class="box2_2_1" >
+                <image class="img" src="{{item.sample_list[0].img_src}}" mode="widthFix" />   
+            </view>
+
+            <view class="box2_2_2" >
+                <view class="box2_2_2_1" >
+                    {{item.sample_list[0].title}}等
+                </view>
+            </view>
+        </view>
+        <view class="box2_3" >
+            <view class="box2_3_1" >
+                共10件商品 合计：
+            </view>
+            <view class="box2_3_3" bindtap='click1' data-uid="{{item.uid}}">
+                查看详情
+            </view>
+        </view>
+    </view>   
+</view>
+
+<view class="box3">
+    <view class="xian">
+        
+    </view>
+    <view class="none">
+        暂无更多数据
+    </view>
+    <view class="xian">
+        
+    </view>  
+</view>

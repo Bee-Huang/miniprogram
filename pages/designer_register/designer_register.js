@@ -1,4 +1,4 @@
-
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -6,13 +6,11 @@ Page({
    */
   data: {
     QRcode_appear:false,
-    QRcode_src:'',
-    radio_value:'r1',
     name:'',
+    radio_value:'男',
     phone_number:'',
-    // class:'',
-    // dorm:'',
-    introducer:''
+    address:'',
+    QRcode_src:'',
   },
 
 
@@ -30,23 +28,10 @@ Page({
     })
   },
 
-  // input_class:function(e){
-  //   console.log(e.detail.value)
-  //   this.setData({
-  //     class:e.detail.value
-  //   })
-  // },
-  // input_dorm:function(e){
-  //   console.log(e.detail.value)
-  //   this.setData({
-  //     dorm:e.detail.value
-  //   })
-  // },
-  
-  input_introducer:function(e){
+  input_address:function(e){
     console.log(e.detail.value)
     this.setData({
-      introducer:e.detail.value
+      address:e.detail.value
     })
   },
 
@@ -64,23 +49,69 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success (res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        var QRcode_src=res.tempFilePaths
-      that.setData({
-        QRcode_src:QRcode_src,
-        QRcode_appear:true
-      })
+        var QRcode_src=res.tempFilePaths[0]
+        that.setData({
+          QRcode_src:QRcode_src,
+          QRcode_appear:true
+        })
       }
     })
     // console.log(this.data.QRcode_src)
   },
 
   formSubmit(e) {
-    console.log('form发生了submit事件，携带数据为：', e)
+    var time=util.formatTime(new Date())
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('designer')
+    .orderBy('designer_id', 'desc')
+    .limit(1)
+    .field({
+      designer_id:true
+    })
+    .get({
+      success:function(res) {
+        var designer_id=res.data[0].designer_id+1
+        that.setData({
+          designer_id:designer_id
+        })
+        that.setagent();
+      }
+   })
   },
 
+setagent(){
+  const db = wx.cloud.database()
+  db.collection('designer')
+  .add({
+    data: 
+      {
+        agent_id:this.data.designer_id,
+        name: this.data.name,
+        sex: this.data.radio_value,
+        phone:this.data.phone_number,
+        address:this.data.address,
+        qrcode:this.data.QRcode_src,
+        register_time:this.data.time
+      },
+      success:function(res){
+        wx.showToast({
+          title: '注册成功',
+          icon: 'success',
+          duration: 1500
+         })
+        setTimeout(function () {
+          wx.navigateBack({
+                delta: 1
+              });
+           },
+          1500)
+      }
+  })
+},
+
   formReset(e) {
-    console.log('form发生了reset事件，携带数据为：', e.detail.value)
+    // console.log('form发生了reset事')
     this.setData({
       chosen: ''
     })

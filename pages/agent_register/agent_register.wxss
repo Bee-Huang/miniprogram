@@ -3,9 +3,10 @@ page{
   }
 
 .box1{
-    margin-top: 5rpx;
+    margin-top: 20rpx;
     margin-left: 30rpx;
     margin-right: 30rpx;
+    border-radius: 20rpx;
     background-color: #fff;
 }
 

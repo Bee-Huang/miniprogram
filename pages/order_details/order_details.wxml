@@ -23,43 +23,38 @@
     <view class="_box1_1" >
         <view class="_box1_1_1" >
             <view class="_img_box" >
-                <image class="_img" mode="widthFix" src="cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg" />
+                <image class="_img" mode="widthFix" src="{{order_details.confirm_type.img_src}}" />
             </view>
         </view>
         <view class="_box1_1_2" >
             <view class="_clothe_text" >
-                JD76000男款24支180g纯棉圆领短袖T恤
+                {{order_details.confirm_type.title}}
             </view>
-            <view class="_color_size_number" >
+
+            <view class="_color_size_number" wx:if="{{order_details.confirm_size!=undefined}}">
                 <view class="_color_box" >
                     <view class="_color" >
-                        {{color}}：
+                        {{order_details.confirm_type.color}}：
                     </view>
                 </view>
                 <view class="_size_number_box">
-                    <view class="_size_number" wx:for="{{6}}">
-                        {{size}}-{{number}}
+                    <view class="_size_number" wx:for="{{order_details.confirm_size}}" wx:if="{{item.number_data!=0}}">
+                        {{item.size_data}}-{{item.number_data}}
                     </view>  
                 </view>
             </view>
         </view>
-        <view class="_box1_1_3" >
-            <view class="_number" >
-                x{{all_number}}件
-            </view>
-            <view class="_money" >
-                ￥{{all_money}}
-            </view>
-        </view>
-    </view> 
-    <view class="_box1_2" wx:if="design_count">
+    </view>
+</view>
+
+<view class="_box1_2" wx:if="{{order_details.designpic!=undefined}}">
         <view class="_box1_2_1" >
             效果图
         </view>
-        <view class="_box1_2_2" wx:for="{{4}}">
-            <image class="_img1" src="{{imgUrl}}" bindtap='click1'/>  
+        <view class="_box1_2_2" wx:for="{{order_details.designpic}}">
+            <image class="_img1"
+            data-src="{{item}}" src="{{item}}" bindtap='click1'/>  
         </view>
-    </view>
 </view>
 
 <view class="box3" >
@@ -94,5 +89,20 @@
         <view class="box4_1_2" >
             送货上门
         </view>
+    </view>
+</view>
+
+ <view class="box6" wx:if="{{agent!=undefined}}">
+    <view class="box6_1" >
+        代理人：
+    </view>
+    <view class="box6_2" >
+        {{agent.name}}  {{agent.phone}}
+    </view>
+      <view class="box6_2" >
+        {{agent.school_class}}  {{agent.dorm_id}}
+    </view>
+    <view class="box6_3" bindtap="agnetimg">
+        点击添加代理微信
     </view>
 </view>

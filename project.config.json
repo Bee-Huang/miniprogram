@@ -79,10 +79,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "pages/order_details/order_details",
 					"pathName": "pages/order_details/order_details",
-					"query": "type=0",
+					"query": "type=0&uid=202008101605319f5153",
 					"scene": null
 				},
 				{

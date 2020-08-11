@@ -121,7 +121,7 @@
     </view>
 </view>
 
-<view class="img_show" wx:if="{{now_progress==2}}">
+<view class="img_show" wx:if="{{now_progress>=2}}">
     <view class="img_show_text_top">
         <view class="img_show_text">已提交的图案</view>
     </view>
@@ -138,11 +138,28 @@
 
 <view class="designing" wx:if="{{now_progress==2}}">
     <view class="designing_text">设计师正在快马加鞭设计中……</view>
-    <view class="underline">急不可耐？这里添加设计师微信询问进度</view>
+    <view class="underline" bindtap="showdesign_code">急不可耐？这里添加设计师微信询问进度</view>
+</view>
+
+<view class="desinged" wx:if="{{now_progress==3}}">
+    <view class="desinged_son">
+        <view class="desinged_text">
+        设计师完成的图案
+        </view>
+        <view class="desinged_picview">
+            <image class="desinged_img" wx:for="{{order.designpic}}" src="{{item}}" bindtap="designed_img" data-src="{{item}}">
+            </image> 
+        </view>
+    </view>
+    <view class="underline" bindtap="showdesign_code">不满意？联系设计师进行深度修改</view>
 </view>
 
 
-<view class="box3" wx:if="{{false}}">
+<view class="box3" wx:if="{{now_progress==3}}">
+    <view class="box3_text">
+        选择尺码数量
+    </view>
+
     <view class="type">
         <view class="size">
             尺码
@@ -159,13 +176,21 @@
             <image class="reduce_img" src="../../icon/jian.png" bindtap="reduce_click" data-id="{{item.id}}" data-size="{{item.size_data}}" data-number="{{item.number_data}}"/>
         </view>
         <view class="number_data_box">
-            <view class="number_data" >
-                {{item.number_data}}
-            </view>
+            <input  class="number_data" data-id="{{index}}" type="number" bindinput="number_input" value="{{item.number_data}}">
+            </input>
         </view>
         <view class="add" >
             <image class="add_img" src="../../icon/jia.png" bindtap="add_click" data-id="{{item.id}}" data-size="{{item.size_data}}" data-number="{{item.number_data}}"/>
-        </view>  
+        </view>
+    </view>
+    <view class="total">
+            共计：{{all_number}}件
+    </view>
+</view>
+
+<view class="submit" wx:if="{{now_progress==3}}" bindtap="submit_order">
+    <view class="submit_text">
+        最终提交订单
     </view>
 </view>
 

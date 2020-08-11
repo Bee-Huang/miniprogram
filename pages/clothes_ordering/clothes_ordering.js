@@ -423,7 +423,37 @@ Page({
     ]
   },
 
-
+  setsize:function(){
+    //这里是获取衣服的码数表
+    console.log("id是");
+    var ids=this.data.order.confirm_type.id
+    console.log(ids);
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('detail')
+    .where({
+      id: ids
+    })
+    .get({
+      success:function(res){
+        if(res.data.length>0){
+          var tmp=[]
+          for(let i=0;i<res.data[0].size.length;i++){
+            console.log(res.data[0].size[i]);
+            let obj={}
+            obj.id=i
+            obj.size_data=res.data[0].size[i]
+            obj.number_data=0
+            tmp.push(obj)
+          }
+          console.log(tmp);
+          that.setData({
+            data:tmp
+          })
+        }
+      }
+    })
+  },
 
   cloth_click:function(e){
     this.setData({
@@ -475,7 +505,8 @@ Page({
           color:e.color,
           title:e.title,
           img_src:e.img_src
-        }
+        },
+        status:'设计进行中'
       },
       success:function(res){
         if(res.errMsg=="collection.update:ok"){
@@ -509,8 +540,7 @@ Page({
           that.updateimg(array)
         }
       })
-    }
-    
+    }  
   },
 
   updateimg:function(array){
@@ -524,7 +554,8 @@ Page({
       data: {
         userpic:{
           item:array,
-          remarks:this.data.remark
+          remarks:this.data.remark,
+          status:'设计进行中'
         }
       },
       success:function(res){
@@ -578,7 +609,6 @@ Page({
     })
   },
 
-
   sure_click:function(){
     var that=this
     wx.showModal({
@@ -593,58 +623,15 @@ Page({
         }
       }
     })
-    // console.log(this.data.cloth_color)
-    // if(this.data.cloth_color.text==''&&this.data.cloth_color.color==''){
-    //   wx.showToast({
-    //     title: '请选择布料/颜色',
-    //     icon: 'none',
-    //     duration: 2000
-    //   })
-    // }
-    // else{
-    //   wx.showToast({
-    //     title: '布料/颜色提交成功',
-    //     icon: 'success',
-    //     duration: 1000
-    //   })
-    // }
-    // wx.showModal({
-    //   title: '选择图案',
-    //   content: '图库图案/自定义图案',
-    //   cancelText:'图库',
-    //   confirmText:'自定义',
-    //   success (res) {
-    //     if (res.confirm) {
-    //       wx.chooseImage({
-    //         count: 4,
-    //         sizeType: ['original', 'compressed'],
-    //         sourceType: ['album', 'camera'],
-    //         success (res) {
-    //           // tempFilePath可以作为img标签的src属性显示图片
-    //           var tempFilePaths = res.tempFilePaths
-    //           that.setData({
-    //             picture:tempFilePaths,
-    //             appear:'true'
-    //           })
-    //           console.log(that.data.picture)
-    //         }
-    //       })
-    //     } 
-    //     else if (res.cancel) {
-    //       that.setData({
-    //         appear:'false'
-    //       })
-    //     }
-    //   }
-    // })
+
   },
-//获取点击接触时间
+
   Start: function(e) {
     this.setData({
       startTime: e.timeStamp
     })
   },
-//获取点击结束时间
+
   End: function(e) {
     this.setData({
       endTime: e.timeStamp
@@ -743,13 +730,153 @@ Page({
       this.setData({
         now_progress:1
       })
-      //继续检查是否已经选择照片
-      if(this.data.order.userpic!=undefined){
-        this.setData({
-          now_progress:2
+    }
+     //继续检查是否已经选择照片
+     if(this.data.order.userpic!=undefined){
+      this.setData({
+        now_progress:2
+      })
+    }
+    //继续检查是否设计师已经提交效果图
+    if(this.data.order.designpic!=undefined){
+      this.setData({
+        now_progress:3
+      })
+      console.log('aaa');
+      this.setsize();
+    }
+  },
+
+  showdesign_code(){
+      this.getorder_details();//更新数据
+      if(this.data.order.designer_id!=undefined){ 
+        var that=this
+        const db = wx.cloud.database()
+        db.collection('designer')
+        .where({
+          designer_id: this.data.order.designer_id
+        })
+        .get({
+          success:function(res){
+            if(res.data.length>0){
+              wx.previewImage({
+                current: res.data[0].qrcode,
+                urls: [res.data[0].qrcode]
+              })
+            }
+          }
+        })
+      }else{
+        //还没有设计师接单
+        wx.showToast({
+          title: '正在安排设计师',
+          icon:'none',
+          duration:1500
         })
       }
+  },
+
+  submit_order:function(e){
+    //整体订单提交
+    var that=this
+    wx.showModal({
+      cancelColor: 'cancelColor',
+      cancelText: '再想想',
+      confirmColor: 'confirmColor',
+      confirmText: '确认提交',
+      content: '确定提交吗？提交后不可修改哦',
+      showCancel: true,
+      title: '提交?',
+      success: (result) => {
+        console.log(result);
+        if(result.confirm){
+            wx.showLoading({
+              title: '提交中……',
+            })
+            if(that.data.all_number!=0){
+              that.update_cout();
+            }else{
+              wx.hideLoading({
+                success: (res) => {},
+              })
+              wx.showToast({
+                title: '请选择数量',
+                icon:'none',
+                duration:1500
+              })
+            }
+        }
+      },
+      fail: (res) => {},
+      complete: (res) => {},
+    })
+
+
+   
+  },
+
+  update_cout:function(){
+    var that=this
+    const db = wx.cloud.database()
+    db.collection('order')
+    .where({
+      uid: this.data.uid
+    })
+    .update({
+      data: {
+        confirm_size:this.data.data,
+        status:'厂家生产发货中'
+      },
+      success:function(res){
+        wx.hideLoading({
+          success: (res) => {},
+        })
+        wx.showToast({
+          title: '提交成功',
+          icon:'success',
+          duration:1500
+        })
+        setTimeout(function(){
+          wx.navigateBack({
+            delta: 0,
+          })
+        },1500)
+      }
+    })
+  },
+
+  number_input:function(e){
+    console.log(e.currentTarget.dataset.id);
+    var index=e.currentTarget.dataset.id
+    var number=e.detail.value
+    if(number!=''){
+       number=parseInt(number)
+       var ii='data['+index+'].number_data'
+       this.setData({
+         [ii]:number
+       })
+    }else{
+      //为空
+      var ii='data['+index+'].number_data'
+      this.setData({
+        [ii]:0
+      })
     }
+    //统计所有码数
+    var total=0
+    for(let i=0;i<this.data.data.length;i++)
+      total=total+this.data.data[i].number_data
+    this.setData({
+      all_number:total
+    })
+  },
+
+  designed_img:function(e){
+    console.log(e.currentTarget.dataset.src);
+    wx.previewImage({
+      current: e.currentTarget.dataset.src,
+      urls: this.data.order.designpic
+    })
   },
 
   getorder_details:function(){

@@ -11,55 +11,6 @@ Page({
     prices:0.00,
     isorder:false,
     QRcode_appear:false,
-    swiper_item:[
-      {
-        id:0,
-        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
-      },
-      {
-        id:1,
-        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
-      },
-      {
-        id:2,
-        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
-      },
-      {
-        id:3,
-        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
-      },
-      {
-        id:4,
-        src:'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/clothes-images/img/JD76000男款24支180g纯棉圆领短袖T恤.jpg'
-      },
-    ],
-    parameter:[
-      {
-        id:0,
-        text1:'面料',
-        text2:'黄胜锋大傻子'
-      },
-      {
-        id:1,
-        text1:'成分',
-        text2:'黄胜锋大傻子'
-      },
-      {
-        id:2,
-        text1:'克重',
-        text2:'黄胜锋大傻子'
-      },
-      {
-        id:3,
-        text1:'面料',
-        text2:'黄胜锋大傻子'
-      },
-      {
-        id:4,
-        text1:'成分',
-        text2:'黄胜锋大傻子黄胜锋大傻子黄胜锋大傻子黄胜锋大傻子'
-      },
-    ],
     data:{}
   },
   /**
@@ -108,6 +59,7 @@ Page({
     })
     .get({
       success:function(res){
+        console.log(res);
         if(res.data.length>0){
           that.setData({
             data:res.data[0]
@@ -118,15 +70,13 @@ Page({
           wx.showToast({
             title: '衣服信息不存在',
             icon: 'none',
-            duration: 2000,
-            success: function () {
-              setInterval(function () {
-                wx.navigateBack({
-                  delta: 1,
-                })
-              }, 2000);
-            }
+            duration: 2000
           })
+          setTimeout(function () {
+              wx.navigateBack({
+                delta: 0,
+              })
+          }, 2000);
         }
       }
     })

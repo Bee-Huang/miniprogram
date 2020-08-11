@@ -74,6 +74,7 @@ Page({
 
 
   submit2:function(){
+    var that=this
     const db = wx.cloud.database()
       db.collection('order').add({
         data: {
@@ -102,7 +103,7 @@ Page({
           })
           setTimeout(function () {
             wx.navigateTo({
-              url: '../order_details/order_details?type=2'
+              url: '../order_details/order_details?type=2&uid='+that.data.uid
             });
           }, 1500)
         },

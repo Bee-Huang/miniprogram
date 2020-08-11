@@ -10,10 +10,10 @@
     </view>
     <view class="sex" >
         <label class="radio" >
-        <radio value="r1" bindtap="radioChange" checked="{{radio_value=='r1'?true:false}}" data-value="r1"/>男
+        <radio value="男" bindtap="radioChange" checked="{{radio_value=='男'?true:false}}" data-value="男"/>男
         </label>
         <label class="radio" >
-        <radio value="r2" bindtap="radioChange" checked="{{radio_value=='r2'?true:false}}"  data-value="r2"/>女
+        <radio value="女" bindtap="radioChange" checked="{{radio_value=='女'?true:false}}"  data-value="女"/>女
         </label>
     </view>
 
@@ -30,7 +30,7 @@
             联系地址:
         </view>
         <view class="box1_1_2" >
-            <input type="text" bindinput="input_class" placeholder="请输入联系地址"/>
+            <input type="text" bindinput="input_address" placeholder="请输入联系地址"/>
         </view>
     </view>
     <!-- <view class="box1_1" >
