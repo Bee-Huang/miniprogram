@@ -145,6 +145,7 @@ page{
   width: 30rpx;
   height: 30rpx;
   margin-top: 25rpx;
-  margin-left:400rpx;
+  margin-left:auto;
+  margin-right: 20rpx;
 }
 

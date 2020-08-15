@@ -42,6 +42,27 @@ Page({
     ]
   },
 
+  scan:function(){
+    // 允许从相机和相册扫码
+    wx.scanCode({
+      success (res) {
+        //代理294BB9D3C7E657C5A9219145036896C3
+        //设计师  DFB8367A07D331C4741F28599BC6A21F
+        if(res.result=='DFB8367A07D331C4741F28599BC6A21F'){
+          wx.navigateTo({
+            url: '../../pages/designer_register/designer_register',
+          })
+        }
+        if(res.result=='294BB9D3C7E657C5A9219145036896C3'){
+          wx.navigateTo({
+            url: '../../pages/agent_register/agent_register',
+          })
+        }
+        console.log(res)
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

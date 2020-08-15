@@ -74,15 +74,17 @@
   </navigator>
   <view class="fengexian" />
 
-  <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
-    <view class="box1">
+  <!-- <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" > -->
+  <view class="navigator">
+    <view class="box1" bindtap="scan">
       <image class="image1" src="../../images/mine-images/shangjia.png" />
       <text class="text" >
-        商家入驻
+        扫一扫
       </text>
       <image class="image2" src="../../images/mine-images/fanhui.png" />
     </view>
-  </navigator>
+  </view>
+  <!-- </navigator> -->
   <view class="fengexian" />
 
   <navigator class="navigator" hover-stay-time="100" url="/pages/other/other" >
