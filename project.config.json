@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -90,6 +90,13 @@
 					"name": "pages/clothes_ordering/clothes_ordering",
 					"pathName": "pages/clothes_ordering/clothes_ordering",
 					"query": "uid=2020080717005586e5df",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/agent/agent",
+					"pathName": "pages/agent/agent",
+					"query": "",
 					"scene": null
 				}
 			]

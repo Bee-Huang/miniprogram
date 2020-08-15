@@ -66,7 +66,7 @@ Page({
   },
 
   getindexdata(index){
-    var statuss=['订单已提交','代理已接单','设计流程进行中','等待发货','订单完成']
+    var statuss=['订单已提交','代理已接单','设计进行中','厂家生产发货中','已完成']
     if(index==0){
       this.getdata();
     }else{
@@ -83,8 +83,20 @@ Page({
         that.setData({
           order_details:res.data
         })
+        that.deal_time();
        }
       })
+    }
+  },
+
+  deal_time(){
+    for(let i=0;i<this.data.order_details.length;i++){
+        var tmp=this.data.order_details[i].time
+        tmp=tmp.substring(0,4)+"-"+tmp.substring(4,6)+"-"+tmp.substring(6,8)+" "+tmp.substring(8,10)+":"+tmp.substring(10,12)
+        var ii='order_details['+i+'].time'
+        this.setData({
+          [ii]:tmp
+        })
     }
   },
 
@@ -102,6 +114,7 @@ Page({
       that.setData({
         order_details:res.data
       })
+      that.deal_time();
      }
     })
   },

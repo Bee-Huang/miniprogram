@@ -63,7 +63,6 @@ Page({
   },
 
   check_progress(){
-     console.log(this.data.order_details.confirm_type);
       if(this.data.order_details.confirm_type!=undefined){
          this.setData({
           confirm_count:true
@@ -106,6 +105,7 @@ Page({
         that.checkcount();
         that.getagent(res.data[0].agent);
         that.check_progress();
+        that.deal_total();
         wx.hideLoading({
           success: (res) => {},
         })
@@ -130,6 +130,17 @@ Page({
           })
         }
      }
+    })
+  },
+
+  deal_total(){
+    if(this.data.order_details.confirm_size==undefined)
+      return;
+    var count=0
+    for(let i=0;i<this.data.order_details.confirm_size.length;i++)
+      count+=this.data.order_details.confirm_size[i].number_data
+    this.setData({
+      all_number:count
     })
   },
 

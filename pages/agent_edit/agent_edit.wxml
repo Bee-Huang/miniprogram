@@ -1,0 +1,71 @@
+<view class="box1" >
+    <view class="pro_view">
+        <view class="for" wx:for="{{5}}">
+            <view class="{{now_progress==index?'rounded':'round'}}"/>
+            <view wx:if="{{index<4}}" class="line"/>
+        </view>
+    </view>
+    <view class="progress">
+       {{order_details.status}}
+    </view>
+</view>
+
+<!--样衣清单-->
+<view class="box2">
+    <view class="tip">样衣清单</view>
+    <view class="list" wx:for="{{order_details.sample_list}}">
+        <view class="list_son">
+            <image class="img" src="{{item.img_src}}"></image>
+            <view class="title">{{item.title}}</view>
+        </view>
+    </view>
+</view>
+
+<!-- 确认的衣服 -->
+<view class="box2" wx:if="{{order_details.confirm_type!=undefined}}">
+    <view  class="tip2">已选布料/颜色</view>
+    <view class="list_son">
+        <image class="img" src="{{order_details.confirm_type.img_src}}"></image>
+        <view>
+            <view class="tip2">{{order_details.confirm_type.title}}</view>
+            <view class="tip3">{{order_details.confirm_type.color}}</view>
+        </view>
+    </view>
+</view>
+
+<view class="box2" wx:if="{{order_details.confirm_type!=undefined}}">
+    <view class="tip2">设计师完成的图案</view>
+    <view class="list_son">
+        <view wx:for="{{order_details.designpic}}">
+            <image class="img2" src="{{item}}" data-url="{{item}}" data-urls="{{order_details.designpic}}" bindtap="img_click"></image>
+        </view>
+    </view>
+</view>
+
+
+<view class="box3">
+    <view class="tip2">定金/合同状态</view>
+    <switch class="switch" disabled="{{deposit}}" checked="{{deposit}}" bindchange="switchchange"></switch>
+</view>
+
+
+<view class="box4">
+    <view class="prices_box">
+        <view class="box4_text" >单价定价</view>
+        <input class="prices_input" bindinput="prices"  type="digit" value="{{order_details.value.prices}}"></input>
+    </view>
+    <view class="prices_box">
+        <view class="box4_text">优惠金额</view>
+        <input class="box4_discount" bindinput="discount"  type="digit" value="{{order_details.value.discount}}"></input>
+    </view>
+    <view class="tip">优惠金额是整单减免的金额而非单件减免的金额</view>
+    <view class="prices_box">
+        <view class="box4_text">其他优惠</view>
+        <input class="box4_remark" value="{{order_details.value.remark}}" confirm-type="done" bindinput="remark" bindconfirm="values"></input>
+    </view>
+    <view class="tip">其他优惠包括赠送物品或者其他物品类优惠说明信息</view>
+</view>
+
+<view class='button'>
+    <view class="button_text" bindtap="clear">清除订单设计进度（谨慎使用）</view>
+</view>

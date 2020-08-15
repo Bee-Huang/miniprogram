@@ -310,6 +310,50 @@ page{
   margin-right: auto;
 }
 
+.prices_view{
+  margin-top: 10rpx;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rpx;
+}
+
+
+.pricess_view{
+  margin-top: 20rpx;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
+
+.total_view{
+  margin-top: 20rpx;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  font-size: 40rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.prices{
+  color: #1296db;
+}
+
+.total{
+  color: red;
+  
+}
+
+
+
+
+
 
 
 

@@ -1,0 +1,195 @@
+/* pages/agent_edit/agent_edit.wxss */
+page{
+  background-color:#efefef;
+  display: flex;
+  flex-direction: column;
+}
+
+.box1{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  justify-content: center;
+}
+.progress{
+  font-size: 40rpx;
+  text-align: center;
+  color: #444444;
+}
+
+.pro_view{
+  width: 100%;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.for{
+  display: flex;
+  justify-content: center;
+}
+
+.round{
+  margin-top: auto;
+  margin-bottom: auto;
+  /* background-color: #000000; */
+  width: 25rpx;
+  height: 25rpx;
+  border-radius: 50%;
+  border: #1296db solid 5rpx;
+}
+
+.rounded{
+  background-color: #1296db;
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 50%;
+  border: #1296db solid 5rpx;
+}
+
+.line{
+  width: 100rpx;
+  height: 5rpx;
+  background-color: #1296db;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.box2{
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20rpx;
+  padding:20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+
+.list{
+  margin-top: 15rpx;
+}
+
+.list_son{
+  display: flex;
+  margin-top: 20rpx;
+}
+
+
+
+.img{
+  height: 120rpx;
+  width: 120rpx;
+}
+
+.img2{
+  height: 120rpx;
+  width: 120rpx;
+  margin-left: 15rpx;
+}
+
+.box3{
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20rpx;
+  padding:20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+}
+
+.tip2{
+  font-size: 35rpx;
+  width:100%;
+  margin-left: 20rpx;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.switch{
+  display: flex;
+  margin-right: auto;
+  width:100%;
+}
+
+.box4{
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20rpx;
+  padding:20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.prices_box{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.box4_text{
+  display: flex;
+  font-size: 30rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+input{
+  border: #444444 solid 1rpx;
+  margin-left: 25rpx;
+  width: 70%;
+  padding: 10rpx;
+  border-radius: 15rpx;
+}
+
+.tip{
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #555555;
+}
+
+.tip2{
+  font-size: 30rpx;
+}
+
+.tip3{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-size: 25rpx;
+}
+
+.button{
+  font-size: 30rpx;
+  display: flex;
+  margin-top: 30rpx;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FF3300;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  width: 80%;
+  padding: 20rpx;
+}
+
+.button_text{
+  display: flex;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}

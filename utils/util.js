@@ -5,8 +5,10 @@ const formatTime = date => {
   const hour = date.getHours()
   const minute = date.getMinutes()
   const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('') + '' + [hour, minute, second].map(formatNumber).join('')
+  // return year.toString()+month.toString()+day.toString()+hour.toString()+minute.toString()+second.toString()
+  var a= [year, month, day].map(formatNumber)+ [hour, minute, second].map(formatNumber)
+  a = a.replace(/\,/g,"");
+  return a
 }
 
 const formatNumber = n => {

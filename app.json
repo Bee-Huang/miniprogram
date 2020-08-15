@@ -3,6 +3,13 @@
 
   "pages": [
     "pages/index/index",
+    "pages/designer/designer", 
+    "pages/agent/agent",
+    "pages/agent_edit/agent_edit",  
+    "pages/mine/mine",
+    "pages/designer_register/designer_register", 
+    "pages/agent_register/agent_register", 
+    "pages/clothes_detail/clothes_detail", 
     "pages/clothes/clothes",
     "pages/order_details/order_details", 
     "pages/clothes_shopping_cart/clothes_shopping_cart",    
@@ -14,10 +21,7 @@
     "pages/other/other",
     "pages/clothes_type/clothes_type",
     "pages/clothes_list/clothes_list",
-    "pages/clothes_detail/clothes_detail", 
-    "pages/search/search", 
-    "pages/mine/mine"
-
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "dark",

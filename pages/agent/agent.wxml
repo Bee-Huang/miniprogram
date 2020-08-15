@@ -1,3 +1,44 @@
+<view class="topbar">
+    <view class="{{id==0?'press':'no_press'}}" bindtap="click_tap" data-id="0">
+        全部订单
+    </view>
+    <view class="{{id==1?'press':'no_press'}}" bindtap="click_tap" data-id="1">
+        我的订单
+    </view>
+</view>
+
+<view class="box_big" wx:if="{{id==0}}">
+    <view class="boxx" wx:for="{{order_details}}">
+        <view class="boxx1">
+            <view class="time">{{item.time}}</view>
+            <view class="uid">{{item.uid}}</view>
+        </view>
+        <view class="boxxx">
+            <view class="boxx2">
+                <view class="name">{{item.contactinfo.name}} {{item.contactinfo.phone}}</view>
+                <view class="address">{{item.contactinfo.address}}</view>
+            </view>
+            <view class="get_order" bindtap="recevice" data-uid="{{item.uid}}">
+                <view class="get_order_text">
+                    接单
+                </view>
+            </view>
+        </view> 
+    </view>
+</view>
+
+<view class="mine_box" wx:if="{{id==1}}">
+    <view class="mine_item" wx:for='{{order_details}}'>
+        <view class="mine_son">
+             <view class="uid2">{{item.uid}}</view>
+             <view class="status">{{item.status}}</view>
+        </view>
+        <view class="address2">{{item.contactinfo.address}}</view>
+        <view class="details" data-uid="{{item.uid}}" bindtap="to_detail">查看详情</view>
+    </view>
+</view>
+
+<!--
 <view class="box1" >
     <view class="box1_" wx:for="{{order_text}}" >
         <view class="{{item.id==id?'box1_1_press':'box1_1'}}"  bindtap="click"  data-id="{{item.id}}">
@@ -20,7 +61,6 @@
             <view class="box2_2_1" >
                 <image class="img" src="{{item.sample_list[0].img_src}}" mode="widthFix" />   
             </view>
-
             <view class="box2_2_2" >
                 <view class="box2_2_2_1" >
                     {{item.sample_list[0].title}}等
@@ -36,7 +76,7 @@
             </view>
         </view>
     </view>   
-</view>
+</view> -->
 
 <view class="box3">
     <view class="xian">

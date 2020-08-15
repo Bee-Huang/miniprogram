@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
-const app = getApp()
+var app=getApp()
+var util = require('../../utils/util.js')
 
 Page({
   data: {
@@ -110,7 +111,8 @@ Page({
     })
   },
   onLoad: function () {
-    
+      console.log(util.formatTime(new Date()));
+      
   },
   getUserInfo: function(e) {
     console.log(e)

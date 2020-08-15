@@ -47,6 +47,41 @@
     </view>
 </view>
 
+<view class="prices_view" wx:if="{{order_details.value!=undefined}}">
+    <view class="pricess_view">
+        <view class="prices_tip">
+            单价：
+        </view>
+        <view class="prices">
+            {{order_details.value.prices}}
+        </view>
+    </view>
+     <view class="pricess_view">
+        <view class="prices_tip">
+            优惠：
+        </view>
+        <view class="prices">
+            -{{order_details.value.discount}}
+        </view>
+    </view>
+     <view class="pricess_view">
+        <view class="prices_tip">
+            其他优惠：
+        </view>
+        <view class="prices">
+            {{order_details.value.remark}}
+        </view>
+    </view>
+     <view class="total_view">
+        <view class="prices_tip">
+            总价：
+        </view>
+        <view class="total">
+            {{order_details.value.prices*all_number-order_details.value.discount}}
+        </view>
+    </view>
+</view>
+
 <view class="_box1_2" wx:if="{{order_details.designpic!=undefined}}">
         <view class="_box1_2_1" >
             效果图

@@ -1,11 +1,16 @@
 <view class="box0" >
     <view class="box0_1" >
-        <view class="{{is_true==true?'box0_1_1_press':'box0_1_1'}}" bindtap='click1' >
-            订单
+        <view class="{{state=='all'?'box0_1_1_press':'box0_1_1'}}" bindtap='click1' >
+            全部订单
         </view>
     </view>
     <view class="box0_1" >
-        <view class="{{is_true==false?'box0_1_1_press':'box0_1_1'}}" bindtap='click2'>
+        <view class="{{state=='mine'?'box0_1_1_press':'box0_1_1'}}" bindtap='click2'>
+            我的订单
+        </view>
+    </view>
+    <view class="box0_1" >
+        <view class="{{state=='history'?'box0_1_1_press':'box0_1_1'}}" bindtap='click3'>
             历史订单
         </view>
     </view>
@@ -13,85 +18,143 @@
 
 <view class="none"></view>
 
-<view class="_box1" wx:if="{{is_true==true}}">
-    <block wx:for="{{order}}" >
-        <view class="box1" wx:if="{{item.is_submit==false}}">
-        <view class="box1_1" >
-            <view class="box1_1_1"  >
-                <image class="img" src="{{item.src}}" bindtap='cheak_img1' data-src="{{item.src}}" />
-            </view>
-            <view class="box1_1_2" >
-                <view class="box1_1_2_1" >
-                    布料：{{item.cloth}}
+<view class="_box1" wx:if="{{state=='all'}}">
+    <block wx:for="{{all_order}}" wx:if="{{item.userpic.item.length>0&&item.designer_id==undefined}}">
+        <view class="box1" >
+            <view class="box1_1" >
+                <view class="box1_1_1"  >
+                    <image class="img" src="{{item.confirm_type.img_src}}" bindtap='cheak_img1' data-src="{{item.confirm_type.img_src}}"/>
                 </view>
-                <view class="box1_1_2_2" >
-                    颜色：{{item.color}}
+                <view class="box1_1_2" >
+                    <view class="box1_1_2_1" >
+                        布料：{{item.confirm_type.title}}
+                    </view>
+                    <view class="box1_1_2_2" >
+                        颜色：{{item.confirm_type.color}}
+                    </view>
+                </view>
+                <view class="box1_1_3" bindtap='receive_click' data-id="{{index}}" >
+                    接单
                 </view>
             </view>
-            <view class="box1_1_3" bindtap='submit_click' data-isSubmit="{{item.is_submit}}" data-submitTime="{{item.submit_time}}" data-id="{{item.id}}" >
-                提交
+            <view class="box1_2" wx:if="{{item.userpic.remarks!=undefined}}">
+                客户留言：{{item.userpic.remarks}}
+            </view>
+            <view class="box1_3" >
+                <view class="box1_3_1" wx:for="{{item.userpic.item}}" bindtap='cheak_img2' data-src="{{item}}">
+                    <image class="img" src="{{item}}" />
+                </view>
             </view>
         </view>
-        <view class="box1_2" >
-            客户留言：{{item.words}}
-        </view>
-        <view class="box1_3" >
-            <view class="box1_3_1" wx:for="{{item.img}}" bindtap='cheak_img2' data-src="{{item.src}}">
-            <image class="img" src="{{item.src}}" />
+    </block>
+    <view class="bottom" >
+        <view class="hengxian" >
             
-            </view>
         </view>
-        <view class="box1_4" >
-            <view class="box1_4_1" wx:for-index="childindex" 
-                wx:for-item="items"  
-                data-parent='{{index}}' wx:for="{{4}}" wx:if="{{is_add==false}}" bindtap='add_img'  >
-                <view class="box1_4_1_1" >
-                    +
-                </view>
-            </view>
+        <view class="no_data" >
+            暂无更多数据
+        </view>
+        <view class="hengxian" >
             
-            <view class="box1_4_1" wx:for="{{item.desiger_img}}" wx:if="{{is_add==false}}">
-                <image class="img" src="{{item.src}}" wx:if="{{is_add==true}}" />
-            </view>
         </view>
     </view>
-    </block>
-    
 </view>
 
-<view class="_box1" wx:if="{{is_true==false}}">
-    <view class="box1" wx:for="{{order}}" wx:if="{{item.is_submit==true}}">
-        <view class="box1_1" >
-            <view class="box1_1_1" >
-                <image class="img" src="{{item.src}}" />
-            </view>
-            <view class="box1_1_2" >
-                <view class="box1_1_2_1" >
-                    布料：{{item.cloth}}
+<view class="_box1" wx:if="{{state=='mine'}}">
+    <block wx:for="{{mine_order}}">
+        <view class="box1" >
+            <view class="box1_1" >
+                <view class="box1_1_1"  >
+                    <image class="img" src="{{item.confirm_type.img_src}}" bindtap='cheak_img1' data-src="{{item.confirm_type.img_src}}" />
                 </view>
-                <view class="box1_1_2_2" >
-                    颜色：{{item.color}}
+                <view class="box1_1_2" >
+                    <view class="box1_1_2_1" >
+                        布料：{{item.confirm_type.title}}
+                    </view>
+                    <view class="box1_1_2_2" >
+                        颜色：{{item.confirm_type.color}}
+                    </view>
+                </view>
+                <view class="box1_1_3" bindtap='submit_click' data-uid="{{item.uid}}" data-index="{{index}}">
+                    提交
                 </view>
             </view>
-            <view class="box1_1_3" >
-                完成
+            <view class="box1_2" wx:if="{{item.userpic.remarks!=undefined}}">
+                客户留言：{{item.userpic.remarks}}
+            </view>
+            <view class="box1_3" >
+                <view class="box1_3_1" wx:for="{{item.userpic.item}}" bindtap='cheak_img2' data-src="{{item}}">
+                    <image class="img" src="{{item}}" />
+                </view>
+            </view>
+            <view class="box1_4" >
+                <view class="box1_4_1" wx:for-item="items" data-uid="{{item.uid}}" wx:for="{{4}}" bindtap='add_img' data-parent='{{index}}'>
+                    <view class="box1_4_1_1" wx:if="{{item.designpic[index]==undefined}}" >
+                        +
+                    </view>
+                    <image class="img" src="{{item.designpic[index]}}" wx:if="{{item.designpic[index]!=undefined}}"/>
+
+                </view>
             </view>
         </view>
-        <view class="box1_2" >
-            设计师留言：
-        </view>
-        <view class="box1_3" >
-            <view class="box1_3_1" wx:for="{{item.img}}">
-            <image class="img" src="{{item.src}}" />
+    </block>
+    <view class="bottom" >
+        <view class="hengxian" >
             
-            </view>
         </view>
-        <view class="box1_4" >
-            <view class="box1_4_1" wx:for="{{4}}">
-                <view class="box1_4_1_1" >
-                    +
+        <view class="no_data" >
+            暂无更多数据
+        </view>
+        <view class="hengxian" >
+            
+        </view>
+    </view>
+</view>
+
+<view class="_box1" wx:if="{{state=='history'}}">
+    <block wx:for="{{history_order}}" >
+        <view class="box1" >
+            <view class="box1_1" >
+                <view class="box1_1_1" >
+                    <image class="img" src="{{item.confirm_type.img_src}}" bindtap='cheak_img1' data-src="{{item.confirm_type.img_src}}" />
+                </view>
+                <view class="box1_1_2" >
+                    <view class="box1_1_2_1" >
+                        布料：{{item.confirm_type.title}}
+                    </view>
+                    <view class="box1_1_2_2" >
+                        颜色：{{item.confirm_type.color}}
+                    </view>
+                </view>
+                <view class="box1_1_3" >
+                    完成
                 </view>
             </view>
+            <view class="box1_2" >
+                客户留言：{{item.userpic.remarks}}
+            </view>
+            <view class="box1_3" >
+                <view class="box1_3_1" wx:for="{{item.userpic.item}}" bindtap='cheak_img2' data-src="{{item}}">
+                    <image class="img" src="{{item}}" />
+                </view>
+            </view>
+            <view class="box1_4" >
+                <view class="box1_4_1" wx:for-index="childindex" 
+                    data-parent='{{index}}' data-childid="{{childindex}}" wx:for="{{item.designpic}}"  bindtap='add_img' >
+                    <image class="img" src="{{item}}" />
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="bottom" >
+        <view class="hengxian" >
+            
+        </view>
+        <view class="no_data" >
+            暂无更多数据
+        </view>
+        <view class="hengxian" >
+            
         </view>
     </view>
 </view>

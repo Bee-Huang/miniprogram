@@ -7,10 +7,10 @@
 </view>
 
 <view class="box" >
-        <view class="box2" wx:for="{{order_details}}" wx:if="{{id==0}}" >
+        <view class="box2" wx:for="{{order_details}}" >
         <view class="box2_1" >
             <view class="box2_1_1" >
-                {{item.uid}}
+                {{item.time}}
             </view>
             <view class="box2_1_2" >
                 {{item.status}}
