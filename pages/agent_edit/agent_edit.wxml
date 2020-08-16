@@ -66,6 +66,26 @@
     <view class="tip">其他优惠包括赠送物品或者其他物品类优惠说明信息</view>
 </view>
 
+<view class="box4" wx:if="{{order_details.confirm_size!=undefined}}">
+    <view class="tip2">
+        尺码数量:
+    </view>
+    <view class="for_size">
+        <view class="size_for" wx:for="{{order_details.confirm_size}}">
+            <view class="size">
+                {{item.size_data}}
+            </view>
+            <view class="count">
+                {{item.number_data}}
+            </view>
+        </view>
+    </view>
+    <view class="count_all">
+        总计：{{all_count}}
+    </view>
+
+</view>
+
 <view class='button'>
     <view class="button_text" bindtap="clear">清除订单设计进度（谨慎使用）</view>
 </view>

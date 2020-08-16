@@ -7,6 +7,7 @@ Page({
   data: {
     now_progress:0,
     order_details:{},
+    all_count:0,
     deposit:false,
   },
 
@@ -18,6 +19,18 @@ Page({
           now_progress:i
         })
       }
+    }
+    this.getcount()
+  },
+
+  getcount(){
+    if(this.data.order_details.confirm_size!=undefined){
+      var count=0
+      for(let i=0;i<this.data.order_details.confirm_size.length;i++)
+        count=count+this.data.order_details.confirm_size[i].number_data
+      this.setData({
+        all_count:count
+      })
     }
   },
 
@@ -117,6 +130,7 @@ Page({
       title: '警告',
       content: '你确定要清除该订单的所有设计流程信息吗？',
       success (res) {
+        
         if (res.confirm) {
           wx.showModal({
             title: '警告',

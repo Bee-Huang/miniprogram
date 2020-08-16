@@ -84,7 +84,34 @@ page{
   margin-top: 20rpx;
 }
 
+.size_for{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
 
+.for_size{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.size{
+  display: flex;
+  margin-left: 20rpx;
+  font-size: 35rpx;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.count{
+  display: flex;
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  color: #FF3300;
+  padding-right: 10rpx;
+  border-right: #000000 solid 1rpx;
+}
 
 .img{
   height: 120rpx;
@@ -95,6 +122,15 @@ page{
   height: 120rpx;
   width: 120rpx;
   margin-left: 15rpx;
+}
+
+.count_all{
+  display: flex;
+  margin-left: auto;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  font-size:35rpx;
+  color: #1296db;
 }
 
 .box3{

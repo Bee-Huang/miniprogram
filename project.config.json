@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -97,6 +97,12 @@
 					"name": "pages/agent/agent",
 					"pathName": "pages/agent/agent",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clothes_gallery/clothes_gallery",
+					"pathName": "pages/clothes_gallery/clothes_gallery",
 					"scene": null
 				}
 			]

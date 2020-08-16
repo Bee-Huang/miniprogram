@@ -30,6 +30,10 @@ Page({
       this.setData({
         isallselect:true
       })
+    }else{
+      this.setData({
+        isallselect:false
+      })
     }
     this.setData({
       [index]:boo,

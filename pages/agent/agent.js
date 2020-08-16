@@ -128,6 +128,9 @@ Page({
 
   getmydata:function(){
     var that=this
+    this.setData({
+      order_details:[]
+    })
     const db = wx.cloud.database()
     db.collection('order')
     .where({
@@ -136,8 +139,6 @@ Page({
     .get({ 
       success:function(res){
         console.log(res);
-        
-
         that.setData({
           order_details:res.data
         })
