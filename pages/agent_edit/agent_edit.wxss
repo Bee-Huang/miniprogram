@@ -221,6 +221,19 @@ input{
   padding: 20rpx;
 }
 
+.button2{
+  font-size: 30rpx;
+  display: flex;
+  margin-top: 30rpx;
+  margin-left: auto;
+  margin-right: auto;
+  background: #1296db;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  width: 80%;
+  padding: 20rpx;
+}
+
 .button_text{
   display: flex;
   margin-bottom: auto;

@@ -1,2 +1,12 @@
-<!--pages/clothes_gallery/clothes_gallery.wxml-->
-<text>pages/clothes_gallery/clothes_gallery.wxml</text>
+<view class="box1" >
+    <view class="box1_1" >
+        选择你喜欢的图片并保存下来
+    </view>
+    <view class="box1_2" >
+        <view class="box1_2_1" >
+            <view class="box1_2_1_1" wx:for="{{pattern}}" bindtap='check_img' data-src="{{item}}">
+                <image class="img" src="{{item}}" />
+            </view>
+        </view>
+    </view>
+</view>

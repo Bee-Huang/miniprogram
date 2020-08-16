@@ -58,6 +58,31 @@ Page({
     })
   },
 
+  update:function(id){
+    //上传二维码
+    //this.data.QRcode_src
+    var pic=this.data.QRcode_src
+    let tmp1=pic.split(".")
+    let suffix=tmp1[tmp1.length-1]
+    var that=this
+    wx.cloud.uploadFile({
+      filePath : this.data.QRcode_src,
+      cloudPath: 'qrcode/'+id+'.'+suffix, // 文件路径
+      success: res => {
+        // get resource ID
+        console.log(res.fileID)
+        that.setData({
+          QRcode_src:res.fileID
+        })
+        that.setagent(that);
+      },
+      fail: err => {
+        // handle error
+        console.log(err);
+      }
+    })
+  },
+
   add_QRcode:function(){
     var that=this
     wx.chooseImage({
@@ -77,6 +102,9 @@ Page({
   },
 
   formSubmit(e) {
+    wx.showLoading({
+      title: '注册中……',
+    })
     var time=util.formatTime(new Date())
     var that=this
     const db = wx.cloud.database()
@@ -92,9 +120,11 @@ Page({
         that.setData({
           agent_id:agent_id
         })
-        that.setagent(that);
+        that.update(agent_id);
+      },
+      fail:function(err){
+        console.log(err);
       }
-    
    })
   },
 
@@ -114,16 +144,19 @@ setagent:function(that){
         register_time:that.data.time
       },
       success:function(res){
+        wx.hideLoading({
+          success: (res) => {},
+        })
         wx.showToast({
           title: '注册成功',
           icon: 'success',
           duration: 1500
          })
         setTimeout(function () {
-          wx.navigateBack({
-                delta: 1
-              });
-           },
+        wx.redirectTo({
+          url: '../agent/agent'
+        })
+          },
           1500)
       },
       fail:function(res){
@@ -143,6 +176,7 @@ setagent:function(that){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.cloud.init()
   },
 
   /**

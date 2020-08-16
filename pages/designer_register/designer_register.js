@@ -59,7 +59,35 @@ Page({
     // console.log(this.data.QRcode_src)
   },
 
+   update:function(id){
+        //上传二维码
+        //this.data.QRcode_src
+        var pic=this.data.QRcode_src
+        let tmp1=pic.split(".")
+        let suffix=tmp1[tmp1.length-1]
+        var that=this
+        wx.cloud.uploadFile({
+          filePath : this.data.QRcode_src,
+          cloudPath: 'qrcode/'+id+'.'+suffix, // 文件路径
+          success: res => {
+            // get resource ID
+            console.log(res.fileID)
+            that.setData({
+              QRcode_src:res.fileID
+            })
+            that.setagent(that);
+          },
+          fail: err => {
+            // handle error
+            console.log(err);
+          }
+        })
+      },
+
   formSubmit(e) {
+    wx.showLoading({
+      title:'注册中……'
+    });
     var time=util.formatTime(new Date())
     var that=this
     const db = wx.cloud.database()
@@ -75,37 +103,41 @@ Page({
         that.setData({
           designer_id:designer_id
         })
-        that.setagent();
+        that.update(designer_id)
       }
    })
   },
 
-setagent(){
+setagent:function(that){
   const db = wx.cloud.database()
   db.collection('designer')
   .add({
     data: 
       {
-        agent_id:this.data.designer_id,
-        name: this.data.name,
-        sex: this.data.radio_value,
-        phone:this.data.phone_number,
-        address:this.data.address,
-        qrcode:this.data.QRcode_src,
-        register_time:this.data.time
+        agent_id:that.data.designer_id,
+        name: that.data.name,
+        sex: that.data.radio_value,
+        phone:that.data.phone_number,
+        address:that.data.address,
+        qrcode:that.data.QRcode_src,
+        register_time:that.data.time
       },
       success:function(res){
+        wx.hideLoading();
         wx.showToast({
           title: '注册成功',
           icon: 'success',
           duration: 1500
          })
         setTimeout(function () {
-          wx.navigateBack({
-                delta: 1
-              });
-           },
+            wx.redirectTo({
+          url: '../designer/designer'
+        })
+          },
           1500)
+      },
+      fail:function(res){
+        console.log(res);
       }
   })
 },
@@ -121,7 +153,7 @@ setagent(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.init()
   },
 
   /**

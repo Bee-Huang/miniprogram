@@ -23,7 +23,7 @@
         </view>
         <view class="keyword_box">
             <block wx:for="{{hot_keywords}}">
-                <view class="keyword" wx:if="{{item.id>0}}">
+                <view class="keyword" wx:if="{{item.id>0}}" bindtap="click_keyword1" data-name="{{item.name}}">
                     {{item.name}}
                 </view>
             </block>

@@ -55,8 +55,22 @@ Page({
     ]
   },
 
-  onload:function(option){
-    hot_keywords=[]
+  frist:function(){
+    
+        
+  },
+
+  onLoad:function(option){
+    var that=this
+    wx.getStorage({
+      key: 'history_keyword',
+      success (res) {
+        var keywords=res.data
+        that.setData({
+          hot_keywords:keywords
+        })
+      }
+    })
   },
 
   inputkeyword:function(e){
@@ -71,15 +85,27 @@ Page({
 
   search:function(){
     this.data.hot_keywords.push({
-     id:1,
-     name: this.data.user_keywords
-   })
+      id:1,
+      name: this.data.user_keywords
+    })
     this.setData({
       hot_keywords:this.data.hot_keywords,
-  })
-  wx.navigateTo({
-    url: '/pages/clothes_list/clothes_list?type=0&word='+this.data.user_keywords,
-  });
+    })
+    wx.setStorage({
+      key:"history_keyword",
+      data:this.data.hot_keywords
+    })
+    wx.navigateTo({
+      url: '/pages/clothes_list/clothes_list?type=0&word='+this.data.user_keywords,
+    });
+  },
+
+  click_keyword1:function(e){
+    console.log(e.currentTarget.dataset.name)
+    let name=e.currentTarget.dataset.name
+    wx.navigateTo({
+      url: '/pages/clothes_list/clothes_list?type=0&word='+name,
+    });
   },
 
   clean:function(){
@@ -100,6 +126,10 @@ Page({
     this.setData({
       hot_keywords:this.data.hot_keywords,
       user_keywords:this.data.keywords[index].name,
+    })
+    wx.setStorage({
+      key:"history_keyword",
+      data:this.data.hot_keywords
     })
     wx.navigateTo({
       url: '/pages/clothes_list/clothes_list?word='+this.data.user_keywords,

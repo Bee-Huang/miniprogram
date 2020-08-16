@@ -490,6 +490,12 @@ Page({
     })
   },
 
+  gallery(){
+    wx.navigateTo({
+      url: '../clothes_gallery/clothes_gallery',
+    })
+  },
+
   writedatabase_pro1:function(e){
     console.log(e);
     var that=this

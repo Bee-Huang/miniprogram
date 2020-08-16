@@ -14,6 +14,7 @@ Page({
     mine_order:[],
     history_order:[],
     designer:[],
+    uploadcount:0
   },
 
 click1:function(){
@@ -122,26 +123,7 @@ receive_click:function(e){
       }
     }
   })
-  
-  // const db = wx.cloud.database()
-  // db.collection('order')
-  // .where({
-  //   uid:that.data.all_order[id].uid
-  // })
-  // .update({
-  //   data:{
-  //     designer_id:that.data.designer.designer_id,
-  //   },success:function(res){
-  //     wx.showToast({
-  //       title: '接单成功',
-  //       icon: 'success',
-  //       duration: 600
-  //     })
-  //     that.all_order()
-  //     that.mine_order()
-  //     that.history_order()
-  //   }
-  // })
+
   
 },
 
@@ -163,73 +145,93 @@ submit_click:function(e){
     content: '是否确定提交',
     success (res) {
       if (res.confirm) {
+        wx.showLoading({
+          title: '提交中'
+        })
         if(that.data.mine_order[index].designpic!=undefined){
-          const db = wx.cloud.database()
-            db.collection('order')
-            .where({
-              uid:e.currentTarget.dataset.uid
-            })
-            .update({
-              data:{
-                designpic:that.data.mine_order[index].designpic,
-              },
-              success:function(res){
-                console.log(res);
-                that.setData({
-                  mine_order:that.data.mine_order
-                })
-                wx.showToast({
-                  title: '提交成功',
-                  icon: 'success',
-                  duration: 600
-                })
-                that.mine_order()
-                that.history_order()
-              }
-            })    
+            that.update_pic(index,e.currentTarget.dataset.uid);
         }
       } else if (res.cancel) {
         // console.log('用户点击取消')
       }
     }
   })
+},
+
+update_pic(index,uid){
+    var array=this.data.mine_order[index].designpic
+    for(let i=0;i<array.length;i++){
+      this.update_pic_one(index,i,array[i],uid)
+    }
+    
+
+},
+
+update_pic_one(index,count,src,uid){
+   //上传二维码
+   //this.data.QRcode_src
+      var pic=src
+      let tmp1=pic.split(".")
+      let suffix=tmp1[tmp1.length-1]
+      var that=this
+      wx.cloud.uploadFile({
+        filePath : src,
+        cloudPath: 'designer/'+that.data.mine_order[index].uid+count+'.'+suffix, // 文件路径
+        success: res => {
+          // get resource ID
+          console.log(res.fileID)
+          var array=that.data.mine_order[index].designpic
+          array[count]=res.fileID
+          var dd='that.data.mine_order['+index+'].designpic'
+          var countt=that.data.uploadcount+1
+          console.log(array);
+          that.setData({
+            [dd]:array,
+            uploadcount:countt
+          })
+          if(countt==array.length){
+             that.update_database(index,uid);
+          }
+        },
+        fail: err => {
+          // handle error
+          console.log(err);
+        }
+   })
+},
 
 
-
-  // if(this.data.mine_order[index].designpic!=undefined){
-  //   const db = wx.cloud.database()
-  //     db.collection('order')
-  //     .where({
-  //       uid:e.currentTarget.dataset.uid
-  //     })
-  //     .update({
-  //       data:{
-  //         designpic:this.data.mine_order[index].designpic,
-  //       },
-  //       success:function(res){
-  //         console.log(res);
-  //         that.setData({
-  //           mine_order:that.data.mine_order
-  //         })
-  //         wx.showToast({
-  //           title: '提交成功',
-  //           icon: 'success',
-  //           duration: 600
-  //         })
-  //         that.mine_order()
-  //         that.history_order()
-  //       }
-  //     })
-      
-  // }
-  // else{
-  //   wx.showToast({
-  //     title: '请上传设计图案',
-  //     icon: 'none',
-  //     duration: 1500
-  //   })
-  // }
-  
+update_database(index,uidd){
+  console.log('数据库开始');
+  var that=this
+  const db = wx.cloud.database()
+  db.collection('order')
+  .where({
+    uid:uidd
+  })
+  .update({
+    data:{
+      designpic:that.data.mine_order[index].designpic,
+    },
+    success:function(res){
+      console.log(res);
+      that.setData({
+        mine_order:that.data.mine_order
+      })
+      wx.hideLoading({
+      })
+      wx.showToast({
+        title: '提交成功',
+        icon: 'success',
+        duration: 600
+      })
+      that.mine_order()
+      that.history_order()
+    },
+    fail:function(err){
+      console.log(err);
+    }
+  })    
 },
 
 getopenid:function(){

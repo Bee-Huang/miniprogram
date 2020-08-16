@@ -33,22 +33,6 @@
             <input type="text" bindinput="input_address" placeholder="请输入联系地址"/>
         </view>
     </view>
-    <!-- <view class="box1_1" >
-        <view class="box1_1_1" >
-            内宿（宿舍号）:
-        </view>
-        <view class="box1_1_2" >
-            <input type="text" bindinput="input_dorm" placeholder="内宿生必填"/>
-        </view>
-    </view>
-    <view class="box1_1" >
-        <view class="box1_1_1" >
-            介绍人:
-        </view>
-        <view class="box1_1_2" >
-            <input type="text" bindinput="input_introducer" placeholder="可不填"/>
-        </view>
-    </view> -->
     <view class="QRcode">
         <view class="box1_1_1" >
             个人微信二维码:

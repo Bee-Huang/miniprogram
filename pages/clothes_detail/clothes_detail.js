@@ -149,8 +149,8 @@ Page({
 
   service_click:function(){
     wx.previewImage({
-      current: 'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/12.jpg', 
-      urls: ['cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/12.jpg'] 
+      current: 'cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/客服.jpg', 
+      urls: ['cloud://wxpay-8jkfa.7778-wxpay-8jkfa-1302658837/客服.jpg'] 
     })
   },
 

@@ -69,7 +69,7 @@
 </view>
 
 <!-- 图库图案 -->
-<view class="_box1_2" wx:if="{{now_progress==1}}" >
+<view class="_box1_2" wx:if="{{now_progress==1}}" bindtap="gallery">
     <view class="_box1_2_1">
         图库
     </view>

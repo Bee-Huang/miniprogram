@@ -23,6 +23,31 @@ Page({
     this.getcount()
   },
 
+  confirm:function(e){
+    var that=this
+     const db = wx.cloud.database()
+     db.collection('order')
+     .where({
+       uid: this.data.order_details.uid
+     })
+     .update({
+        data: {
+          status:'已完成',
+        },
+        success:function(res){
+          console.log(res);
+          if(res.stats.updated>0){
+            wx.showToast({
+              title: '完成!!!',
+            })
+          }
+        },
+        fail:function(res){
+          console.log(res);
+        }
+     })
+  },
+
   getcount(){
     if(this.data.order_details.confirm_size!=undefined){
       var count=0

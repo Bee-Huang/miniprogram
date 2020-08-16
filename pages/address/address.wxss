@@ -15,14 +15,15 @@
 }
 
 .box1_1_1{
-    font-size: 30rpx;
+    font-size: 35rpx;
     margin-top: auto;
+    margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     /* background-color: darkmagenta; */
 }
 
-.box1_1_2{
+/* .box1_1_2{
     font-size: 30rpx;
     padding: 5rpx 10rpx 5rpx 10rpx;
     margin-top: 10rpx;
@@ -32,8 +33,7 @@
     color: red;
     border: red solid 1rpx;
     border-radius: 10rpx;
-    /* background-color: darkmagenta; */
-}
+} */
 
 .box1_2{
     width: 60%;

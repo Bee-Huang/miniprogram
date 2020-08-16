@@ -86,6 +86,10 @@
 
 </view>
 
+<view class='button2'>
+    <view class="button_text" bindtap="confirm">确认所有成衣送达客户</view>
+</view>
+
 <view class='button'>
     <view class="button_text" bindtap="clear">清除订单设计进度（谨慎使用）</view>
 </view>
