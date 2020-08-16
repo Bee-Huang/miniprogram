@@ -33,7 +33,13 @@
              <view class="uid2">{{item.uid}}</view>
              <view class="status">{{item.status}}</view>
         </view>
+        <view class="name">
+            <text class="" selectable="true" >
+                {{item.contactinfo.name}} {{item.contactinfo.phone}}
+            </text>
+       </view>
         <view class="address2">{{item.contactinfo.address}}</view>
+        
         <view class="details" data-uid="{{item.uid}}" bindtap="to_detail">查看详情</view>
     </view>
 </view>
